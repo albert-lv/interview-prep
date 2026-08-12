@@ -167,7 +167,7 @@ if (n == -1 && errno == EAGAIN) {
 - 📝 **有面试真题想补充？** 欢迎贡献
 - 👀 **想看看是不是真的每天更新？** [查看 commit 历史](https://github.com/albert-lv/interview-prep/commits/main)
 
-> 由 [向上](https://github.com/albert-lv) 维护，**每日自动推送** + 不定期手动加餐。
+> 由 [albert-lv](https://github.com/albert-lv) 维护，**每日自动推送** + 不定期手动加餐。
 >
 > **不是一次性项目，是每天都在长的活文档。** 🔥
 
