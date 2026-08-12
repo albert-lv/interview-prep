@@ -1,7 +1,7 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2010%20Day%2068-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2068%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2010%20Day%2069-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2069%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -17,14 +17,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 68 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 69 天** |
 | 📅 **6 周系统计划** | 不是零散刷题，按主题递进（DP → 数据结构 → 网络 → 系统设计） |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 68 · 2026-08-11）
-- 🔥 [复原 IP 地址（回溯 + 剪枝）](week10/2026-08-11-network-security.md) — 输入校验与网络安全思维
-- 🛡️ 面试技巧：XSS / CSRF / SQL 注入 / TLS 握手 / Session vs JWT 深度对比
+### 今日更新（Day 69 · 2026-08-12）
+- 🔥 [设计带 TTL 的线程安全缓存](week10/2026-08-12-ttl-cache.md) — LRU + 惰性删除 + 定期抽样，Redis 过期策略复刻
+- 🎤 面试技巧：系统设计题的 CLAPS 沟通框架（Clarify → Load → API → Pattern → Scale）
 
 **想看今天的内容？直接点上面 👆**
 
@@ -44,7 +44,7 @@
 
 > 💡 **节奏设计**：周一/周五主菜（重难点），周三换口味（数据结构/算法），周六复盘，周日彻底休息。
 >
-> 🔥 **当前状态**：Week 10 进行中，**每日更新从未中断**。
+> 🔥 **当前状态**：Week 10 已完结，**每日更新从未中断**。
 
 ---
 
@@ -68,10 +68,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 68 — 网络安全基础](week10/2026-08-11-network-security.md)（XSS/CSRF/SQL 注入/TLS 握手/Session vs JWT）
+- 🔥 [Day 69 — 带 TTL 的线程安全缓存](week10/2026-08-12-ttl-cache.md)（惰性删除 + 定期抽样 + 分段锁优化）
+- [Day 68 — 网络安全基础](week10/2026-08-11-network-security.md)（XSS/CSRF/SQL 注入/TLS 握手/Session vs JWT）
 - [Day 67 — HTTP/HTTPS 核心原理](week10/2026-08-10-http-https.md)（TLS 1.3、缓存机制、Cookie 安全）
 - [Day 66 — TCP/UDP 深度解析](week10/2026-08-09-tcp-udp.md)（滑动窗口、拥塞控制、队头阻塞）
-- [Day 65 — IO 模型与 epoll](week10/2026-08-08-io-models.md)（Reactor 模式、ET vs LT、Redis 单线程）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
@@ -148,9 +148,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 10 / Day 68**（网络安全已进入深水区 🏊）
+当前进度：**Week 10 / Day 69**（Week 10 已完结 🎉，下一站：综合真题模拟）
 
-**更新记录**：已连续更新 **68 天**，每日 20:42 自动推送。
+**更新记录**：已连续更新 **69** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
