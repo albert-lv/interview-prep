@@ -1,23 +1,32 @@
-# 🎯 Interview Prep — 6 周拿下大厂面试
+# 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
 [![Progress](https://img.shields.io/badge/进度-Week%2010%20Day%2068-blue)](./memory/interview-prep.md)
-[![Auto Push](https://img.shields.io/badge/每日更新-08:42%20%7C%2020:42-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2068%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
-> **不是题海战术，是「高频考点 + 面试话术」双管齐下。**
-> 
-> 每天晚上 20:42 自动更新：一道算法题 + 一页面试速查。跟着走，6 周后你会感谢自己。
+> **不是收藏夹吃灰，是真的每天都在更新。**
+>
+> 每天 20:42 自动推送：一道算法题 + 一页面试速查。跟着走，6 周后你会感谢自己。
 
 ---
 
 ## 📌 这是什么？
 
-一个 **结构化、自动化、可跟随** 的面试准备仓库。
+一个 **每天更新、结构清晰、直接可用** 的面试准备仓库。
 
-- ✅ **6 周系统计划** — 不是零散刷题，是按主题递进（DP → 数据结构 → 网络 → 系统设计）
-- ✅ **每日双更** — 早上 Agent 工具技巧，晚上算法 + 面试考点
-- ✅ **面试导向** — 每道题都带「面试官会怎么问」和「一句话速答」
-- ✅ **完整可运行代码** — 不是伪代码，是能直接 `gcc` 或 `go run` 的
+| 特性 | 说明 |
+|---|---|
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 68 天** |
+| 📅 **6 周系统计划** | 不是零散刷题，按主题递进（DP → 数据结构 → 网络 → 系统设计） |
+| 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
+| ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
+
+### 今日更新（Day 68 · 2026-08-11）
+- 🔥 [复原 IP 地址（回溯 + 剪枝）](week10/2026-08-11-network-security.md) — 输入校验与网络安全思维
+- 🛡️ 面试技巧：XSS / CSRF / SQL 注入 / TLS 握手 / Session vs JWT 深度对比
+
+**想看今天的内容？直接点上面 👆**
 
 ---
 
@@ -31,9 +40,13 @@
 | **Week 4** | 状态压缩 DP | 图论/二分/滑动窗口 | DP 优化 | 复盘 |
 | **Week 5** | DP 高频 | 贪心/回溯 | 模拟实战 | 复盘 |
 | **Week 6** | 综合真题 | 系统设计/场景题 | 模拟面试 | 🎉 毕业 |
-| **Week 7+** | 操作系统 | 网络协议 | 网络安全 | ...持续更新 |
+| **Week 7+** | 操作系统 | 网络协议 | 网络安全 | ...**持续更新中** |
 
-**节奏设计**：周一/周五主菜（重难点），周三换口味（数据结构/算法），周六复盘，周日彻底休息。
+> 💡 **节奏设计**：周一/周五主菜（重难点），周三换口味（数据结构/算法），周六复盘，周日彻底休息。
+>
+> 🔥 **当前状态**：Week 10 进行中，**每日更新从未中断**。
+
+---
 
 ---
 
@@ -54,10 +67,13 @@ agent-tips/   # 每日 Agent 工具技巧（Claude Code / Kimi Code / Windsurf�
 memory/       # 进度追踪 & 学习笔记
 ```
 
-**最新内容**：
-- 🔥 [Day 67 — HTTP/HTTPS 核心原理](week10/2026-08-10-http-https.md)（TLS 1.3、缓存机制、Cookie 安全）
-- 🔥 [Day 66 — TCP/UDP 深度解析](week10/2026-08-11-tcp-udp.md)（滑动窗口、拥塞控制、队头阻塞）
-- 🔥 [Day 65 — IO 模型与 epoll](week10/2026-08-10-io-models.md)（Reactor 模式、ET vs LT、Redis 单线程）
+**最新内容**（倒序）：
+- 🔥 [Day 68 — 网络安全基础](week10/2026-08-11-network-security.md)（XSS/CSRF/SQL 注入/TLS 握手/Session vs JWT）
+- [Day 67 — HTTP/HTTPS 核心原理](week10/2026-08-10-http-https.md)（TLS 1.3、缓存机制、Cookie 安全）
+- [Day 66 — TCP/UDP 深度解析](week10/2026-08-09-tcp-udp.md)（滑动窗口、拥塞控制、队头阻塞）
+- [Day 65 — IO 模型与 epoll](week10/2026-08-08-io-models.md)（Reactor 模式、ET vs LT、Redis 单线程）
+
+> 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
 ---
 
@@ -65,10 +81,13 @@ memory/       # 进度追踪 & 学习笔记
 
 ### 方式一：跟着走（推荐）
 
-1. 点右上角 ⭐ Star 本仓库（给自己一点仪式感）
-2. 每天 20:42 来看当日更新，或 Watch 仓库接收通知
-3. 按周推进，周六复盘这周的内容
-4. 面试前一周，快速过一遍 `memory/interview-prep.md` 的进度索引
+1. 点右上角 ⭐ **Star** 本仓库（给自己一点仪式感）
+2. 点 👁️ **Watch** 接收每日更新通知（推荐选 "Releases only" 或 "All Activity"）
+3. 每天 20:42 来看当日更新，或等 GitHub 通知推送
+4. 按周推进，周六复盘这周的内容
+5. 面试前一周，快速过一遍 `memory/interview-prep.md` 的进度索引
+
+> 💬 **真实的每日更新** — 不是一次性写完的题库，是真的每天都在 push 新内容。你可以看 [commit 历史](https://github.com/albert-lv/interview-prep/commits/main) 验证。
 
 ### 方式二：按需查阅
 
@@ -129,21 +148,28 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 10 / Day 68**（操作系统 + 网络协议已进入深水区 🏊）
+当前进度：**Week 10 / Day 68**（网络安全已进入深水区 🏊）
+
+**更新记录**：已连续更新 **68 天**，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
 ---
 
-## 🤝 欢迎加入
+---
+
+## 🤝 欢迎加入 / 一起打卡
 
 这个仓库最初是个人学习笔记，但好东西值得分享。
 
-- 发现错误？提 Issue 或 PR
-- 有面试真题想补充？欢迎贡献
-- 单纯想一起打卡？点 Star 就是组队信号 ⭐
+- ⭐ **Star = 组队信号** — 每天来看新内容的人不止你一个
+- 🐛 **发现错误？** 提 Issue 或 PR
+- 📝 **有面试真题想补充？** 欢迎贡献
+- 👀 **想看看是不是真的每天更新？** [查看 commit 历史](https://github.com/albert-lv/interview-prep/commits/main)
 
-> 由 [向上小郎君](https://github.com/albert-lv) 维护，每日自动推送 + 不定期手动加餐。
+> 由 [向上小郎君](https://github.com/albert-lv) 维护，**每日自动推送** + 不定期手动加餐。
+>
+> **不是一次性项目，是每天都在长的活文档。** 🔥
 
 ---
 
