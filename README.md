@@ -1,7 +1,7 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2010%20Day%2069-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2069%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2011%20Day%2071-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2071%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -22,9 +22,9 @@
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 69 · 2026-08-12）
-- 🔥 [设计带 TTL 的线程安全缓存](week10/2026-08-12-ttl-cache.md) — LRU + 惰性删除 + 定期抽样，Redis 过期策略复刻
-- 🎤 面试技巧：系统设计题的 CLAPS 沟通框架（Clarify → Load → API → Pattern → Scale）
+### 今日更新（Day 71 · 2026-08-14）
+- 🔥 [快照数组 + MySQL 事务与 MVCC](week11/2026-08-14-transaction-mvcc.md) — 版本链 + 二分查找映射 MVCC，ACID、隔离级别、ReadView、锁机制、死锁排查
+- 🎤 面试技巧：RC vs RR 本质区别 + MVCC 可见性判断四规则 + 死锁预防 Checklist
 
 **想看今天的内容？直接点上面 👆**
 
@@ -68,10 +68,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 69 — 带 TTL 的线程安全缓存](week10/2026-08-12-ttl-cache.md)（惰性删除 + 定期抽样 + 分段锁优化）
+- 🔥 [Day 71 — 快照数组 + MySQL 事务与 MVCC](week11/2026-08-14-transaction-mvcc.md)（版本链/MVCC/ACID/隔离级别/死锁排查）
+- [Day 70 — 合并 K 个升序链表 + MySQL 索引原理](week11/2026-08-13-mysql-index.md)（最小堆/分治归并 + B+树/最左前缀/覆盖索引）
+- [Day 69 — 带 TTL 的线程安全缓存](week10/2026-08-12-ttl-cache.md)（惰性删除 + 定期抽样 + 分段锁优化）
 - [Day 68 — 网络安全基础](week10/2026-08-11-network-security.md)（XSS/CSRF/SQL 注入/TLS 握手/Session vs JWT）
-- [Day 67 — HTTP/HTTPS 核心原理](week10/2026-08-10-http-https.md)（TLS 1.3、缓存机制、Cookie 安全）
-- [Day 66 — TCP/UDP 深度解析](week10/2026-08-09-tcp-udp.md)（滑动窗口、拥塞控制、队头阻塞）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
@@ -148,9 +148,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 10 / Day 69**（Week 10 已完结 🎉，下一站：综合真题模拟）
+当前进度：**Week 11 / Day 71**（Week 11 主题：数据库与存储深度 🔥）
 
-**更新记录**：已连续更新 **69** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **71** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
