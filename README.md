@@ -1,7 +1,7 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2011%20Day%2071-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2071%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2011%20Day%2072-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2072%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -17,14 +17,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 69 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 72 天** |
 | 📅 **6 周系统计划** | 不是零散刷题，按主题递进（DP → 数据结构 → 网络 → 系统设计） |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 71 · 2026-08-14）
-- 🔥 [快照数组 + MySQL 事务与 MVCC](week11/2026-08-14-transaction-mvcc.md) — 版本链 + 二分查找映射 MVCC，ACID、隔离级别、ReadView、锁机制、死锁排查
-- 🎤 面试技巧：RC vs RR 本质区别 + MVCC 可见性判断四规则 + 死锁预防 Checklist
+### 今日更新（Day 72 · 2026-08-15）
+- 🔥 [设计排行榜 + Redis 核心原理](week11/2026-08-15-redis-leaderboard.md) — HashMap+TreeSet 实现动态排行榜，Redis 五种数据结构、跳表原理、RDB/AOF 持久化、缓存三坑、分布式锁
+- 🎤 面试技巧：Redis 快的原因 + ZSET 底层实现 + 混合持久化 + 缓存穿透/击穿/雪崩 + Redisson 看门狗
 
 **想看今天的内容？直接点上面 👆**
 
@@ -68,7 +68,8 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 71 — 快照数组 + MySQL 事务与 MVCC](week11/2026-08-14-transaction-mvcc.md)（版本链/MVCC/ACID/隔离级别/死锁排查）
+- 🔥 [Day 72 — 设计排行榜 + Redis 核心原理](week11/2026-08-15-redis-leaderboard.md)（HashMap+TreeSet / 跳表 / RDB+AOF / 缓存三坑 / 分布式锁）
+- [Day 71 — 快照数组 + MySQL 事务与 MVCC](week11/2026-08-14-transaction-mvcc.md)（版本链/MVCC/ACID/隔离级别/死锁排查）
 - [Day 70 — 合并 K 个升序链表 + MySQL 索引原理](week11/2026-08-13-mysql-index.md)（最小堆/分治归并 + B+树/最左前缀/覆盖索引）
 - [Day 69 — 带 TTL 的线程安全缓存](week10/2026-08-12-ttl-cache.md)（惰性删除 + 定期抽样 + 分段锁优化）
 - [Day 68 — 网络安全基础](week10/2026-08-11-network-security.md)（XSS/CSRF/SQL 注入/TLS 握手/Session vs JWT）
@@ -148,9 +149,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 11 / Day 71**（Week 11 主题：数据库与存储深度 🔥）
+当前进度：**Week 11 / Day 72**（Week 11 主题：数据库与存储深度 🔥）
 
-**更新记录**：已连续更新 **71** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **72** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
