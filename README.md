@@ -1,7 +1,7 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2011%20Day%2074-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2074%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2011%20Day%2075-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2075%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -22,9 +22,9 @@
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 74 · 2026-08-17）
-- 🔥 [设计点击量统计器 + 数据库分库分表策略](week11/2026-08-17-hit-counter.md) — 滑动窗口循环数组 O(1) 设计，数据库垂直/水平拆分、分片键选择、全局 ID、跨分片查询解法、平滑扩容迁移
-- 🎤 面试技巧：分库分表时机判断、哈希/范围/组合分片对比、分片键选择原则、跨片分页/JOIN/聚合的四种解法、双写扩容迁移流程
+### 今日更新（Day 75 · 2026-08-18）
+- 🔥 [常数时间插入删除获取随机元素 + 存储引擎与缓存一致性](week11/2026-08-18-storage-engine-cache.md) — HashMap+动态数组 O(1) 设计，B+Tree vs LSM-Tree 存储引擎深度对比，缓存一致性四种策略（Cache-Aside/Read-Through/Write-Through/Write-Behind）及面试连环追问
+- 🎤 面试技巧：存储引擎选型判断、缓存一致性策略选择、Race Condition 排查、延迟双删与 Binlog 兜底方案
 
 **想看今天的内容？直接点上面 👆**
 
@@ -68,11 +68,11 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 74 — 设计点击量统计器 + 数据库分库分表策略](week11/2026-08-17-hit-counter.md)（滑动窗口循环数组 / 垂直水平拆分 / 分片键选择 / 跨片查询 / 扩容迁移）
+- 🔥 [Day 75 — 常数时间插入删除获取随机元素 + 存储引擎与缓存一致性](week11/2026-08-18-storage-engine-cache.md)（HashMap+ArrayList O(1) / B+Tree vs LSM-Tree / 缓存一致性四种策略 / 面试连环追问）
+- [Day 74 — 设计点击量统计器 + 数据库分库分表策略](week11/2026-08-17-hit-counter.md)（滑动窗口循环数组 / 垂直水平拆分 / 分片键选择 / 跨片查询 / 扩容迁移）
 - [Day 73 — LFU 缓存设计 + 数据库连接池与 SQL 优化](week11/2026-08-16-lfu-cache.md)（HashMap+频率链表+双向链表 / 连接池调优 / SQL 优化 / 慢查询排查）
 - [Day 72 — 设计排行榜 + Redis 核心原理](week11/2026-08-15-redis-leaderboard.md)（HashMap+TreeSet / 跳表 / RDB+AOF / 缓存三坑 / 分布式锁）
 - [Day 71 — 快照数组 + MySQL 事务与 MVCC](week11/2026-08-14-transaction-mvcc.md)（版本链/MVCC/ACID/隔离级别/死锁排查）
-- [Day 70 — 合并 K 个升序链表 + MySQL 索引原理](week11/2026-08-13-mysql-index.md)（最小堆/分治归并 + B+树/最左前缀/覆盖索引）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
@@ -149,9 +149,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 11 / Day 74**（Week 11 主题：数据库与存储深度 🔥）
+当前进度：**Week 11 / Day 75**（Week 11 主题：数据库与存储深度 🔥）
 
-**更新记录**：已连续更新 **74** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **75** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
