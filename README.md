@@ -1,7 +1,7 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2011%20Day%2075-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2075%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2012%20Day%2076-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2076%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -17,14 +17,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 72 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 76 天** |
 | 📅 **6 周系统计划** | 不是零散刷题，按主题递进（DP → 数据结构 → 网络 → 系统设计） |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 75 · 2026-08-18）
-- 🔥 [常数时间插入删除获取随机元素 + 存储引擎与缓存一致性](week11/2026-08-18-storage-engine-cache.md) — HashMap+动态数组 O(1) 设计，B+Tree vs LSM-Tree 存储引擎深度对比，缓存一致性四种策略（Cache-Aside/Read-Through/Write-Through/Write-Behind）及面试连环追问
-- 🎤 面试技巧：存储引擎选型判断、缓存一致性策略选择、Race Condition 排查、延迟双删与 Binlog 兜底方案
+### 今日更新（Day 76 · 2026-08-19）
+- 🔥 [数组中的第K个最大元素 + 搜索引擎设计基础](week12/2026-08-19-topk-search-engine.md) — 快速选择 O(n) / 最小堆 O(n log k) 双解，倒排索引核心原理，分布式搜索架构，ES 为什么比 MySQL 搜索快
+- 🎤 面试技巧：Top K 大数据场景扩展、搜索引擎倒排索引与查询流程、相关性排序 BM25、面试连环追问
 
 **想看今天的内容？直接点上面 👆**
 
@@ -68,10 +68,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 75 — 常数时间插入删除获取随机元素 + 存储引擎与缓存一致性](week11/2026-08-18-storage-engine-cache.md)（HashMap+ArrayList O(1) / B+Tree vs LSM-Tree / 缓存一致性四种策略 / 面试连环追问）
+- 🔥 [Day 76 — 数组中的第K个最大元素 + 搜索引擎设计基础](week12/2026-08-19-topk-search-engine.md)（快速选择 O(n) / 最小堆 / 倒排索引 / 分布式搜索 / BM25 / ES vs MySQL）
+- [Day 75 — 常数时间插入删除获取随机元素 + 存储引擎与缓存一致性](week11/2026-08-18-storage-engine-cache.md)（HashMap+ArrayList O(1) / B+Tree vs LSM-Tree / 缓存一致性四种策略 / 面试连环追问）
 - [Day 74 — 设计点击量统计器 + 数据库分库分表策略](week11/2026-08-17-hit-counter.md)（滑动窗口循环数组 / 垂直水平拆分 / 分片键选择 / 跨片查询 / 扩容迁移）
 - [Day 73 — LFU 缓存设计 + 数据库连接池与 SQL 优化](week11/2026-08-16-lfu-cache.md)（HashMap+频率链表+双向链表 / 连接池调优 / SQL 优化 / 慢查询排查）
-- [Day 72 — 设计排行榜 + Redis 核心原理](week11/2026-08-15-redis-leaderboard.md)（HashMap+TreeSet / 跳表 / RDB+AOF / 缓存三坑 / 分布式锁）
 - [Day 71 — 快照数组 + MySQL 事务与 MVCC](week11/2026-08-14-transaction-mvcc.md)（版本链/MVCC/ACID/隔离级别/死锁排查）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
@@ -149,9 +149,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 11 / Day 75**（Week 11 主题：数据库与存储深度 🔥）
+当前进度：**Week 12 / Day 76**（Week 12 主题：大数据处理与搜索引擎 🔍）
 
-**更新记录**：已连续更新 **75** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **76** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
