@@ -1,6 +1,6 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2012%20Day%2078-blue)](./memory/interview-prep.md)
+[![Progress](https://img.shields.io/badge/进度-Week%2012%20Day%2079-blue)](./memory/interview-prep.md)
 [![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2078%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
@@ -17,14 +17,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 76 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 79 天** |
 | 📅 **6 周系统计划** | 不是零散刷题，按主题递进（DP → 数据结构 → 网络 → 系统设计） |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 78 · 2026-08-21）
-- 🔥 [数据流的中位数 + 推荐系统设计与实时计算](week12/2026-08-21-median-stream-recommendation.md) — 双堆平衡 O(log n) 插入 O(1) 查询，推荐系统四层架构（召回→粗排→精排→重排），协同过滤 vs 向量召回，冷启动与信息茧房解决方案，Flink 流处理核心原理（Watermarks/Checkpoint/Exactly-Once）
-- 🎤 面试技巧：推荐系统架构拆解话术、实时计算框架选型（Flink vs Spark Streaming）、大数据高频速查表
+### 今日更新（Day 79 · 2026-08-22）
+- 🔥 [区间和的个数 + OLAP 与实时数仓架构](week12/2026-08-22-count-range-sum-olap.md) — 前缀和 + 归并排序分治 O(n log n)，Lambda vs Kappa 架构对比，ClickHouse/Doris/Druid OLAP 引擎选型，实时数仓五层模型（ODS→DWD→DWS→ADS→DIM），列式存储与向量化执行原理，大数据面试金句速查
+- 🎤 面试技巧：实时数仓分层话术、OLAP 引擎选型逻辑、Exactly-Once 保障方案、数据倾斜处理策略
 
 **想看今天的内容？直接点上面 👆**
 
@@ -68,10 +68,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 78 — 数据流的中位数 + 推荐系统设计与实时计算](week12/2026-08-21-median-stream-recommendation.md)（双堆 O(log n) / 推荐系统四层架构 / 协同过滤 / Flink 流处理 / Exactly-Once）
+- 🔥 [Day 79 — 区间和的个数 + OLAP 与实时数仓架构](week12/2026-08-22-count-range-sum-olap.md)（前缀和 + 归并分治 O(n log n) / Lambda vs Kappa / ClickHouse 列式存储 / 实时数仓五层模型 / 大数据面试速查）
+- [Day 78 — 数据流的中位数 + 推荐系统设计与实时计算](week12/2026-08-21-median-stream-recommendation.md)（双堆 O(log n) / 推荐系统四层架构 / 协同过滤 / Flink 流处理 / Exactly-Once）
 - [Day 77 — 前 K 个高频元素 + MapReduce 原理与分布式计算](week12/2026-08-20-frequent-elements-mapreduce.md)（哈希表+最小堆 / 桶排序 O(n) / MapReduce 模型 / Combiner / 数据倾斜 / Hadoop vs Spark vs Flink）
 - [Day 76 — 数组中的第K个最大元素 + 搜索引擎设计基础](week12/2026-08-19-topk-search-engine.md)（快速选择 O(n) / 最小堆 / 倒排索引 / 分布式搜索 / BM25 / ES vs MySQL）
-- [Day 75 — 常数时间插入删除获取随机元素 + 存储引擎与缓存一致性](week11/2026-08-18-storage-engine-cache.md)（HashMap+ArrayList O(1) / B+Tree vs LSM-Tree / 缓存一致性四种策略 / 面试连环追问）
 - [Day 73 — LFU 缓存设计 + 数据库连接池与 SQL 优化](week11/2026-08-16-lfu-cache.md)（HashMap+频率链表+双向链表 / 连接池调优 / SQL 优化 / 慢查询排查）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
@@ -149,9 +149,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 12 / Day 78**（Week 12 主题：大数据处理与搜索引擎 🔍）
+当前进度：**Week 12 / Day 79**（Week 12 主题：大数据处理与搜索引擎 🔍 — **已完结**）
 
-**更新记录**：已连续更新 **78** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **79** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
