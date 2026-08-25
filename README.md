@@ -1,7 +1,7 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2013%20Day%2081-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2081%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2013%20Day%2082-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2082%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -22,9 +22,9 @@
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 81 · 2026-08-24）
-- 🔥 [重构字符串 + K8s 网络模型与 CNI 插件深入](week13/2026-08-24-reorganize-string-k8s-network.md) — 贪心+最大堆 O(N log K) / 奇偶位置 O(N) 最优解，K8s 网络三大要求与 Pod 通信四场景深度解析，kube-proxy 三种模式对比（iptables vs IPVS），Flannel/Calico/Cilium 三大 CNI 插件选型与实现原理，BGP 路由 vs Overlay 封装，NetworkPolicy 工作机制，网络排错八步法
-- 🎤 面试技巧：Pod IP 分配全流程、ClusterIP 负载均衡实现、跨节点通信方案对比、NetworkPolicy 实现原理、DNS 解析链路、Service 访问排错 checklist
+### 今日更新（Day 82 · 2026-08-25）
+- 🔥 [根据身高重建队列 + Helm 与 GitOps 实践](week13/2026-08-25-queue-reconstruction-helm-gitops.md) — 贪心排序+插入 O(N log N)，"先处理高的"经典策略；Helm Chart 结构与 Values 覆盖机制、Helm 3 去 Tiller 安全改进、GitOps 四原则与 ArgoCD Pull 模型、滚动/蓝绿/金丝雀/A-B 四种部署策略深度对比
+- 🎤 面试技巧：Helm vs Kustomize 选型、3-way merge 解决集群漂移、GitOps 安全实践、Argo Rollouts 金丝雀发布配置
 
 **想看今天的内容？直接点上面 👆**
 
@@ -68,11 +68,11 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 81 — 重构字符串 + K8s 网络模型与 CNI 插件深入](week13/2026-08-24-reorganize-string-k8s-network.md)（贪心+最大堆 / 奇偶位置 O(N) / K8s 网络三大要求 / Pod 通信四场景 / kube-proxy 三模式 / Flannel/Calico/Cilium / BGP vs Overlay / NetworkPolicy / 网络排错八步法）
+- 🔥 [Day 82 — 根据身高重建队列 + Helm 与 GitOps 实践](week13/2026-08-25-queue-reconstruction-helm-gitops.md)（贪心排序+插入 / Helm Chart 结构 / Values 覆盖 / Helm 3 安全改进 / GitOps 四原则 / ArgoCD 架构 / 四种部署策略对比）
+- [Day 81 — 重构字符串 + K8s 网络模型与 CNI 插件深入](week13/2026-08-24-reorganize-string-k8s-network.md)（贪心+最大堆 / 奇偶位置 O(N) / K8s 网络三大要求 / Pod 通信四场景 / kube-proxy 三模式 / Flannel/Calico/Cilium / BGP vs Overlay / NetworkPolicy / 网络排错八步法）
 - [Day 80 — 任务调度器 + Docker 与 Kubernetes 核心原理](week13/2026-08-23-task-scheduler-k8s.md)（贪心调度 O(N) / Namespace+Cgroups+UnionFS / K8s 架构全解析 / Pod/Deployment/StatefulSet / Service 网络 / 调度器原理 / CI/CD 基础）
 - [Day 79 — 区间和的个数 + OLAP 与实时数仓架构](week12/2026-08-22-count-range-sum-olap.md)（前缀和 + 归并分治 O(n log n) / Lambda vs Kappa / ClickHouse 列式存储 / 实时数仓五层模型 / 大数据面试速查）
 - [Day 78 — 数据流的中位数 + 推荐系统设计与实时计算](week12/2026-08-21-median-stream-recommendation.md)（双堆 O(log n) / 推荐系统四层架构 / 协同过滤 / Flink 流处理 / Exactly-Once）
-- [Day 73 — LFU 缓存设计 + 数据库连接池与 SQL 优化](week11/2026-08-16-lfu-cache.md)（HashMap+频率链表+双向链表 / 连接池调优 / SQL 优化 / 慢查询排查）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
@@ -149,9 +149,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 13 / Day 81**（Week 13 主题：云原生与容器化基础设施 🐳 — **进行中**）
+当前进度：**Week 13 / Day 82**（Week 13 主题：云原生与容器化基础设施 🐳 — **进行中**）
 
-**更新记录**：已连续更新 **81** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **82** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
