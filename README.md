@@ -1,7 +1,7 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2013%20Day%2083-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2083%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2013%20Day%2084-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2084%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -17,14 +17,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 79 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 84 天** |
 | 📅 **6 周系统计划** | 不是零散刷题，按主题递进（DP → 数据结构 → 网络 → 系统设计） |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 83 · 2026-08-26）
-- 🔥 [优势洗牌 + K8s 持久化存储与 Service Mesh 核心原理](week13/2026-08-26-advantage-shuffle-k8s-storage-servicemesh.md) — 田忌赛马贪心双指针 O(N log N)；K8s 存储三层模型 PV/PVC/StorageClass、CSI 架构与动态供给、AccessMode 详解；Istio Sidecar 模式、mTLS 自动加密、VirtualService/DestinationRule 流量管理、Service Mesh 适用场景与代价
-- 🎤 面试技巧：CSI Controller vs Node 分工、WaitForFirstConsumer 跨可用区问题、Sidecar 流量劫持原理、Istio vs Linkerd 选型、Sidecarless Mesh（eBPF）趋势
+### 今日更新（Day 84 · 2026-08-27）
+- 🔥 [加油站 + 容器安全与云原生可观测性](week13/2026-08-27-gas-station-container-security.md) — 贪心绕环判定 O(N) O(1)，全局可行性 + 局部失败跳站策略；容器安全四层防御（镜像扫描 / 运行时 SecurityContext / NetworkPolicy / RBAC）、云原生可观测性三支柱（Metrics-Prometheus / Logs-Loki / Traces-Jaeger）、SRE 黄金信号、面试高频 Q&A
+- 🎤 面试技巧：镜像漏洞扫描 CI 阻断、Pod Security Context 最小权限配置、NetworkPolicy 东西向流量隔离、Prometheus 高可用方案、Loki vs ELK 选型、eBPF 与可观测性
 
 **想看今天的内容？直接点上面 👆**
 
@@ -68,10 +68,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 83 — 优势洗牌 + K8s 持久化存储与 Service Mesh 核心原理](week13/2026-08-26-advantage-shuffle-k8s-storage-servicemesh.md)（田忌赛马贪心 / K8s PV/PVC/StorageClass / CSI 架构 / AccessMode / Istio Sidecar / mTLS / VirtualService / Service Mesh 适用场景）
+- 🔥 [Day 84 — 加油站 + 容器安全与云原生可观测性](week13/2026-08-27-gas-station-container-security.md)（贪心绕环判定 O(N) / 镜像安全四层防御 / SecurityContext / NetworkPolicy / RBAC / Prometheus-Loki-Jaeger 三支柱 / SRE 黄金信号 / eBPF 可观测性）
+- [Day 83 — 优势洗牌 + K8s 持久化存储与 Service Mesh 核心原理](week13/2026-08-26-advantage-shuffle-k8s-storage-servicemesh.md)（田忌赛马贪心 / K8s PV/PVC/StorageClass / CSI 架构 / AccessMode / Istio Sidecar / mTLS / VirtualService / Service Mesh 适用场景）
 - [Day 82 — 根据身高重建队列 + Helm 与 GitOps 实践](week13/2026-08-25-queue-reconstruction-helm-gitops.md)（贪心排序+插入 / Helm Chart 结构 / Values 覆盖 / Helm 3 安全改进 / GitOps 四原则 / ArgoCD 架构 / 四种部署策略对比）
 - [Day 81 — 重构字符串 + K8s 网络模型与 CNI 插件深入](week13/2026-08-24-reorganize-string-k8s-network.md)（贪心+最大堆 / 奇偶位置 O(N) / K8s 网络三大要求 / Pod 通信四场景 / kube-proxy 三模式 / Flannel/Calico/Cilium / BGP vs Overlay / NetworkPolicy / 网络排错八步法）
-- [Day 80 — 任务调度器 + Docker 与 Kubernetes 核心原理](week13/2026-08-23-task-scheduler-k8s.md)（贪心调度 O(N) / Namespace+Cgroups+UnionFS / K8s 架构全解析 / Pod/Deployment/StatefulSet / Service 网络 / 调度器原理 / CI/CD 基础）
 - [Day 78 — 数据流的中位数 + 推荐系统设计与实时计算](week12/2026-08-21-median-stream-recommendation.md)（双堆 O(log n) / 推荐系统四层架构 / 协同过滤 / Flink 流处理 / Exactly-Once）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
@@ -149,9 +149,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 13 / Day 83**（Week 13 主题：云原生与容器化基础设施 🐳 — **进行中**）
+当前进度：**Week 13 / Day 84**（Week 13 主题：云原生与容器化基础设施 🐳 — **进行中**）
 
-**更新记录**：已连续更新 **83** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **84** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
