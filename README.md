@@ -1,7 +1,7 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2013%20Day%2084-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2084%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2013%20Day%2085-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2085%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -22,9 +22,9 @@
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 84 · 2026-08-27）
-- 🔥 [加油站 + 容器安全与云原生可观测性](week13/2026-08-27-gas-station-container-security.md) — 贪心绕环判定 O(N) O(1)，全局可行性 + 局部失败跳站策略；容器安全四层防御（镜像扫描 / 运行时 SecurityContext / NetworkPolicy / RBAC）、云原生可观测性三支柱（Metrics-Prometheus / Logs-Loki / Traces-Jaeger）、SRE 黄金信号、面试高频 Q&A
-- 🎤 面试技巧：镜像漏洞扫描 CI 阻断、Pod Security Context 最小权限配置、NetworkPolicy 东西向流量隔离、Prometheus 高可用方案、Loki vs ELK 选型、eBPF 与可观测性
+### 今日更新（Day 85 · 2026-08-28）
+- 🔥 [会议室 II + K8s 调度器高级特性与 CI/CD 流水线设计](week13/2026-08-28-meeting-rooms-k8s-scheduler-cicd.md) — 最小堆维护最早结束时间复用会议室 O(n log n)；K8s 调度器高阶机制（节点亲和性/反亲和性、污点容忍、Pod 优先级与抢占、拓扑分布约束、QoS 分级）、ResourceQuota/LimitRange；CI/CD 工具选型（Jenkins/GitLab CI/GitHub Actions/ArgoCD/Tekton）、Pipeline as Code、安全扫描左移、GitOps Pull 模型、不可变镜像
+- 🎤 面试技巧：调度失败排查四步法、Predicates vs Priorities 本质区别、Kaniko 无 daemon 构建安全优势、ArgoCD 自动同步与回滚机制、蓝绿 vs 金丝雀部署 K8s 实现
 
 **想看今天的内容？直接点上面 👆**
 
@@ -68,11 +68,11 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 84 — 加油站 + 容器安全与云原生可观测性](week13/2026-08-27-gas-station-container-security.md)（贪心绕环判定 O(N) / 镜像安全四层防御 / SecurityContext / NetworkPolicy / RBAC / Prometheus-Loki-Jaeger 三支柱 / SRE 黄金信号 / eBPF 可观测性）
+- 🔥 [Day 85 — 会议室 II + K8s 调度器高级特性与 CI/CD 流水线设计](week13/2026-08-28-meeting-rooms-k8s-scheduler-cicd.md)（最小堆调度 O(n log n) / 节点亲和性/反亲和性 / 污点容忍 / Pod 优先级与抢占 / 拓扑分布约束 / QoS 分级 / GitLab CI / ArgoCD GitOps / 安全扫描左移）
+- [Day 84 — 加油站 + 容器安全与云原生可观测性](week13/2026-08-27-gas-station-container-security.md)（贪心绕环判定 O(N) / 镜像安全四层防御 / SecurityContext / NetworkPolicy / RBAC / Prometheus-Loki-Jaeger 三支柱 / SRE 黄金信号 / eBPF 可观测性）
 - [Day 83 — 优势洗牌 + K8s 持久化存储与 Service Mesh 核心原理](week13/2026-08-26-advantage-shuffle-k8s-storage-servicemesh.md)（田忌赛马贪心 / K8s PV/PVC/StorageClass / CSI 架构 / AccessMode / Istio Sidecar / mTLS / VirtualService / Service Mesh 适用场景）
 - [Day 82 — 根据身高重建队列 + Helm 与 GitOps 实践](week13/2026-08-25-queue-reconstruction-helm-gitops.md)（贪心排序+插入 / Helm Chart 结构 / Values 覆盖 / Helm 3 安全改进 / GitOps 四原则 / ArgoCD 架构 / 四种部署策略对比）
 - [Day 81 — 重构字符串 + K8s 网络模型与 CNI 插件深入](week13/2026-08-24-reorganize-string-k8s-network.md)（贪心+最大堆 / 奇偶位置 O(N) / K8s 网络三大要求 / Pod 通信四场景 / kube-proxy 三模式 / Flannel/Calico/Cilium / BGP vs Overlay / NetworkPolicy / 网络排错八步法）
-- [Day 78 — 数据流的中位数 + 推荐系统设计与实时计算](week12/2026-08-21-median-stream-recommendation.md)（双堆 O(log n) / 推荐系统四层架构 / 协同过滤 / Flink 流处理 / Exactly-Once）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
@@ -149,9 +149,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 13 / Day 84**（Week 13 主题：云原生与容器化基础设施 🐳 — **进行中**）
+当前进度：**Week 13 / Day 85**（Week 13 主题：云原生与容器化基础设施 🐳 — **进行中**）
 
-**更新记录**：已连续更新 **84** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **85** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
