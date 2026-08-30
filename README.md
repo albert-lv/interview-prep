@@ -1,7 +1,7 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2013%20Day%2086-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2086%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2014%20Day%2087-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2087%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -22,9 +22,9 @@
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 86 · 2026-08-29）
-- 🔥 [合并区间 + K8s 生产环境排障体系与 SRE 实践](week13/2026-08-29-merge-intervals-k8s-troubleshooting.md) — 排序+贪心 O(n log n) 合并重叠区间；K8s 故障分层诊断模型、Pod 异常状态速查表（CrashLoopBackOff/OOMKilled/Pending/Evicted）、排障五步法（止血→日志→事件→资源→归档）、高频面试连环问、SRE 黄金实践（可观测性三支柱/错误预算/无责备复盘）
-- 🎤 面试技巧：Pod Pending 三层排查法、502 间歇性故障定位路径、节点 NotReady 四步诊断、`kubectl debug` 临时容器排障、Chaos Mesh 故障注入验证
+### 今日更新（Day 87 · 2026-08-30）
+- 🔥 [字母异位词分组 + 机器学习基础与特征工程](week14/2026-08-30-group-anagrams-ml-basics.md) — 哈希表+排序/字符计数编码 O(N·K) 分组异位词；机器学习三大范式（监督/无监督/强化学习）、特征工程核心方法（标准化/归一化/编码/降维）、模型评估指标（Precision/Recall/F1/AUC-ROC）、过拟合与欠拟合的处理策略、偏差-方差分解、L1 vs L2 正则化、高频面试连环问
+- 🎤 面试技巧：特征工程的标准化/归一化选择指南、类别特征编码方案（One-Hot/Label/Target/Embedding）、分类/回归评估指标速查、过拟合的六招应对、面试项目描述的 STAR 框架
 
 **想看今天的内容？直接点上面 👆**
 
@@ -68,10 +68,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 86 — 合并区间 + K8s 生产环境排障体系与 SRE 实践](week13/2026-08-29-merge-intervals-k8s-troubleshooting.md)（排序+贪心 O(n log n) / K8s 故障分层诊断 / Pod 异常状态速查 / 排障五步法 / SRE 黄金实践）
+- 🔥 [Day 87 — 字母异位词分组 + 机器学习基础与特征工程](week14/2026-08-30-group-anagrams-ml-basics.md)（哈希表+字符计数 O(N·K) / ML 三大范式 / 特征工程标准化编码 / 模型评估指标 / 过拟合处理 / L1 vs L2 正则化 / 偏差-方差分解）
+- [Day 86 — 合并区间 + K8s 生产环境排障体系与 SRE 实践](week13/2026-08-29-merge-intervals-k8s-troubleshooting.md)（排序+贪心 O(n log n) / K8s 故障分层诊断 / Pod 异常状态速查 / 排障五步法 / SRE 黄金实践）
 - [Day 85 — 会议室 II + K8s 调度器高级特性与 CI/CD 流水线设计](week13/2026-08-28-meeting-rooms-k8s-scheduler-cicd.md)（最小堆调度 O(n log n) / 节点亲和性/反亲和性 / 污点容忍 / Pod 优先级与抢占 / 拓扑分布约束 / QoS 分级 / GitLab CI / ArgoCD GitOps / 安全扫描左移）
 - [Day 84 — 加油站 + 容器安全与云原生可观测性](week13/2026-08-27-gas-station-container-security.md)（贪心绕环判定 O(N) / 镜像安全四层防御 / SecurityContext / NetworkPolicy / RBAC / Prometheus-Loki-Jaeger 三支柱 / SRE 黄金信号 / eBPF 可观测性）
-- [Day 83 — 优势洗牌 + K8s 持久化存储与 Service Mesh 核心原理](week13/2026-08-26-advantage-shuffle-k8s-storage-servicemesh.md)（田忌赛马贪心 / K8s PV/PVC/StorageClass / CSI 架构 / AccessMode / Istio Sidecar / mTLS / VirtualService / Service Mesh 适用场景）
 - [Day 81 — 重构字符串 + K8s 网络模型与 CNI 插件深入](week13/2026-08-24-reorganize-string-k8s-network.md)（贪心+最大堆 / 奇偶位置 O(N) / K8s 网络三大要求 / Pod 通信四场景 / kube-proxy 三模式 / Flannel/Calico/Cilium / BGP vs Overlay / NetworkPolicy / 网络排错八步法）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
@@ -149,9 +149,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 13 / Day 86**（Week 13 主题：云原生与容器化基础设施 🐳 — **已完结**）
+当前进度：**Week 14 / Day 87**（Week 14 主题：人工智能与大模型工程 🧠 — **进行中**）
 
-**更新记录**：已连续更新 **86** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **87** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
