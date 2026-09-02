@@ -1,7 +1,7 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2014%20Day%2089-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2089%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2014%20Day%2090-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2090%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -22,9 +22,9 @@
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 89 · 2026-09-01）
-- 🔥 [课程表 II + 模型训练与分布式训练](week14/2026-09-01-course-schedule-distributed-training.md) — 拓扑排序 Kahn 算法 / DFS 三色标记法 / 计算图调度类比；数据并行 DDP Ring AllReduce 详解、模型并行与流水线并行（GPipe/PipeDream）、ZeRO-1/2/3 分片策略、混合精度训练（FP16/BF16/Loss Scaling）、梯度累积、3D 并行（DP×PP×TP）、FSDP 与 DeepSpeed、Checkpoint 与断点续训、高频面试连环问
-- 🎤 面试技巧：DDP 梯度同步 Ring AllReduce 原理、ZeRO 三阶段对比、数据/模型/流水线并行选型决策树、混合精度 Loss Scaling 机制、大模型 OOM 排查七步法、AllReduce/AllGather/ReduceScatter 区别
+### 今日更新（Day 90 · 2026-09-02）
+- 🔥 [最长递增子序列 + Transformer 与大模型架构](week14/2026-09-02-transformer-architecture.md) — LIS 双解法（DP O(n²) / 贪心+二分 O(n log n)）；Self-Attention Q/K/V 机制详解、Multi-Head Attention 计算流程、位置编码演进（Sinusoidal→RoPE→ALiBi）、Encoder-Decoder 架构拆解、GPT vs BERT vs T5 选型对比、FFN / LayerNorm / Residual Connection 原理、KV Cache 推理加速、FlashAttention 显存优化、Scaling Laws 扩展法则、高频面试连环问
+- 🎤 面试技巧：Self-Attention 复杂度分析、Transformer 比 RNN 快的三个原因、LayerNorm vs BatchNorm、参数量计算公式推导、梯度检查点原理、Decoder-only 成为主流的原因
 
 **想看今天的内容？直接点上面 👆**
 
@@ -68,10 +68,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 89 — 课程表 II + 模型训练与分布式训练](week14/2026-09-01-course-schedule-distributed-training.md)（拓扑排序 O(V+E) / DDP Ring AllReduce / 数据并行 vs 模型并行 vs 流水线并行 / ZeRO-1/2/3 分片策略 / 混合精度训练 FP16/BF16 / 梯度累积 / 3D 并行 / FSDP / DeepSpeed / 大模型 OOM 排查）
+- 🔥 [Day 90 — 最长递增子序列 + Transformer 与大模型架构](week14/2026-09-02-transformer-architecture.md)（LIS DP O(n²) / 贪心+二分 O(n log n) / Self-Attention QKV / Multi-Head / 位置编码演进 / Encoder-Decoder 架构 / GPT vs BERT vs T5 / KV Cache / FlashAttention / Scaling Laws）
+- [Day 89 — 课程表 II + 模型训练与分布式训练](week14/2026-09-01-course-schedule-distributed-training.md)（拓扑排序 O(V+E) / DDP Ring AllReduce / 数据并行 vs 模型并行 vs 流水线并行 / ZeRO-1/2/3 分片策略 / 混合精度训练 FP16/BF16 / 梯度累积 / 3D 并行 / FSDP / DeepSpeed / 大模型 OOM 排查）
 - [Day 88 — 三角形最小路径和 + 深度学习与神经网络核心原理](week14/2026-08-31-triangle-dl-basics.md)（自底向上 DP O(n²)/O(n) / 感知机→MLP→DNN 演进 / 激活函数全家桶选型决策树 / 反向传播链式法则 / 损失函数对比 / 优化器进化史 / 正则化四大金刚 / 梯度消失与梯度爆炸 / CNN/RNN/Transformer 速览 / Transformer 核心公式）
 - [Day 87 — 字母异位词分组 + 机器学习基础与特征工程](week14/2026-08-30-group-anagrams-ml-basics.md)（哈希表+字符计数 O(N·K) / ML 三大范式 / 特征工程标准化编码 / 模型评估指标 / 过拟合处理 / L1 vs L2 正则化 / 偏差-方差分解）
-- [Day 86 — 合并区间 + K8s 生产环境排障体系与 SRE 实践](week13/2026-08-29-merge-intervals-k8s-troubleshooting.md)（排序+贪心 O(n log n) / K8s 故障分层诊断 / Pod 异常状态速查 / 排障五步法 / SRE 黄金实践）
 - [Day 81 — 重构字符串 + K8s 网络模型与 CNI 插件深入](week13/2026-08-24-reorganize-string-k8s-network.md)（贪心+最大堆 / 奇偶位置 O(N) / K8s 网络三大要求 / Pod 通信四场景 / kube-proxy 三模式 / Flannel/Calico/Cilium / BGP vs Overlay / NetworkPolicy / 网络排错八步法）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
@@ -149,9 +149,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 14 / Day 89**（Week 14 主题：人工智能与大模型工程 🧠 — **进行中**）
+当前进度：**Week 14 / Day 90**（Week 14 主题：人工智能与大模型工程 🧠 — **进行中**）
 
-**更新记录**：已连续更新 **89** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **90** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
