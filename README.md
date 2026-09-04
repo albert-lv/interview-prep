@@ -1,6 +1,6 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2014%20Day%2091-blue)](./memory/interview-prep.md)
+[![Progress](https://img.shields.io/badge/进度-Week%2014%20Day%2092-blue)](./memory/interview-prep.md)
 [![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2091%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
@@ -17,14 +17,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 84 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 92 天** |
 | 📅 **6 周系统计划** | 不是零散刷题，按主题递进（DP → 数据结构 → 网络 → 系统设计） |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 91 · 2026-09-03）
-- 🔥 [实现 Trie + RAG 与向量检索系统设计](week14/2026-09-03-rag-vector-retrieval.md) — Trie 前缀树实现 O(m) 插入/查找；RAG 完整架构流程（Query理解→向量检索→重排序→Prompt构建→生成）、Embedding 模型选型、ANN 算法对比（HNSW/IVF/PQ/LSH）、向量数据库选型（Milvus/Pinecone/Weaviate/pgvector）、文档切分策略、查询优化（HyDE/多路召回）、Cross-Encoder 重排序、高频面试连环问
-- 🎤 面试技巧：RAG vs Fine-tuning 决策树、ANN 为什么比精确搜索快、HNSW 多层导航图原理、Embedding 维度选型、跨语言检索方案、召回率与准确率平衡
+### 今日更新（Day 92 · 2026-09-04）
+- 🔥 [基本计算器 II + Agent 系统设计与工具调用](week14/2026-09-04-agent-design.md) — 栈处理运算符优先级 O(n)：乘除立即算、加减延迟入栈；Agent 核心架构四大组件（Planning/Memory/Tools/Action）、ReAct 推理-行动交替循环、Function Calling 技术细节（Schema 定义/工具选择/错误处理/并行调用）、记忆系统三层设计（短期/工作/长期）、多 Agent 协作四种模式（主管-工人/流水线/投票辩论/市场拍卖）、高频面试连环问
+- 🎤 面试技巧：LLM vs Agent 本质区别、ReAct vs CoT vs ToT 选型、Function Calling 实现原理、工具调用失败三层容错、防无限循环四策略、多 Agent 冲突避免方案
 
 **想看今天的内容？直接点上面 👆**
 
@@ -68,11 +68,11 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 91 — 实现 Trie + RAG 与向量检索系统设计](week14/2026-09-03-rag-vector-retrieval.md)（Trie 前缀树 O(m) / RAG 架构完整流程 / Embedding 选型 / ANN 算法 HNSW·IVF·PQ / 向量数据库选型 / 文档切分策略 / HyDE 查询优化 / Cross-Encoder 重排序）
+- 🔥 [Day 92 — 基本计算器 II + Agent 系统设计与工具调用](week14/2026-09-04-agent-design.md)（栈处理表达式求值 O(n) / Agent 四大组件 / ReAct 推理+行动 / Function Calling 架构 / 记忆三层设计 / 多 Agent 协作模式）
+- [Day 91 — 实现 Trie + RAG 与向量检索系统设计](week14/2026-09-03-rag-vector-retrieval.md)（Trie 前缀树 O(m) / RAG 架构完整流程 / Embedding 选型 / ANN 算法 HNSW·IVF·PQ / 向量数据库选型 / 文档切分策略 / HyDE 查询优化 / Cross-Encoder 重排序）
 - [Day 90 — 最长递增子序列 + Transformer 与大模型架构](week14/2026-09-02-transformer-architecture.md)（LIS DP O(n²) / 贪心+二分 O(n log n) / Self-Attention QKV / Multi-Head / 位置编码演进 / Encoder-Decoder 架构 / GPT vs BERT vs T5 / KV Cache / FlashAttention / Scaling Laws）
 - [Day 89 — 课程表 II + 模型训练与分布式训练](week14/2026-09-01-course-schedule-distributed-training.md)（拓扑排序 O(V+E) / DDP Ring AllReduce / 数据并行 vs 模型并行 vs 流水线并行 / ZeRO-1/2/3 分片策略 / 混合精度训练 FP16/BF16 / 梯度累积 / 3D 并行 / FSDP / DeepSpeed / 大模型 OOM 排查）
 - [Day 88 — 三角形最小路径和 + 深度学习与神经网络核心原理](week14/2026-08-31-triangle-dl-basics.md)（自底向上 DP O(n²)/O(n) / 感知机→MLP→DNN 演进 / 激活函数全家桶选型决策树 / 反向传播链式法则 / 损失函数对比 / 优化器进化史 / 正则化四大金刚 / 梯度消失与梯度爆炸 / CNN/RNN/Transformer 速览 / Transformer 核心公式）
-- [Day 87 — 字母异位词分组 + 机器学习基础与特征工程](week14/2026-08-30-group-anagrams-ml-basics.md)（哈希表+字符计数 O(N·K) / ML 三大范式 / 特征工程标准化编码 / 模型评估指标 / 过拟合处理 / L1 vs L2 正则化 / 偏差-方差分解）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
@@ -149,9 +149,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 14 / Day 91**（Week 14 主题：人工智能与大模型工程 🧠 — **进行中**）
+当前进度：**Week 14 / Day 92**（Week 14 主题：人工智能与大模型工程 🧠 — **进行中，明天完结**）
 
-**更新记录**：已连续更新 **91** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **92** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
