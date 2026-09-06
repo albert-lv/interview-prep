@@ -1,7 +1,7 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2014%20Day%2093-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2093%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2015%20Day%2094-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2094%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -22,9 +22,9 @@
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 93 · 2026-09-05 · Week 14 收官）
-- 🔥 [正则表达式匹配 + 模型部署与推理优化](week14/2026-09-05-model-deployment.md) — 二维 DP 经典：正则匹配的状态转移分情况讨论（普通字符/`.*`/`a*`）；模型压缩三驾马车（量化 PTQ/QAT/SmoothQuant、剪枝结构化/非结构化/2:4稀疏、知识蒸馏软标签学习）；推理加速四大技术（KV Cache、PagedAttention、Continuous Batching、Speculative Decoding）；部署架构（单体/多副本/分离式 Prefill-Decode、TP+PP 并行）；边缘部署与高频面试连环问
-- 🎤 面试技巧：量化精度下降排查五步法、vLLM PagedAttention 与传统缓存区别、Continuous Batching 实现要点、Speculative Decoding draft 模型选型、LLM 推理监控指标体系（TTFT/TPOT/tokens/sec）、GPU 显存不足六方案
+### 今日更新（Day 94 · 2026-09-06 · Week 15 开篇）
+- 🔥 [逆波兰表达式求值 + 编译原理基础与编译器前端](week15/2026-09-06-compiler-basics.md) — 栈处理后缀表达式 O(n)，注意先弹出的是右操作数；编译器三阶段架构（词法分析→语法分析→语义分析）；乔姆斯基文法体系（Type-3正则/Type-2 CFG）；LL vs LR 解析算法对比；LLVM IR 作为通用中间表示；JIT vs AOT 编译模型；编译原理在 AI 工程中的五大应用（TVM/MLIR/XLA/算子融合/量化图优化）
+- 🎤 面试技巧：中缀转后缀的调度场算法、左递归消除方法、编译型 vs 解释型语言本质区别、递归下降解析器手写思路
 
 **想看今天的内容？直接点上面 👆**
 
@@ -68,10 +68,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 93 — 正则表达式匹配 + 模型部署与推理优化](week14/2026-09-05-model-deployment.md)（二维 DP 经典正则匹配 / 量化 PTQ·QAT·SmoothQuant / 剪枝结构化·非结构化·2:4稀疏 / 知识蒸馏 / KV Cache / PagedAttention / Continuous Batching / Speculative Decoding / TP+PP 并行 / 分离式 Prefill-Decode 架构）
+- 🔥 [Day 94 — 逆波兰表达式求值 + 编译原理基础与编译器前端](week15/2026-09-06-compiler-basics.md)（栈 O(n) / 调度场算法 / 编译器三阶段 / 乔姆斯基文法 / LL vs LR / LLVM IR / JIT vs AOT / 编译原理在 AI 工程中的应用）
+- [Day 93 — 正则表达式匹配 + 模型部署与推理优化](week14/2026-09-05-model-deployment.md)（二维 DP 经典正则匹配 / 量化 PTQ·QAT·SmoothQuant / 剪枝结构化·非结构化·2:4稀疏 / 知识蒸馏 / KV Cache / PagedAttention / Continuous Batching / Speculative Decoding / TP+PP 并行 / 分离式 Prefill-Decode 架构）
 - [Day 92 — 基本计算器 II + Agent 系统设计与工具调用](week14/2026-09-04-agent-design.md)（栈处理表达式求值 O(n) / Agent 四大组件 / ReAct 推理+行动 / Function Calling 架构 / 记忆三层设计 / 多 Agent 协作模式）
 - [Day 91 — 实现 Trie + RAG 与向量检索系统设计](week14/2026-09-03-rag-vector-retrieval.md)（Trie 前缀树 O(m) / RAG 架构完整流程 / Embedding 选型 / ANN 算法 HNSW·IVF·PQ / 向量数据库选型 / 文档切分策略 / HyDE 查询优化 / Cross-Encoder 重排序）
-- [Day 90 — 最长递增子序列 + Transformer 与大模型架构](week14/2026-09-02-transformer-architecture.md)（LIS DP O(n²) / 贪心+二分 O(n log n) / Self-Attention QKV / Multi-Head / 位置编码演进 / Encoder-Decoder 架构 / GPT vs BERT vs T5 / KV Cache / FlashAttention / Scaling Laws）
 - [Day 88 — 三角形最小路径和 + 深度学习与神经网络核心原理](week14/2026-08-31-triangle-dl-basics.md)（自底向上 DP O(n²)/O(n) / 感知机→MLP→DNN 演进 / 激活函数全家桶选型决策树 / 反向传播链式法则 / 损失函数对比 / 优化器进化史 / 正则化四大金刚 / 梯度消失与梯度爆炸 / CNN/RNN/Transformer 速览 / Transformer 核心公式）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
@@ -149,9 +149,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 14 / Day 93**（Week 14 主题：人工智能与大模型工程 🧠 — **已完结**）
+当前进度：**Week 15 / Day 94**（Week 15 主题：编译原理与语言实现 🛠️ — **进行中**）
 
-**更新记录**：已连续更新 **93** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **94** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
