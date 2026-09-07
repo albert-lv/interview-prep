@@ -1,7 +1,7 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2015%20Day%2094-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2094%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2015%20Day%2095-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2095%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -17,14 +17,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 93 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 94 天** |
 | 📅 **6 周系统计划** | 不是零散刷题，按主题递进（DP → 数据结构 → 网络 → 系统设计） |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 94 · 2026-09-06 · Week 15 开篇）
-- 🔥 [逆波兰表达式求值 + 编译原理基础与编译器前端](week15/2026-09-06-compiler-basics.md) — 栈处理后缀表达式 O(n)，注意先弹出的是右操作数；编译器三阶段架构（词法分析→语法分析→语义分析）；乔姆斯基文法体系（Type-3正则/Type-2 CFG）；LL vs LR 解析算法对比；LLVM IR 作为通用中间表示；JIT vs AOT 编译模型；编译原理在 AI 工程中的五大应用（TVM/MLIR/XLA/算子融合/量化图优化）
-- 🎤 面试技巧：中缀转后缀的调度场算法、左递归消除方法、编译型 vs 解释型语言本质区别、递归下降解析器手写思路
+### 今日更新（Day 95 · 2026-09-07 · Week 15 进行中）
+- 🔥 [表达式求值（递归下降版）+ 手写递归下降解析器实战](week15/2026-09-07-recursive-descent.md) — 递归下降解析器经典入门：expr→term→factor 三层语法规则，每层对应一个函数，调用栈天然实现优先级和括号嵌套；支持 `+ - * / ( )` 和空格的完整表达式求值；左递归消除方法（改写为循环形式）；FIRST/FOLLOW 集在预测解析中的作用；递归下降 vs LL(1) vs LR 的选型对比；实战扩展（一元正负号/变量赋值/函数调用）
+- 🎤 面试技巧：递归下降手写万能模板、左递归消除、FIRST/FOLLOW 集速答、错误恢复策略、从计算器扩展到 Tiny 语言的三步走
 
 **想看今天的内容？直接点上面 👆**
 
@@ -68,10 +68,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 94 — 逆波兰表达式求值 + 编译原理基础与编译器前端](week15/2026-09-06-compiler-basics.md)（栈 O(n) / 调度场算法 / 编译器三阶段 / 乔姆斯基文法 / LL vs LR / LLVM IR / JIT vs AOT / 编译原理在 AI 工程中的应用）
+- 🔥 [Day 95 — 表达式求值（递归下降版）+ 手写递归下降解析器实战](week15/2026-09-07-recursive-descent.md)（递归下降三层架构 expr→term→factor / 调用栈实现优先级与括号嵌套 / 左递归消除 / FIRST·FOLLOW 集 / 递归下降 vs LL(1) vs LR / 一元正负号·变量赋值·函数调用扩展）
+- [Day 94 — 逆波兰表达式求值 + 编译原理基础与编译器前端](week15/2026-09-06-compiler-basics.md)（栈 O(n) / 调度场算法 / 编译器三阶段 / 乔姆斯基文法 / LL vs LR / LLVM IR / JIT vs AOT / 编译原理在 AI 工程中的应用）
 - [Day 93 — 正则表达式匹配 + 模型部署与推理优化](week14/2026-09-05-model-deployment.md)（二维 DP 经典正则匹配 / 量化 PTQ·QAT·SmoothQuant / 剪枝结构化·非结构化·2:4稀疏 / 知识蒸馏 / KV Cache / PagedAttention / Continuous Batching / Speculative Decoding / TP+PP 并行 / 分离式 Prefill-Decode 架构）
 - [Day 92 — 基本计算器 II + Agent 系统设计与工具调用](week14/2026-09-04-agent-design.md)（栈处理表达式求值 O(n) / Agent 四大组件 / ReAct 推理+行动 / Function Calling 架构 / 记忆三层设计 / 多 Agent 协作模式）
-- [Day 91 — 实现 Trie + RAG 与向量检索系统设计](week14/2026-09-03-rag-vector-retrieval.md)（Trie 前缀树 O(m) / RAG 架构完整流程 / Embedding 选型 / ANN 算法 HNSW·IVF·PQ / 向量数据库选型 / 文档切分策略 / HyDE 查询优化 / Cross-Encoder 重排序）
 - [Day 88 — 三角形最小路径和 + 深度学习与神经网络核心原理](week14/2026-08-31-triangle-dl-basics.md)（自底向上 DP O(n²)/O(n) / 感知机→MLP→DNN 演进 / 激活函数全家桶选型决策树 / 反向传播链式法则 / 损失函数对比 / 优化器进化史 / 正则化四大金刚 / 梯度消失与梯度爆炸 / CNN/RNN/Transformer 速览 / Transformer 核心公式）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
@@ -149,9 +149,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 15 / Day 94**（Week 15 主题：编译原理与语言实现 🛠️ — **进行中**）
+当前进度：**Week 15 / Day 95**（Week 15 主题：编译原理与语言实现 🛠️ — **进行中**）
 
-**更新记录**：已连续更新 **94** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **95** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
