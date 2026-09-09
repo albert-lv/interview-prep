@@ -1,7 +1,7 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2015%20Day%2096-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2096%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2015%20Day%2097-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2097%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -22,9 +22,9 @@
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 96 · 2026-09-08 · Week 15 进行中）
-- 🔥 [基本计算器 III + LLVM IR 与中间代码优化](week15/2026-09-08-llvm-ir.md) — 递归下降解析器的实战升级：expr→term→factor 三层语法规则处理 `+ - * / ( )`，从手写解析器到 AST 生成再到 LLVM IR 输出的完整编译器前端链路；SSA 形式与 φ 函数、基本块与 CFG、常见优化 Pass 速查；深度学习编译器 TVM/MLIR/XLA 核心对比
-- 🎤 面试技巧：LLVM IR SSA 速答模板、φ 函数作用、mem2reg 优化、TVM AutoTVM 原理 vs MLIR Dialect 机制、XLA 算子融合
+### 今日更新（Day 97 · 2026-09-09 · Week 15 进行中）
+- 🔥 [为运算表达式设计优先级 + JIT 编译与动态优化](week15/2026-09-09-jit-compilation.md) — 分治法枚举所有括号方案 = 枚举所有 AST 结构；JIT 分层编译（JVM C1/C2）、热点检测、OSR 栈上替换、去优化、内联缓存与隐藏类；V8 / LuaJIT / PyPy 核心对比；AI 编译器 XLA/TVM JIT 延伸
+- 🎤 面试技巧：解释执行 vs AOT vs JIT 选型、JVM 分层编译策略、Hidden Class 与 IC 三级状态、OSR 与 Deoptimization 机制、LuaJIT tracing JIT vs HotSpot method JIT、XLA 算子融合 JIT
 
 **想看今天的内容？直接点上面 👆**
 
@@ -68,10 +68,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 96 — 基本计算器 III + LLVM IR 与中间代码优化](week15/2026-09-08-llvm-ir.md)（递归下降解析器实战升级 / SSA 形式与 φ 函数 / 基本块与 CFG / LLVM 优化 Pass / TVM·MLIR·XLA 深度学习编译器对比）
+- 🔥 [Day 97 — 为运算表达式设计优先级 + JIT 编译与动态优化](week15/2026-09-09-jit-compilation.md)（分治法枚举 AST 结构 / JVM C1+C2 分层编译 / OSR 栈上替换 / Deoptimization / Hidden Class / Inline Caching / V8·LuaJIT·PyPy 对比 / XLA JIT 算子融合）
+- [Day 96 — 基本计算器 III + LLVM IR 与中间代码优化](week15/2026-09-08-llvm-ir.md)（递归下降解析器实战升级 / SSA 形式与 φ 函数 / 基本块与 CFG / LLVM 优化 Pass / TVM·MLIR·XLA 深度学习编译器对比）
 - [Day 95 — 表达式求值（递归下降版）+ 手写递归下降解析器实战](week15/2026-09-07-recursive-descent.md)（递归下降三层架构 expr→term→factor / 调用栈实现优先级与括号嵌套 / 左递归消除 / FIRST·FOLLOW 集 / 递归下降 vs LL(1) vs LR / 一元正负号·变量赋值·函数调用扩展）
 - [Day 94 — 逆波兰表达式求值 + 编译原理基础与编译器前端](week15/2026-09-06-compiler-basics.md)（栈 O(n) / 调度场算法 / 编译器三阶段 / 乔姆斯基文法 / LL vs LR / LLVM IR / JIT vs AOT / 编译原理在 AI 工程中的应用）
-- [Day 93 — 正则表达式匹配 + 模型部署与推理优化](week14/2026-09-05-model-deployment.md)（二维 DP 经典正则匹配 / 量化 PTQ·QAT·SmoothQuant / 剪枝结构化·非结构化·2:4稀疏 / 知识蒸馏 / KV Cache / PagedAttention / Continuous Batching / Speculative Decoding / TP+PP 并行 / 分离式 Prefill-Decode 架构）
 - [Day 92 — 基本计算器 II + Agent 系统设计与工具调用](week14/2026-09-04-agent-design.md)（栈处理表达式求值 O(n) / Agent 四大组件 / ReAct 推理+行动 / Function Calling 架构 / 记忆三层设计 / 多 Agent 协作模式）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
@@ -149,9 +149,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 15 / Day 96**（Week 15 主题：编译原理与语言实现 🛠️ — **进行中**）
+当前进度：**Week 15 / Day 97**（Week 15 主题：编译原理与语言实现 🛠️ — **进行中**）
 
-**更新记录**：已连续更新 **96** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **97** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
