@@ -1,13 +1,15 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2015%20Day%2099-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%2099%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2015%20Day%20100%20✅-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20100%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
 > **不是收藏夹吃灰，是真的每天都在更新。**
 >
 > 每天 20:42 自动推送：一道算法题 + 一页面试速查。跟着走，6 周后你会感谢自己。
+>
+> 🎉 **Day 100 达成！连续更新 100 天！**
 
 ---
 
@@ -22,9 +24,9 @@
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 99 · 2026-09-11 · Week 15 进行中）
-- 🔥 [有效数字 + 词法分析与正则引擎实现](week15/2026-09-11-lexer-and-regex-engine.md) — DFA 状态机识别数字文法 O(n)/O(1)；Thompson 构造法（正则→NFA）、子集构造法（NFA→DFA）、Hopcroft 最小化；DFA vs NFA 回溯引擎对比、灾难性回溯原理与防护；Lex/Flex 词法分析器生成器实战；关键字保留机制与最长匹配原则
-- 🎤 面试技巧：编译器前端为什么分两阶段、手写 Lexer 六步骤、正则引擎灾难性回溯示例与 RE2 安全方案、工业界正则引擎选型
+### 今日更新（Day 100 · 2026-09-12 · Week 15 完结 🎉）
+- 🔥 [解析布尔表达式 + 编译原理全链路高频考点速查](week15/2026-09-12-compiler-comprehensive.md) — 递归下降解释器实战（`!`/`&`/`|` 运算符 + 括号嵌套）；编译原理全链路面试速查（词法分析 DFA/NFA → 语法分析递归下降/LL/LR → 中间代码 SSA/LLVM IR → 后端 JIT/AOT/OSR → AI 编译器 XLA/TVM/MLIR）；Week 15 六天学习地图总结与自检清单
+- 🎤 面试技巧：编译器完整阶段链路、递归下降错误恢复策略、正则引擎 DFA vs NFA 终极对比、手写编译器六步骤、AI 编译器高频连环问速答模板
 
 **想看今天的内容？直接点上面 👆**
 
@@ -68,11 +70,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 99 — 有效数字 + 词法分析与正则引擎实现](week15/2026-09-11-lexer-and-regex-engine.md)（DFA 状态机识别数字文法 / Thompson 构造法 / 子集构造法 / Hopcroft 最小化 / DFA vs NFA 回溯引擎 / 灾难性回溯 / Lex/Flex / 关键字保留机制 / 最长匹配原则）
+- 🔥 [Day 100 — 解析布尔表达式 + 编译原理全链路高频考点速查](week15/2026-09-12-compiler-comprehensive.md)（递归下降解释器实战 / 编译原理全链路面试速查 / 词法分析→语法分析→IR→优化→后端→AI 编译器 / Week 15 完结总结 🎉）
+- [Day 99 — 有效数字 + 词法分析与正则引擎实现](week15/2026-09-11-lexer-and-regex-engine.md)（DFA 状态机识别数字文法 / Thompson 构造法 / 子集构造法 / Hopcroft 最小化 / DFA vs NFA 回溯引擎 / 灾难性回溯 / Lex/Flex / 关键字保留机制 / 最长匹配原则）
 - [Day 98 — 原子的数量 + 深度学习编译器（TVM / MLIR / XLA）](week15/2026-09-10-deep-learning-compilers.md)（栈/递归下降解析嵌套结构 / XLA HLO 算子融合 / TVM AutoTVM·Ansor 自动调度 / MLIR Dialect 渐进式 Lowering / 三巨头对比 / 面试速答模板）
 - [Day 97 — 为运算表达式设计优先级 + JIT 编译与动态优化](week15/2026-09-09-jit-compilation.md)（分治法枚举 AST 结构 / JVM C1+C2 分层编译 / OSR 栈上替换 / Deoptimization / Hidden Class / Inline Caching / V8·LuaJIT·PyPy 对比 / XLA JIT 算子融合）
-- [Day 96 — 基本计算器 III + LLVM IR 与中间代码优化](week15/2026-09-08-llvm-ir.md)（递归下降解析器实战升级 / SSA 形式与 φ 函数 / 基本块与 CFG / LLVM 优化 Pass / TVM·MLIR·XLA 深度学习编译器对比）
-- [Day 95 — 表达式求值（递归下降版）+ 手写递归下降解析器实战](week15/2026-09-07-recursive-descent.md)（递归下降三层架构 expr→term→factor / 调用栈实现优先级与括号嵌套 / 左递归消除 / FIRST·FOLLOW 集 / 递归下降 vs LL(1) vs LR / 一元正负号·变量赋值·函数调用扩展）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
@@ -149,9 +150,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 15 / Day 99**（Week 15 主题：编译原理与语言实现 🛠️ — **进行中**）
+当前进度：**Week 15 / Day 100**（Week 15 主题：编译原理与语言实现 🛠️ — **已完结 🎉**）
 
-**更新记录**：已连续更新 **99** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **100** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
