@@ -1,7 +1,7 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2016%20Day%20101%20🔥-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20101%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2016%20Day%20102%20🔥-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20102%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -9,7 +9,7 @@
 >
 > 每天 20:42 自动推送：一道算法题 + 一页面试速查。跟着走，6 周后你会感谢自己。
 >
-> 🎉 **Day 100 达成！连续更新 101 天！**
+> 🎉 **Day 100 达成！连续更新 102 天！**
 
 ---
 
@@ -19,14 +19,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 94 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 102 天** |
 | 📅 **6 周系统计划** | 不是零散刷题，按主题递进（DP → 数据结构 → 网络 → 系统设计） |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 101 · 2026-09-13 · Week 16 启动 🔗）
-- 🔥 [多数元素 II + Raft 共识算法](week16/2026-09-13-majority-element-ii.md) — Boyer-Moore 投票算法扩展 O(n)/O(1)：摩尔投票的本质是「配对抵消」，最多只有 k-1 个出现次数超过 n/k 的元素；Raft 共识算法三驾马车（领导者选举 / 日志复制 / 安全性），强 Leader 模型简化分布式共识，etcd/Consul/TiKV 核心实现；网络分区场景分析、Joint Consensus 成员变更、与 Paxos/2PC 的对比
-- 🎤 面试技巧：Boyer-Moore 投票算法两阶段（候选/验证）、Raft 选举流程与超时随机化、日志复制两阶段（append + commit）、选举限制保证安全性、脑裂防护与日志压缩
+### 今日更新（Day 102 · 2026-09-14 · Week 16 进行中 🔗）
+- 🔥 [只出现一次的数字 III + 分布式一致性模型与 CAP/BASE](week16/2026-09-14-single-number-iii-consistency-models.md) — 异或位运算分治艺术：全员异或 → lowbit 取区分位 → 按位分组降解为两个 Single Number I，O(n)/O(1)；一致性模型光谱（线性→顺序→因果→最终），CAP 定理的本质是「P 必选、分区时 C/A 二选一」，CP vs AP 系统选型对照（ZK/etcd vs Cassandra/DynamoDB），BASE 理论三件套（基本可用/软状态/最终一致），PACELC 实战加强版，读己之写/单调读/单调写会话四保证，高频连环问速答模板（Redis 是 CP 还是 AP、AP 能否做分布式锁）
+- 🎤 面试技巧：一致性模型四级光谱一句话区分（实时+原子 / 顺序统一 / 因果依赖 / 收敛即可）、CAP 与 ACID 的 C 不是一回事、最终一致性下的体验缝补方案、quorum R+W>N 的交集论证
 
 **想看今天的内容？直接点上面 👆**
 
@@ -70,10 +70,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 101 — 多数元素 II + Raft 共识算法](week16/2026-09-13-majority-element-ii.md)（Boyer-Moore 投票算法扩展 O(n)/O(1) / 摩尔投票「配对抵消」本质 / Raft 三驾马车：选举·复制·安全 / 强 Leader 模型 / etcd·Consul·TiKV 实现 / 网络分区分析 / Joint Consensus 成员变更 / Raft vs Paxos vs 2PC）
+- 🔥 [Day 102 — 只出现一次的数字 III + 分布式一致性模型与 CAP/BASE](week16/2026-09-14-single-number-iii-consistency-models.md)（异或分治 O(n)/O(1) / lowbit 技巧 / 一致性模型光谱：线性·顺序·因果·最终 / CAP：P 必选分区时 C-A 二选一 / CP vs AP 系统选型 / BASE 理论 / PACELC / 读己之写·单调读·会话四保证 / Redis 是 CP 还是 AP 速答）
+- [Day 101 — 多数元素 II + Raft 共识算法](week16/2026-09-13-majority-element-ii.md)（Boyer-Moore 投票算法扩展 O(n)/O(1) / 摩尔投票「配对抵消」本质 / Raft 三驾马车：选举·复制·安全 / 强 Leader 模型 / etcd·Consul·TiKV 实现 / 网络分区分析 / Joint Consensus 成员变更 / Raft vs Paxos vs 2PC）
 - [Day 100 — 解析布尔表达式 + 编译原理全链路高频考点速查](week15/2026-09-12-compiler-comprehensive.md)（递归下降解释器实战 / 编译原理全链路面试速查 / 词法分析→语法分析→IR→优化→后端→AI 编译器 / Week 15 完结总结 🎉）
 - [Day 99 — 有效数字 + 词法分析与正则引擎实现](week15/2026-09-11-lexer-and-regex-engine.md)（DFA 状态机识别数字文法 / Thompson 构造法 / 子集构造法 / Hopcroft 最小化 / DFA vs NFA 回溯引擎 / 灾难性回溯 / Lex/Flex / 关键字保留机制 / 最长匹配原则）
-- [Day 98 — 原子的数量 + 深度学习编译器（TVM / MLIR / XLA）](week15/2026-09-10-deep-learning-compilers.md)（栈/递归下降解析嵌套结构 / XLA HLO 算子融合 / TVM AutoTVM·Ansor 自动调度 / MLIR Dialect 渐进式 Lowering / 三巨头对比 / 面试速答模板）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
@@ -150,9 +150,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 16 / Day 101**（Week 16 主题：分布式系统核心协议 🔗 — **进行中**）
+当前进度：**Week 16 / Day 102**（Week 16 主题：分布式系统核心协议 🔗 — **进行中**）
 
-**更新记录**：已连续更新 **101** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **102** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
