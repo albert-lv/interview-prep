@@ -1,7 +1,7 @@
 # 🎯 Interview Prep — 每天一道题，六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2016%20Day%20105%20🔥-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20105%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2016%20Day%20106%20🔥-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20106%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -9,7 +9,7 @@
 >
 > 每天 20:42 自动推送：一道算法题 + 一页面试速查。跟着走，6 周后你会感谢自己。
 >
-> 🎉 **Day 100 达成！连续更新 105 天！**
+> 🎉 **Day 100 达成！连续更新 106 天！**
 
 ---
 
@@ -19,14 +19,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 105 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 106 天** |
 | 📅 **6 周系统计划** | 不是零散刷题，按主题递进（DP → 数据结构 → 网络 → 系统设计） |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码，是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 105 · 2026-09-17 · Week 16 进行中 🔗）
-- 🔥 [交替打印 FooBar + 分布式锁设计与实现](week16/2026-09-17-foobar-distributed-lock.md) — 互斥锁+条件变量 / 双信号量 / Go channel 三解对照：while 防虚假唤醒 + Broadcast 防丢失唤醒，信号量初始值编码执行顺序；分布式锁打分表（互斥·防死锁·容错 + 谁加谁删·看门狗·fencing）；Redis 锁四代演进：SETNX 死锁 → SET NX EX 原子加锁 + 唯一 value + Lua 原子删解决误删 → 看门狗每 TTL/3 续约 → Redlock 多数派对抗主从丢锁与 Kleppmann 争议；ZK 临时顺序节点 + watch 前驱节点避羊群效应（CP 标杆）；etcd lease + revision 现代方案；fencing token 把互斥校验下沉到存储端；可重入 Hash 计数与公平锁；MySQL 兜底方案；选型决策树 + 高频连环问
-- 🎤 面试技巧：wait 为何必须 while、notify vs notify_all 与惊群权衡、扩展到 k 线程环形令牌、SET NX EX 原子性军规、误删锁完整时间线、Redlock 争议高分收尾话术、ZK 为什么 watch 前驱、有了锁为什么还要幂等、跨机房锁设计
+### 今日更新（Day 106 · 2026-09-18 · Week 16 进行中 🔗）
+- 🔥 [基于时间的键值存储 + 副本一致性与冲突解决（CRDT / OT）](week16/2026-09-18-timebased-kv-crdt-ot.md) — 多版本存储 + 二分查找 O(log n) 快照读：这就是 MVCC 读取路径和 LWW 冲突解决的骨架；三条冲突解决路线（强一致避免冲突 / 向量时钟检测+LWW 仲裁 / CRDT·OT 结构收敛）；向量时钟偏序与并发判定，Lamport 时钟为什么不行；LWW 三大坑（丢更新·时钟漂移·语义丢失）与 HLC 改进；CRDT 三定律（交换·结合·幂等）与 G-Counter / PN-Counter / G-Set / 2P-Set / OR-Set 手写级实现（OR-Set 为什么"加赢过没看到的删"）；OT 操作变换与 CCI 一致性模型（收敛·因果·意图保持）；OT vs CRDT 终极对比（Google Docs 为什么选 OT）；Redis CRDB / DynamoDB / Figma / Cosmos DB 工业界全景速查；Multi-Region 同步决策树 + 高频连环问速答
+- 🎤 面试技巧：冲突解决三路线框架、向量时钟手写、CRDT 三定律默写、OT transform 坐标变换现场演算、LWW 坑与改进、"本质是在 CAP 的 A 和 C 之间选位置"串线收尾话术
 
 **想看今天的内容？直接点上面 👆**
 
@@ -70,10 +70,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
-- 🔥 [Day 105 — 交替打印 FooBar + 分布式锁设计与实现](week16/2026-09-17-foobar-distributed-lock.md)（锁+条件变量 / 双信号量 / channel 三解：while 防虚假唤醒 + Broadcast 防丢失唤醒 / 分布式锁打分表：互斥·防死锁·容错·谁加谁删·看门狗·fencing / Redis 锁四代演进：SETNX 死锁 → SET NX EX+Lua 原子删 → 看门狗续约 → Redlock 多数派与争议 / ZK 临时顺序节点 + watch 前驱避羊群 / etcd lease+revision / fencing token 存储端校验 / 可重入与公平锁 / 跨机房锁设计）
+- 🔥 [Day 106 — 基于时间的键值存储 + 副本一致性与冲突解决（CRDT / OT）](week16/2026-09-18-timebased-kv-crdt-ot.md)（多版本存储 + 二分 O(log n) 快照读 = MVCC / LWW 骨架 / 冲突解决三路线：避免·检测仲裁·结构收敛 / 向量时钟偏序与并发判定 / LWW 三坑与 HLC 改进 / CRDT 三定律与 G-Counter·PN-Counter·OR-Set 手写 / OT 操作变换与 CCI 模型 / OT vs CRDT：Google Docs 为什么选 OT / Redis CRDB·DynamoDB·Figma 全景 / Multi-Region 决策树）
+- [Day 105 — 交替打印 FooBar + 分布式锁设计与实现](week16/2026-09-17-foobar-distributed-lock.md)（锁+条件变量 / 双信号量 / channel 三解：while 防虚假唤醒 + Broadcast 防丢失唤醒 / 分布式锁打分表：互斥·防死锁·容错·谁加谁删·看门狗·fencing / Redis 锁四代演进：SETNX 死锁 → SET NX EX+Lua 原子删 → 看门狗续约 → Redlock 多数派与争议 / ZK 临时顺序节点 + watch 前驱避羊群 / etcd lease+revision / fencing token 存储端校验 / 可重入与公平锁 / 跨机房锁设计）
 - [Day 104 — 01 矩阵 + Gossip 协议与成员发现](week16/2026-09-16-01-matrix-gossip.md)（多源 BFS 求最近源距离 O(mn) / `-1` 未访问标记 / 入队写距离技巧 / 多源 BFS = 边权 1 的多源 Dijkstra / 网格装不下三解法 / Gossip 双模式：反熵+谣传 / SIR 三态与 k·p>1 指数扩散 / O(log n) 轮收敛 / SWIM 四件套：探测·间接探测·怀疑机制·incarnation number / 中心化 vs Gossip 决策树 / Cassandra·Redis Cluster·Consul·DynamoDB 应用 / Gossip 管成员 vs Raft 管数据 / 脑裂恢复）
 - [Day 103 — 只出现一次的数字 II + Paxos 算法与 Multi-Paxos](week16/2026-09-15-single-number-ii-paxos.md)（位运算三进制计数器 O(n)/O(1) / ones·twos 状态机与真值表 / 模 k 推广 / Paxos 两阶段：Prepare+Accept / 三角色 / 多数派安全性 / 活锁与退避 / Multi-Paxos 跳过 Phase 1 / Paxos vs Raft 对比 / Chubby / 提案编号设计 / Paxos vs 2PC）
-- [Day 102 — 只出现一次的数字 III + 分布式一致性模型与 CAP/BASE](week16/2026-09-14-single-number-iii-consistency-models.md)（异或分治 O(n)/O(1) / lowbit 技巧 / 一致性模型光谱：线性·顺序·因果·最终 / CAP：P 必选分区时 C-A 二选一 / CP vs AP 系统选型 / BASE 理论 / PACELC / 读己之写·单调读·会话四保证 / Redis 是 CP 还是 AP 速答）
 
 > 📅 **每天 20:42 自动更新**，[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
@@ -150,9 +150,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 16 / Day 105**（Week 16 主题：分布式系统核心协议 🔗 — **进行中**）
+当前进度：**Week 16 / Day 106**（Week 16 主题：分布式系统核心协议 🔗 — **进行中**，Day 107 综合复习即将到来）
 
-**更新记录**：已连续更新 **105** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **106** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
