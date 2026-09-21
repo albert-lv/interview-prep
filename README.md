@@ -1,7 +1,7 @@
 # 🎯 Interview Prep - 每天一道题,六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2017%20Day%20108%20🧠-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20108%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2017%20Day%20109%20🧠-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20109%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -9,7 +9,7 @@
 >
 > 每天 20:42 自动推送:一道算法题 + 一页面试速查。跟着走,6 周后你会感谢自己。
 >
-> 🎉 **连续更新 108 天，从未中断！**
+> 🎉 **连续更新 109 天，从未中断！**
 
 ---
 
@@ -19,14 +19,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 108 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 109 天** |
 | 📅 **6 周系统计划** | 不是零散刷题,按主题递进(DP → 数据结构 → 网络 → 系统设计) |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码,是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 108 · 2026-09-20 · Week 17 开启 🧠）
-- 🔥 [买卖股票的最佳时机 III + 强化学习基础（MDP · Bellman · Q-Learning）](week17/2026-09-20-stock-iii-rl-basics.md) — Week 17「强化学习与 RL 训练工程」开场：股票 III 状态机 DP = 离散版 Bellman 最优方程（买/卖/观望即动作，dp 转移即 max_a）；通用 k 笔模板 O(n·k)→ 四变量 O(1) 手写；面试技巧串 RL 基础全链：MDP 五要素、Bellman 期望/最优方程、策略迭代 vs 值迭代、SARSA(on-policy) vs Q-Learning(off-policy)、ε-greedy 与 UCB、DQN 两大 trick（经验回放打散相关性 + 目标网络冻结移动靶）、死亡三角、DP→MC→TD→DQN 进化路；6 道高频连环问速答 + agentic RL / veRL 视角连接
-- 🎤 面试技巧：MDP 五要素背诵表、Bellman 方程组徒手默写卡、on/off-policy 一句话判定、DQN 为什么需要 target network 标准答、从 DP 到 DQN 一张嘴版
+### 今日更新（Day 109 · 2026-09-21 · Week 17 Day 2 🧠）
+- 🔥 [随机数索引（蓄水池抽样）+ 策略梯度 REINFORCE 与 Actor-Critic](week17/2026-09-21-reservoir-sampling-policy-gradient.md) — 值方法之后换赛道：不学值函数，直接对策略做梯度上升；算法题蓄水池抽样（1/i 概率替换 + 幸存连乘证明，单遍流式等概率采样 = 无偏估计的经典样板）呼应策略梯度的命脉「有限样本无偏估计期望」；面试技巧串策略梯度全链：值方法三大天花板（连续动作/随机策略/POMDP）、策略梯度定理与 log-derivative trick、REINFORCE 三步流程、baseline 减方差与无偏性手推、Actor-Critic 用 Critic 的 bootstrap 换在线更新（偏差-方差权衡表）、熵正则防坍缩、agentic RL 映射表（轨迹=rollout、状态=context、动作=token、奖励=RM、advantage=组内相对优势）
+- 🎤 面试技巧：策略梯度定理默写卡、log-derivative trick 30 秒手推、baseline 无偏性现场推导、REINFORCE vs Actor-Critic vs Q-Learning 三方对照、6 道高频连环问速答 + LLM 场景 G_t 退化为终局奖励的信用分配难题
 
 **想看今天的内容?直接点上面 👆**
 
@@ -70,10 +70,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
+- 🎲 [Day 109 — 随机数索引（蓄水池抽样）+ 策略梯度 REINFORCE 与 Actor-Critic](week17/2026-09-21-reservoir-sampling-policy-gradient.md)（蓄水池抽样：1/i 概率替换 + 幸存连乘归纳证明 / 单遍流式等概率采样 O(n)/O(1) / 扩展：k 个采样、加权抽样 Efraimidis-Spirakis、rand7→rand10 拒绝采样 / 值方法三大天花板：连续动作·随机策略·POMDP / 策略梯度定理 + log-derivative trick / REINFORCE 三步流程 / baseline 减方差无偏性手推 / Actor-Critic：Critic 的 bootstrap 换在线更新·偏差-方差权衡 / 熵正则防坍缩 / agentic RL 映射表：轨迹=rollout·状态=context·动作=token·奖励=RM）
 - 🧠 [Day 108 — 买卖股票的最佳时机 III + 强化学习基础（MDP · Bellman · Q-Learning）](week17/2026-09-20-stock-iii-rl-basics.md)（状态机 DP = 离散版 Bellman 方程 / 通用 k 笔模板 O(n·k) → 四变量 O(1) / MDP 五要素、期望·最优方程 / 策略迭代 vs 值迭代 / SARSA vs Q-Learning：on·off-policy / ε-greedy·UCB / DQN：经验回放 + 目标网络、死亡三角 / DP→MC→TD→DQN 进化路 / 6 道连环问 + veRL 视角）
 - 🎉 [Day 107 — 多数元素 + Week 16 分布式系统核心协议综合复习](week16/2026-09-19-week16-review-majority-voting.md)（Boyer-Moore 投票 O(n)/O(1) 收官 / 六大协议一张总表：Raft·Paxos·Gossip·分布式锁·CRDT·OT / 三条主线串全周：CAP 选位置 → 共识 vs AP 三路线 → 锁是一致性的投影 / 10 道连环问通关速答 + 黄金收尾话术 / Week 16 完结撒花）
 - 🔥 [Day 106 — 基于时间的键值存储 + 副本一致性与冲突解决（CRDT / OT）](week16/2026-09-18-timebased-kv-crdt-ot.md)（多版本存储 + 二分 O(log n) 快照读 = MVCC / LWW 骨架 / 冲突解决三路线：避免·检测仲裁·结构收敛 / 向量时钟偏序与并发判定 / LWW 三坑与 HLC 改进 / CRDT 三定律与 G-Counter·PN-Counter·OR-Set 手写 / OT 操作变换与 CCI 模型 / OT vs CRDT：Google Docs 为什么选 OT / Redis CRDB·DynamoDB·Figma 全景 / Multi-Region 决策树）
-- [Day 105 — 交替打印 FooBar + 分布式锁设计与实现](week16/2026-09-17-foobar-distributed-lock.md)（锁+条件变量 / 双信号量 / channel 三解：while 防虚假唤醒 + Broadcast 防丢失唤醒 / 分布式锁打分表：互斥·防死锁·容错·谁加谁删·看门狗·fencing / Redis 锁四代演进：SETNX 死锁 → SET NX EX+Lua 原子删 → 看门狗续约 → Redlock 多数派与争议 / ZK 临时顺序节点 + watch 前驱避羊群 / etcd lease+revision / fencing token 存储端校验 / 可重入与公平锁 / 跨机房锁设计）
 
 > 📅 **每天 20:42 自动更新**,[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
@@ -150,9 +150,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 17 / Day 108**（Week 17 主题：强化学习与 RL 训练工程 🧠 — Day 108 MDP · Bellman · Q-Learning 开场，算法题「买卖股票 III」状态机 DP 与 MDP 互为镜像）
+当前进度：**Week 17 / Day 109**（Week 17 主题：强化学习与 RL 训练工程 🧠 — Day 109 策略梯度 REINFORCE + Actor-Critic，算法题「随机数索引」蓄水池抽样：无偏采样经典与策略梯度的期望估计互为镜像）
 
-**更新记录**：已连续更新 **108** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **109** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
