@@ -1,7 +1,7 @@
 # 🎯 Interview Prep - 每天一道题,六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2017%20Day%20109%20🧠-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20109%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2017%20Day%20110%20🧠-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20110%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -9,7 +9,7 @@
 >
 > 每天 20:42 自动推送:一道算法题 + 一页面试速查。跟着走,6 周后你会感谢自己。
 >
-> 🎉 **连续更新 109 天，从未中断！**
+> 🎉 **连续更新 110 天，从未中断！**
 
 ---
 
@@ -19,14 +19,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 109 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 110 天** |
 | 📅 **6 周系统计划** | 不是零散刷题,按主题递进(DP → 数据结构 → 网络 → 系统设计) |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码,是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 109 · 2026-09-21 · Week 17 Day 2 🧠）
-- 🔥 [随机数索引（蓄水池抽样）+ 策略梯度 REINFORCE 与 Actor-Critic](week17/2026-09-21-reservoir-sampling-policy-gradient.md) — 值方法之后换赛道：不学值函数，直接对策略做梯度上升；算法题蓄水池抽样（1/i 概率替换 + 幸存连乘证明，单遍流式等概率采样 = 无偏估计的经典样板）呼应策略梯度的命脉「有限样本无偏估计期望」；面试技巧串策略梯度全链：值方法三大天花板（连续动作/随机策略/POMDP）、策略梯度定理与 log-derivative trick、REINFORCE 三步流程、baseline 减方差与无偏性手推、Actor-Critic 用 Critic 的 bootstrap 换在线更新（偏差-方差权衡表）、熵正则防坍缩、agentic RL 映射表（轨迹=rollout、状态=context、动作=token、奖励=RM、advantage=组内相对优势）
-- 🎤 面试技巧：策略梯度定理默写卡、log-derivative trick 30 秒手推、baseline 无偏性现场推导、REINFORCE vs Actor-Critic vs Q-Learning 三方对照、6 道高频连环问速答 + LLM 场景 G_t 退化为终局奖励的信用分配难题
+### 今日更新（Day 110 · 2026-09-22 · Week 17 Day 3 🧠）
+- 🔥 [按权重随机选择 + PPO 算法详解](week17/2026-09-22-weighted-random-pick-ppo.md) — 工业界默认的 RL 算法来了：算法题「按权重随机选择」用前缀和 + 二分实现 CDF 采样，正是「从策略分布 π(a|s) 采样动作」的工程镜像；面试技巧复盘裸策略梯度三大痛点（on-policy 数据一次即弃/步长玄学/更新无约束），重要性采样把旧数据救活、clip 把信赖域画进目标函数里（L^CLIP 逐符号解读 + 悲观界直觉），GAE 的 λ 旋钮收束偏差-方差光谱，PPO × RLHF 全映射（RM 打分、KL 惩罚防 reward hacking、Critic 难训），6 道连环问速答 + 与 TRPO/DQN 收束对照表
+- 🎤 面试技巧：L^CLIP 默写与画图（A>0 时的平台形状）、重要性采样无偏但方差爆炸的推导、clip 梯度为零现场手推、PPO 完整流程一张纸默写、经典超参组合（ε=0.2·γ=0.99·λ=0.95·K=4~10）
 
 **想看今天的内容?直接点上面 👆**
 
@@ -70,10 +70,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
+- 🎬 [Day 110 — 按权重随机选择 + PPO 算法详解](week17/2026-09-22-weighted-random-pick-ppo.md)（前缀和 + 二分 CDF 采样 O(log n) / 动态加权：树状数组 / 分布式：Efraimidis-Spirakis / 裸策略梯度三大痛点：on-policy 浪费·步长玄学·更新无约束 / 重要性采样 r_t(θ)=π_θ/π_old 无偏方差炸 / TRPO 硬 KL 约束二阶 → PPO clip 软信赖域一阶 / L^CLIP 逐符号解读 + 悲观界 / 完整流程：采样→GAE→K epoch 复用 / GAE λ 旋钮：γ 管多远 λ 信多少 / RLHF 映射：RM·KL 惩罚防 reward hacking·Critic 难训 / PPO vs REINFORCE·AC·DQN 总表）
 - 🎲 [Day 109 — 随机数索引（蓄水池抽样）+ 策略梯度 REINFORCE 与 Actor-Critic](week17/2026-09-21-reservoir-sampling-policy-gradient.md)（蓄水池抽样：1/i 概率替换 + 幸存连乘归纳证明 / 单遍流式等概率采样 O(n)/O(1) / 扩展：k 个采样、加权抽样 Efraimidis-Spirakis、rand7→rand10 拒绝采样 / 值方法三大天花板：连续动作·随机策略·POMDP / 策略梯度定理 + log-derivative trick / REINFORCE 三步流程 / baseline 减方差无偏性手推 / Actor-Critic：Critic 的 bootstrap 换在线更新·偏差-方差权衡 / 熵正则防坍缩 / agentic RL 映射表：轨迹=rollout·状态=context·动作=token·奖励=RM）
 - 🧠 [Day 108 — 买卖股票的最佳时机 III + 强化学习基础（MDP · Bellman · Q-Learning）](week17/2026-09-20-stock-iii-rl-basics.md)（状态机 DP = 离散版 Bellman 方程 / 通用 k 笔模板 O(n·k) → 四变量 O(1) / MDP 五要素、期望·最优方程 / 策略迭代 vs 值迭代 / SARSA vs Q-Learning：on·off-policy / ε-greedy·UCB / DQN：经验回放 + 目标网络、死亡三角 / DP→MC→TD→DQN 进化路 / 6 道连环问 + veRL 视角）
 - 🎉 [Day 107 — 多数元素 + Week 16 分布式系统核心协议综合复习](week16/2026-09-19-week16-review-majority-voting.md)（Boyer-Moore 投票 O(n)/O(1) 收官 / 六大协议一张总表：Raft·Paxos·Gossip·分布式锁·CRDT·OT / 三条主线串全周：CAP 选位置 → 共识 vs AP 三路线 → 锁是一致性的投影 / 10 道连环问通关速答 + 黄金收尾话术 / Week 16 完结撒花）
-- 🔥 [Day 106 — 基于时间的键值存储 + 副本一致性与冲突解决（CRDT / OT）](week16/2026-09-18-timebased-kv-crdt-ot.md)（多版本存储 + 二分 O(log n) 快照读 = MVCC / LWW 骨架 / 冲突解决三路线：避免·检测仲裁·结构收敛 / 向量时钟偏序与并发判定 / LWW 三坑与 HLC 改进 / CRDT 三定律与 G-Counter·PN-Counter·OR-Set 手写 / OT 操作变换与 CCI 模型 / OT vs CRDT：Google Docs 为什么选 OT / Redis CRDB·DynamoDB·Figma 全景 / Multi-Region 决策树）
 
 > 📅 **每天 20:42 自动更新**,[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
@@ -150,9 +150,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 17 / Day 109**（Week 17 主题：强化学习与 RL 训练工程 🧠 — Day 109 策略梯度 REINFORCE + Actor-Critic，算法题「随机数索引」蓄水池抽样：无偏采样经典与策略梯度的期望估计互为镜像）
+当前进度：**Week 17 / Day 110**（Week 17 主题：强化学习与 RL 训练工程 🧠 — Day 110 PPO 算法详解：重要性采样 + clip 软信赖域 + GAE 偏差-方差旋钮，LLM RLHF 默认发动机；算法题「按权重随机选择」前缀和 + 二分 = 策略分布采样的工程镜像）
 
-**更新记录**：已连续更新 **109** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **110** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
