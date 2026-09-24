@@ -1,7 +1,7 @@
 # 🎯 Interview Prep - 每天一道题,六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2017%20Day%20111%20🧠-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20111%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2017%20Day%20112%20🧠-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20112%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -9,7 +9,7 @@
 >
 > 每天 20:42 自动推送:一道算法题 + 一页面试速查。跟着走,6 周后你会感谢自己。
 >
-> 🎉 **连续更新 111 天，从未中断！**
+> 🎉 **连续更新 112 天，从未中断！**
 
 ---
 
@@ -19,14 +19,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 110 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 111 天** |
 | 📅 **6 周系统计划** | 不是零散刷题,按主题递进(DP → 数据结构 → 网络 → 系统设计) |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码,是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 111 · 2026-09-23 · Week 17 Day 4 🧠）
-- 🚤 [救生艇 + DPO 与 RLHF 全流程](week17/2026-09-23-boats-dpo-rlhf.md) — PPO-RLHF 要四个模型同时在线太贵？DPO 把奖励函数从策略比值里「偷」了出来：算法题「救生艇」排序+双指针配对的贪心经典（最重的人要么独占要么带最轻的，交换论证手撕）；面试技巧串起 RLHF 三步流水线（SFT 学像人 / RM 学什么是好 / PPO 学怎么更好），Bradley-Terry 成对比较 → 标量奖励，DPO 三步推导（KL 目标闭式解 → 反解 r → 代入 BT 消掉 Z(x)），loss 逐符号 + PyTorch 最小实现，两大病理（length bias·degeneration）与 IPO·KTO·ORPO·SimPO 变体全家桶
-- 🎤 面试技巧：Z(x) 凭什么消掉、DPO 算不算 RL（offline RL 的监督式求解）、β 旋钮、为什么只训 1 epoch、completion-only logps 的 mask 处理、PPO vs DPO 天花板之争
+### 今日更新（Day 112 · 2026-09-24 · Week 17 Day 5 🧠）
+- 🎰 [打乱数组 + GRPO 算法详解](week17/2026-09-24-shuffle-grpo.md) — PPO 的 Critic 永远训不稳？GRPO 直接从 base 模型纯 RL 练出推理能力：算法题「打乱数组」Fisher-Yates 洗牌——所有均匀采样的祖师爷，`rand() % n` 的取模偏差就是 GRPO 组采样的隐性敌人；面试技巧拆 GRPO 全流程（每 prompt 采 G 条 → 可验证奖励打分 → 组内均值基线天然难度校准 → PPO clip + k3 KL 估计器），DeepSeek-R1 配方全解析：R1-Zero 不做 SFT 直接 RL、AIME 15.6%→71.0% 涌现「啊哈时刻」，R1 冷启动 SFT→GRPO→拒绝采样→SFT→再 GRPO，std 归一化与 token 均值化两桩公案（Dr.GRPO），社区复现成本打穿
+- 🎤 面试技巧：组均值基线为什么有偏又够用、R1 为什么删 std 归一化、k3 估计器 `e^δ−δ−1` 非负+无偏手推、GRPO 是不是 REINFORCE 套壳、KL 为什么省不掉、token 信用分配遗留问题、rollout 瓶颈三板斧（分离式推理引擎·partial rollout·长度控制）
 
 **想看今天的内容?直接点上面 👆**
 
@@ -70,10 +70,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
+- 🎰 [Day 112 — 打乱数组（Fisher-Yates 洗牌）+ GRPO 算法详解](week17/2026-09-24-shuffle-grpo.md)（Fisher-Yates 从后往前 `[0,i]` 取 j·每个排列 1/n! 归纳证明 / `rand() % n` 取模偏差与拒绝采样修复·rand.IntN·CSPRNG 场景 / 测试均匀性：卡方检验+seed 确定性 / 流式抽样：蓄水池·随机键排序·partial Fisher-Yates / 承诺方案可验证洗牌 / GRPO 全流程：每 prompt 采 G 条·可验证奖励·组内均值基线难度自校准 / A_i=(r_i−mean)/std 与 R1 去 std 版 / k3 KL 估计器 e^δ−δ−1 非负+无偏 / token 均值化长度偏置（Dr.GRPO）/ R1-Zero：base 纯 RL·AIME 15.6%→71.0%·aha moment / R1 配方：冷启动→GRPO→拒绝采样→SFT→GRPO / GRPO vs PPO vs DPO vs REINFORCE 总表 / rollout 三板斧：分离式推理引擎·partial rollout·长度控制）
 - 🚤 [Day 111 — 救生艇 + DPO 与 RLHF 全流程](week17/2026-09-23-boats-dpo-rlhf.md)（排序+双指针贪心：最重的人要么独占要么带最轻的·交换论证·k 人座退化为装箱问题 / RLHF 三步流水线：SFT→RM→PPO / Bradley-Terry 成对比较→标量奖励·标度只需序 / PPO 阶段四模型在线的工程地狱 / DPO 三步推导：闭式解→反解 r→代入 BT 消 Z(x) / 隐式奖励 β·log π_θ/π_ref·模型自己就是 RM / loss 逐符号+PyTorch 最小实现·completion-only logps / β=0.1~0.5·只训 1 epoch / length bias·degeneration 两大病理 / IPO·KTO·ORPO·SimPO 变体 / veRL 视角：DPO 打底 GRPO 冲顶）
 - 🎬 [Day 110 — 按权重随机选择 + PPO 算法详解](week17/2026-09-22-weighted-random-pick-ppo.md)（前缀和 + 二分 CDF 采样 O(log n) / 动态加权：树状数组 / 分布式：Efraimidis-Spirakis / 裸策略梯度三大痛点：on-policy 浪费·步长玄学·更新无约束 / 重要性采样 r_t(θ)=π_θ/π_old 无偏方差炸 / TRPO 硬 KL 约束二阶 → PPO clip 软信赖域一阶 / L^CLIP 逐符号解读 + 悲观界 / 完整流程：采样→GAE→K epoch 复用 / GAE λ 旋钮：γ 管多远 λ 信多少 / RLHF 映射：RM·KL 惩罚防 reward hacking·Critic 难训 / PPO vs REINFORCE·AC·DQN 总表）
 - 🎲 [Day 109 — 随机数索引（蓄水池抽样）+ 策略梯度 REINFORCE 与 Actor-Critic](week17/2026-09-21-reservoir-sampling-policy-gradient.md)（蓄水池抽样：1/i 概率替换 + 幸存连乘归纳证明 / 单遍流式等概率采样 O(n)/O(1) / 扩展：k 个采样、加权抽样 Efraimidis-Spirakis、rand7→rand10 拒绝采样 / 值方法三大天花板：连续动作·随机策略·POMDP / 策略梯度定理 + log-derivative trick / REINFORCE 三步流程 / baseline 减方差无偏性手推 / Actor-Critic：Critic 的 bootstrap 换在线更新·偏差-方差权衡 / 熵正则防坍缩 / agentic RL 映射表：轨迹=rollout·状态=context·动作=token·奖励=RM）
-- 🧠 [Day 108 — 买卖股票的最佳时机 III + 强化学习基础（MDP · Bellman · Q-Learning）](week17/2026-09-20-stock-iii-rl-basics.md)（状态机 DP = 离散版 Bellman 方程 / 通用 k 笔模板 O(n·k) → 四变量 O(1) / MDP 五要素、期望·最优方程 / 策略迭代 vs 值迭代 / SARSA vs Q-Learning：on·off-policy / ε-greedy·UCB / DQN：经验回放 + 目标网络、死亡三角 / DP→MC→TD→DQN 进化路 / 6 道连环问 + veRL 视角）
 
 > 📅 **每天 20:42 自动更新**,[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
@@ -150,9 +150,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 17 / Day 111**（Week 17 主题：强化学习与 RL 训练工程 🧠 — Day 111 DPO 与 RLHF 全流程：Bradley-Terry 成对比较、KL 目标闭式解反推 DPO、隐式奖励 β·log π_θ/π_ref 让模型自己当 RM，开源对齐默认起点；算法题「救生艇」排序+双指针配对贪心，"成对比较"的算法镜像）
+当前进度：**Week 17 / Day 112**（Week 17 主题：强化学习与 RL 训练工程 🧠 — Day 112 GRPO 算法详解：删掉 Critic 用组内均值基线、可验证奖励难度自校准、k3 KL 估计器，DeepSeek-R1 配方全解析（R1-Zero base 纯 RL AIME 15.6%→71.0%）；算法题「打乱数组」Fisher-Yates 洗牌与 `rand()%n` 取模偏差——GRPO 组采样的公平性地基）
 
-**更新记录**：已连续更新 **111** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **112** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
