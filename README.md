@@ -1,7 +1,7 @@
 # 🎯 Interview Prep - 每天一道题,六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2017%20Day%20113%20🧠-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20113%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2017%20Day%20114%20🏆-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20114%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -9,7 +9,7 @@
 >
 > 每天 20:42 自动推送:一道算法题 + 一页面试速查。跟着走,6 周后你会感谢自己。
 >
-> 🎉 **连续更新 113 天，从未中断！**
+> 🎉 **连续更新 114 天，从未中断！**
 
 ---
 
@@ -19,14 +19,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 113 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 114 天** |
 | 📅 **6 周系统计划** | 不是零散刷题,按主题递进(DP → 数据结构 → 网络 → 系统设计) |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码,是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 113 · 2026-09-25 · Week 17 Day 6 🧠）
-- 🏭 [设计阻塞队列 + veRL：Rollout 基础设施与 Agentic RL 工程](week17/2026-09-25-blocking-queue-verl-rollout.md) — GRPO 公式一页纸，跑起来要回答十个工程问题：算法题「设计阻塞队列」一把锁+两个条件变量的并发祖师爷，`while` 防虚假唤醒、Signal vs Broadcast、环形缓冲、双锁演进——rollout pipeline 的背压阀门就是队列容量；面试技巧拆 veRL（HybridFlow）架构：单控制器 Ray driver 编排、GRPO step 数据流七步、colocate 模式 sleep/wake 显存编排与 NCCL 权重同步、吞吐四板斧（continuous batching·prefix caching 白嫖组内 G 条共享前缀·chunked prefill·partial rollout）、agentic 多轮 rollout 三大痛点（长度爆炸·环境异构·信用分配）与异步化解法、四框架选型对比、训练监控六组指标
-- 🎤 面试技巧：为什么 rollout 占总 step 时间 70~90%、单控 vs 多控的取舍、权重同步每 step 一次的账怎么算（7B≈35ms）、partial rollout 会不会破坏组基线、agentic 场景失败轨迹为什么不能丢（数据分布 bias）、手写 20 行最小 GRPO 训练循环并指出瓶颈行
+### 今日更新（Day 114 · 2026-09-26 · Week 17 Day 7 🏆）
+- 🏆 [预测赢家 + Week 17 强化学习与 RL 训练工程综合复习](week17/2026-09-26-predict-winner-week17-review.md) — Week 17 收官日：算法题「预测赢家」minimax/negamax 区间 DP（`dp[i][j]=max(nums[i]−dp[i+1][j], nums[j]−dp[i][j−1])`，零和博弈单 dp 值、min 端=−max 端），偶数长度先手必胜配对论证，Alpha-Beta 剪枝与 AlphaZero 的连接；面试技巧综合复习：六天内容一张总表（MDP/Bellman→REINFORCE/AC→PPO→DPO/RLHF→GRPO→veRL）、两条主线（算法演进每步死穴与新坑 / 工程落地公式一页纸系统一箩筐）、10 道连环问通关速答（SARSA vs Q-Learning·baseline 无偏·clip 逐符号·DPO 三步推导·GRPO 删 Critic·k3 KL·R1-Zero·colocate·agentic 三大痛点·20 行 GRPO 循环）、收官加菜自博弈 Self-Play（policy+value 双头·self-play 数据·胜率替换，"minimax 是对手全知的 DP，self-play 是对手也在学的 RL"）
+- 🎤 面试技巧：Q-Learning→GRPO 算法演进主线串讲、veRL 工程问答速查、RLHF/推理 RL 理解收尾话术一段话版
 
 **想看今天的内容?直接点上面 👆**
 
@@ -70,6 +70,7 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
+- 🏆 [Day 114 — 预测赢家（Predict the Winner）+ Week 17 强化学习与 RL 训练工程综合复习](week17/2026-09-26-predict-winner-week17-review.md)（minimax/negamax 区间 DP：`dp[i][j]=max(nums[i]−dp[i+1][j], nums[j]−dp[i][j−1])`·零和单 dp 值·min=−max / 偶数长度先手必胜配对论证·Alpha-Beta 剪枝 O(b^(d/2)) / Week 17 总表六天串讲：MDP·Bellman→REINFORCE·AC→PPO→DPO·RLHF→GRPO→veRL / 两条主线：算法演进死穴链 + 工程落地 rollout 70~90% / 10 道连环问通关速答 / 收官加菜自博弈 Self-Play：AlphaZero 三件套·MCTS·对手池防坍缩，"minimax 是对手全知的 DP，self-play 是对手也在学的 RL"）
 - 🏭 [Day 113 — 设计阻塞队列（Bounded Blocking Queue）+ veRL：Rollout 基础设施与 Agentic RL 工程](week17/2026-09-25-blocking-queue-verl-rollout.md)（一把锁+两个条件变量：`while` 防虚假唤醒·Signal vs Broadcast·环形缓冲·双锁演进 / 背压 = 队列容量 / veRL=HybridFlow 单控制器 Ray driver / GRPO step 数据流七步 / colocate sleep/wake + NCCL 权重同步 / 吞吐四板斧：continuous batching·prefix caching 组内共享前缀·chunked prefill·partial rollout / agentic 三大痛点：长度爆炸·环境异构·信用分配 / 失败轨迹不能丢=防数据分布 bias / 选型：TRL·veRL·NeMo·OpenRLHF / 监控六指标）
 - 🎰 [Day 112 — 打乱数组（Fisher-Yates 洗牌）+ GRPO 算法详解](week17/2026-09-24-shuffle-grpo.md)（Fisher-Yates 从后往前 `[0,i]` 取 j·每个排列 1/n! 归纳证明 / `rand() % n` 取模偏差与拒绝采样修复·rand.IntN·CSPRNG 场景 / 测试均匀性：卡方检验+seed 确定性 / 流式抽样：蓄水池·随机键排序·partial Fisher-Yates / 承诺方案可验证洗牌 / GRPO 全流程：每 prompt 采 G 条·可验证奖励·组内均值基线难度自校准 / A_i=(r_i−mean)/std 与 R1 去 std 版 / k3 KL 估计器 e^δ−δ−1 非负+无偏 / token 均值化长度偏置（Dr.GRPO）/ R1-Zero：base 纯 RL·AIME 15.6%→71.0%·aha moment / R1 配方：冷启动→GRPO→拒绝采样→SFT→GRPO / GRPO vs PPO vs DPO vs REINFORCE 总表 / rollout 三板斧：分离式推理引擎·partial rollout·长度控制）
 - 🚤 [Day 111 — 救生艇 + DPO 与 RLHF 全流程](week17/2026-09-23-boats-dpo-rlhf.md)（排序+双指针贪心：最重的人要么独占要么带最轻的·交换论证·k 人座退化为装箱问题 / RLHF 三步流水线：SFT→RM→PPO / Bradley-Terry 成对比较→标量奖励·标度只需序 / PPO 阶段四模型在线的工程地狱 / DPO 三步推导：闭式解→反解 r→代入 BT 消 Z(x) / 隐式奖励 β·log π_θ/π_ref·模型自己就是 RM / loss 逐符号+PyTorch 最小实现·completion-only logps / β=0.1~0.5·只训 1 epoch / length bias·degeneration 两大病理 / IPO·KTO·ORPO·SimPO 变体 / veRL 视角：DPO 打底 GRPO 冲顶）
@@ -150,9 +151,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 17 / Day 113**（Week 17 主题：强化学习与 RL 训练工程 🧠 — Day 113 veRL Rollout 基础设施：单控制器 HybridFlow 架构、colocate sleep/wake 显存编排、NCCL 权重同步、吞吐四板斧、agentic 多轮 rollout 工程；算法题「设计阻塞队列」条件变量与背压——rollout pipeline 的祖师爷抽象）
+当前进度：**Week 17 / Day 114**（Week 17 主题：强化学习与 RL 训练工程 🧠 — **已完结 🎉** Day 114 综合复习收官：minimax/negamax 博弈 DP + 全周串讲（MDP/Bellman → REINFORCE/AC → PPO → DPO/RLHF → GRPO → veRL rollout）+ 10 道连环问通关 + 自博弈 Self-Play 收官加菜；Week 17 从 Bellman 方程打到 veRL 流水线，算法与系统双通关）
 
-**更新记录**：已连续更新 **113** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **114** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
