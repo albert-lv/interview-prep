@@ -1,7 +1,7 @@
 # 🎯 Interview Prep - 每天一道题,六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2018%20Day%20117%20🔬-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20117%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2018%20Day%20118%20🔬-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20118%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -9,7 +9,7 @@
 >
 > 每天 20:42 自动推送:一道算法题 + 一页面试速查。跟着走,6 周后你会感谢自己。
 >
-> 🎉 **连续更新 117 天，从未中断！**
+> 🎉 **连续更新 118 天，从未中断！**
 
 ---
 
@@ -24,9 +24,9 @@
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码,是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 117 · 2026-09-29 · Week 18 Day 3 🔬）
-- 🔬 [N 皇后 + 推理树搜索（ToT / MCTS / rStar）](week18/2026-09-29-n-queens-tree-search.md) — 算法题「N 皇后」按行建模把决策变量从 n² 压到 n（搜索空间 2^(n²) → n!），三向冲突 `cols[c]` / `diag1[r-c+n-1]` / `diag2[r+c]` O(1) 评估先剪枝后扩展，位运算版 `diag1<<1 / diag2>>1` 平移三行核心代码（N 皇后 II 竞赛级解法）；隐喻：冲突检查 = 树搜索的廉价评估函数，评估越便宜越准树越小。面试技巧推理树搜索三件套：**ToT**（分解/生成 k 候选/评估/搜索 BFS+beam 或 DFS+回溯，评估器是命门），**MCTS** 四步循环默写（Selection UCB1 → Expansion → Simulation 三档：完整 rollout 贵准 / value model 单点便宜有偏 / 短程 rollout+PRM 折中 → Backpropagation），LLM 化改造四问（动作离散化采样 k 个 thought / pUCT 加 policy 先验 / 奖励=verifier+PRM 塑形），**rStar** 判别式互证免训练 verifier（Generator+Discriminator 两角色互问互答，小模型边际收益更大）；三范式对比表（评估器来源×训练成本×开销×致命伤），搜索↔RL 飞轮（AlphaZero 循环 + o1 内化路线之争：外挂搜索 vs 焊进权重）
-- 🎤 面试技巧：ToT vs CoT 本质（生成重构为状态空间搜索）、ToT 评估器三条路与统一死穴 Goodhart、UCB1 公式各项含义、LLM 场景 Simulation 成本-质量三档、o1 为什么不外挂 MCTS（TPOT 爆炸+任务绑定，长 CoT 隐式搜索内化）、rStar 小模型起飞逻辑、搜索 vs 采样判断口诀「中途有可评估的岔路才值得建树」
+### 今日更新（Day 118 · 2026-09-30 · Week 18 Day 4 🔬）
+- 🔬 [爬楼梯的最少成本 + 自我验证与反思（Self-Consistency / Self-Refine / 验证者悖论）](week18/2026-09-30-min-cost-climbing-stairs-self-verification.md) — 算法题「爬楼梯的最少成本」= Day 1 的对偶回归：同一个状态机，计数版用加法聚合、本题用 min 聚合（`f(i)=cost[i]+min(f(i-1),f(i-2))`，初值 = cost[0]/cost[1] 踏上付费，答案 = min(末两项) 登顶免费），反例说透贪心为何失效，k 级扩展 = 滑动窗口最小值 + 单调队列 O(n)；核心隐喻：暴力枚举 2ⁿ 条爬法 = 采样全集投票，DP 用重叠子结构把指数路径折叠成 O(n) 精确计算——**能精确 DP 的问题别采样投票，LLM 需要投票正因为开放生成的状态空间压不动**。面试技巧内生验证一族全谱：**Self-Consistency**（N 条采样多数投票，独立性假设 + 1−(1−p)^N 对数增长 + 系统性错误一致地错；改进：verifier 加权投票 / Early-Stopping 省 ~40%）、**Self-Refine**（Madaan 2023 批评-修订循环；Kamoi et al. 2024 冷水：intrinsic self-correction 无外部反馈常掉点——GSM8K 上 GPT-4 从 ~95% 掉到 82.9%）、**验证者悖论三段式**（能验出错误为何还犯 / 自评与出错相关独立性崩塌·self-preference bias / 自评进训练信号被 Goodhart）+ 三条出路（外部验证器解耦 / RL 让自检验涌现——R1 实证回头检查行为 / rStar 换实例互证）、**Reflexion**（verbal RL：试错-反思-记忆跨轮循环，HumanEval 91% 档）、**CoVe**（起草→验证问题→独立作答防锚定→修订，独立性靠流程设计）、**Self-Rewarding**（自评→偏好对→DPO 迭代，收益真实但分布坍缩风险 = reward hacking 温床）
+- 🎤 面试技巧：Self-Consistency 统计本质与适用边界（答案空间有限才可投票）、改进三板斧（加权/早停/自适应预算）、Self-Refine 何时有用何时有害（外部信号在回路 = 稳定收益，纯内生 = 实证掉点；批评要带证据）、验证者悖论的完整陈述与反驳（悖论描述基座意愿而非训练后能力）、CoVe 精髓（独立性用流程造出来）、Self-Rewarding 路由表（能外包验证→GRPO，不能→RL 内化，最后才自评）
 
 **想看今天的内容?直接点上面 👆**
 
@@ -46,7 +46,7 @@
 
 > 💡 **节奏设计**:周一/周五主菜(重难点),周三换口味(数据结构/算法),周六复盘,周日彻底休息。
 >
-> 🔥 **当前状态**：Week 18 进行中（推理模型与 Test-Time Compute 🔬，Day 115 开题解数独 + Test-Time Compute 总览，Day 116 单词搜索 + PRM 过程奖励模型 ✅，Day 117 进行中：N 皇后 + 推理树搜索 ToT/MCTS/rStar），Week 17 已完结，**每日更新从未中断**。
+> 🔥 **当前状态**：Week 18 进行中（推理模型与 Test-Time Compute 🔬，Day 115 解数独 + Test-Time Compute 总览 ✅，Day 116 单词搜索 + PRM ✅，Day 117 N 皇后 + ToT/MCTS/rStar ✅，Day 118 进行中：爬楼梯最少成本 + 自我验证与反思 Self-Consistency/Self-Refine/验证者悖论），Week 17 已完结，**每日更新从未中断**。
 
 ---
 
@@ -70,10 +70,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
+- 🔬 [Day 118 — 爬楼梯的最少成本（Min Cost Climbing Stairs）+ 自我验证与反思（Self-Consistency / Self-Refine / 验证者悖论）](week18/2026-09-30-min-cost-climbing-stairs-self-verification.md)（Day 1 对偶回归：同一状态机计数加法 vs 最优取 min / `f(i)=cost[i]+min(f(i-1),f(i-2))` 初值踏上付费答案登顶免费 / k 级扩展 = 滑动窗口最小值+单调队列 O(n) / 暴力枚举 2ⁿ 爬法 = 采样全集投票·DP 折叠成 O(n) 精确计算「能 DP 别投票」 / Self-Consistency 独立性假设+1−(1−p)^N+系统性错误一致地错 / 改进：verifier 加权·Early-Stopping 省 ~40% / Kamoi 2024 冷水：intrinsic self-correction GSM8K 95%→82.9% / 验证者悖论三段式+三出路：外包解耦·RL 涌现 R1 实证·rStar 互证 / Reflexion verbal RL·HumanEval 91% 档 / CoVe 四步独立作答防锚定 / Self-Rewarding 自评→DPO 迭代·分布坍缩风险）
 - 🔬 [Day 117 — N 皇后（N-Queens）+ 推理树搜索（ToT / MCTS / rStar）](week18/2026-09-29-n-queens-tree-search.md)（按行建模决策变量 n²→n（2^(n²)→n!）/ 三向冲突 O(1)：cols·diag1[r-c+n-1]·diag2[r+c] 先剪枝后扩展 / 位运算版 avail=full&~(cols|d1|d2)·diag1<<1·diag2>>1 三行核心 / 冲突检查=树搜索廉价评估函数·评估越便宜越准树越小 / CoT 单链贪心 vs 树搜索中途纠偏总表 / ToT 四操作：分解·生成 k 候选·评估·搜索（评估器是命门·Goodhart）/ MCTS 四步循环+UCB1 默写·LLM 化四问·Simulation 三档成本-质量权衡 / rStar 判别式互证免训练 verifier·小模型边际收益更大 / 三范式对比表·搜索↔RL 飞轮·o1 内化路线之争：外挂搜索 vs 焊进权重）
 - 🔬 [Day 116 — 单词搜索（Word Search）+ 过程奖励模型（PRM）](week18/2026-09-28-word-search-process-reward-model.md)（回溯三件套：原地标记+四方向 DFS+退出撤销 / 前缀验证剪枝，Trie 前缀检查 = 算法版过程验证器 / Follow-up Word Search II：Trie 建图+共享前缀剪枝，10⁵ 词场景，进阶 AC 自动机 / credit assignment 归因黑洞 → 稠密过程信号 / PRM800K 人工标注 → MATH-Shepherd MCTS rollout 自动标注 / ORM vs PRM 七维对照表 / PRM 三用途：RL shaping·推理搜索引导·数据筛选 / 四坑：装模作样 hack·step 边界·OOD·验证成本 / veRL 落地：per-turn reward + 轨迹过滤）
 - 🧩 [Day 115 — 解数独（Sudoku Solver）+ Week 18 开启：推理模型与 Test-Time Compute](week18/2026-09-27-sudoku-solver-test-time-compute-intro.md)（位运算三 bitmap 压缩行/列/宫约束 + `&^=` 撤销 + MRV 最少候选优先 + 前向检查 / 唯一解挖洞生成 · 一般化数独 NP-complete · 并行化求解 / Scaling Law 两根轴：训练 FLOPs ↔ 推理 FLOPs / o1 配方 = RL + 长 CoT + 可验证奖励（GRPO 引擎）/ 三类 test-time 策略表：Best-of-N·Self-Consistency · Self-Refine · ToT·MCTS·rStar / "验证比生成容易"= P vs NP 直觉 → verifier 训练推理两用 / compute-optimal 按难度分配算力 / verifier 四类成本谱：规则·执行·PRM·LLM-Judge / test-time compute ↔ veRL rollout 一体两面）
-- 🏆 [Day 114 — 预测赢家（Predict the Winner）+ Week 17 强化学习与 RL 训练工程综合复习](week17/2026-09-26-predict-winner-week17-review.md)（minimax/negamax 区间 DP：`dp[i][j]=max(nums[i]−dp[i+1][j], nums[j]−dp[i][j−1])`·零和单 dp 值·min=−max / 偶数长度先手必胜配对论证·Alpha-Beta 剪枝 O(b^(d/2)) / Week 17 总表六天串讲：MDP·Bellman→REINFORCE·AC→PPO→DPO·RLHF→GRPO→veRL / 两条主线：算法演进死穴链 + 工程落地 rollout 70~90% / 10 道连环问通关速答 / 收官加菜自博弈 Self-Play：AlphaZero 三件套·MCTS·对手池防坍缩，"minimax 是对手全知的 DP，self-play 是对手也在学的 RL"）
 
 > 📅 **每天 20:42 自动更新**,[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
@@ -150,9 +150,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 18 / Day 117**（Week 18 主题：推理模型与 Test-Time Compute 🔬 — Day 117 进行中：N 皇后按行建模+三向冲突 O(1) 评估先剪枝后扩展（冲突检查=树搜索廉价评估函数，评估越便宜越准树越小）+ 推理树搜索三件套 ToT/MCTS/rStar（ToT 四操作·评估器命门，MCTS 四步循环+UCB1 默写·Simulation 三档成本-质量权衡·pUCT policy 先验，rStar 判别式互证免训练 verifier·小模型边际收益更大；三范式对比表+搜索↔RL 飞轮+o1 内化路线之争：外挂搜索 vs 焊进权重）；本周从 verifier 核心（Day 116 PRM）进入搜索整机，明天 Day 118 自我验证与反思 Self-Consistency/Self-Refine 🔜）
+当前进度：**Week 18 / Day 118**（Week 18 主题：推理模型与 Test-Time Compute 🔬 — Day 118 进行中：爬楼梯的最少成本 = Day 1 对偶回归（同一状态机换聚合函数：计数加法 → 最优取 min），暴力枚举 2ⁿ 爬法 = 采样全集投票，DP 用重叠子结构折叠成 O(n) 精确计算——「能 DP 别投票」；面试技巧内生验证一族：Self-Consistency 多数投票（独立性假设·1−(1−p)^N·系统性错误一致地错·加权/早停改进）、Self-Refine 批评-修订循环（Kamoi 2024 冷水：无外部反馈 intrinsic self-correction 常掉点，GSM8K 95%→82.9%）、验证者悖论三段式（能力循环/独立性崩塌·self-preference/Goodhart）+ 三出路（外部验证器解耦 / RL 让自检验涌现·R1 实证 / rStar 互证）、Reflexion verbal RL、CoVe 独立作答防锚定、Self-Rewarding 自评→DPO 迭代（分布坍缩风险）；本周内生验证已通关，明天 Day 119 长上下文与推理系统工程 🔜）
 
-**更新记录**：已连续更新 **117** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **118** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
