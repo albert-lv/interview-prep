@@ -1,7 +1,7 @@
 # 🎯 Interview Prep - 每天一道题,六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2018%20Day%20118%20🔬-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20118%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2018%20Day%20119%20🔬-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20119%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -9,7 +9,7 @@
 >
 > 每天 20:42 自动推送:一道算法题 + 一页面试速查。跟着走,6 周后你会感谢自己。
 >
-> 🎉 **连续更新 118 天，从未中断！**
+> 🎉 **连续更新 119 天，从未中断！**
 
 ---
 
@@ -19,14 +19,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 117 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 119 天** |
 | 📅 **6 周系统计划** | 不是零散刷题,按主题递进(DP → 数据结构 → 网络 → 系统设计) |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码,是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 118 · 2026-09-30 · Week 18 Day 4 🔬）
-- 🔬 [爬楼梯的最少成本 + 自我验证与反思（Self-Consistency / Self-Refine / 验证者悖论）](week18/2026-09-30-min-cost-climbing-stairs-self-verification.md) — 算法题「爬楼梯的最少成本」= Day 1 的对偶回归：同一个状态机，计数版用加法聚合、本题用 min 聚合（`f(i)=cost[i]+min(f(i-1),f(i-2))`，初值 = cost[0]/cost[1] 踏上付费，答案 = min(末两项) 登顶免费），反例说透贪心为何失效，k 级扩展 = 滑动窗口最小值 + 单调队列 O(n)；核心隐喻：暴力枚举 2ⁿ 条爬法 = 采样全集投票，DP 用重叠子结构把指数路径折叠成 O(n) 精确计算——**能精确 DP 的问题别采样投票，LLM 需要投票正因为开放生成的状态空间压不动**。面试技巧内生验证一族全谱：**Self-Consistency**（N 条采样多数投票，独立性假设 + 1−(1−p)^N 对数增长 + 系统性错误一致地错；改进：verifier 加权投票 / Early-Stopping 省 ~40%）、**Self-Refine**（Madaan 2023 批评-修订循环；Kamoi et al. 2024 冷水：intrinsic self-correction 无外部反馈常掉点——GSM8K 上 GPT-4 从 ~95% 掉到 82.9%）、**验证者悖论三段式**（能验出错误为何还犯 / 自评与出错相关独立性崩塌·self-preference bias / 自评进训练信号被 Goodhart）+ 三条出路（外部验证器解耦 / RL 让自检验涌现——R1 实证回头检查行为 / rStar 换实例互证）、**Reflexion**（verbal RL：试错-反思-记忆跨轮循环，HumanEval 91% 档）、**CoVe**（起草→验证问题→独立作答防锚定→修订，独立性靠流程设计）、**Self-Rewarding**（自评→偏好对→DPO 迭代，收益真实但分布坍缩风险 = reward hacking 温床）
-- 🎤 面试技巧：Self-Consistency 统计本质与适用边界（答案空间有限才可投票）、改进三板斧（加权/早停/自适应预算）、Self-Refine 何时有用何时有害（外部信号在回路 = 稳定收益，纯内生 = 实证掉点；批评要带证据）、验证者悖论的完整陈述与反驳（悖论描述基座意愿而非训练后能力）、CoVe 精髓（独立性用流程造出来）、Self-Rewarding 路由表（能外包验证→GRPO，不能→RL 内化，最后才自评）
+### 今日更新（Day 119 · 2026-10-01 · Week 18 Day 5 🔬）
+- 🔬 [最长重复子数组 + 长上下文与推理系统工程（KV Cache · Prefix Caching · 延迟-质量权衡）](week18/2026-10-01-maximum-length-of-repeated-subarray-inference-systems.md) — 算法题「最长重复子数组」是 LCS 的连续版对偶：`dp[i][j]` 定义为"以 nums1[i-1]、nums2[j-1] 结尾的最长公共**后缀**长度"（不匹配**清零**而非继承历史最优——这是与子序列的唯一差别），滚动数组压缩时 j 必须**倒序**（与 0-1 背包同因），进阶 = 二分长度 + 滚动哈希 O((n+m)·log min(n,m))；核心隐喻：**DP 折叠重叠子结构 ↔ Prefix Caching 折叠共享前缀**——Day 1 的「重叠子结构→折叠计算」与今天的 serving「共享前缀→折叠计算」隔 118 天闭环。面试技巧推理系统工程四大账本：**KV cache 显存公式** `2×层数×KV头数×头维×字节×长度`（Llama-7B fp16 ≈ 512KB/token，4K ≈ 2GB 超权重 15%，GQA 砍头数就是砍这项）；**PagedAttention** = OS 虚拟内存思路（16-token 块 + block table + 按需分配 + Copy-on-Write，碎片 <4%、吞吐 2~4×）；**Prefix caching** = 块级内容哈希（父哈希+token），命中跳过 prefill，GRPO 组共享前缀 prefill O(G·L)→O(L) 省 30~60%（Day 112 隐性红利的原理），多轮对话/系统提示是天然高命中资产；**PD 分离** = prefill 算力型 ∥ decode 带宽型资源画像相反，KV 按层 RDMA 传输，TTFT/TPOT 各有 SLO；长上下文三座大山（prefill O(L²)/显存 O(L)/decode 带宽 O(L)）与登山杖（chunked prefill · KV 量化 · RAG 减输入）；**延迟-质量交换所**：serving 层买延迟（PagedAttention/prefix cache/PD 分离纯赚、speculative decoding 花算力买、KV 量化轻微掉点），test-time 层买质量（长 CoT 核心汇率、自适应预算、budget forcing）
+- 🎤 面试技巧：「大模型推理优化」总-分答题模板（模型层→**服务层主战场**→系统层）；TTFT vs TPOT/ITL 指标定义；prefill（并行·compute-bound）vs decode（自回归·memory-bound）两种负载的 batch 策略；KV 显存口算（7B/70B 现场估算）；PagedAttention 三步讲法（问题→机制→收益）；prefix caching 哈希链构造与块大小权衡；GRPO 收益口算题；PD 分离取舍一句话；长上下文优化三件套；与 veRL rollout 的一体两面（Day 113 衔接）
 
 **想看今天的内容?直接点上面 👆**
 
@@ -46,7 +46,7 @@
 
 > 💡 **节奏设计**:周一/周五主菜(重难点),周三换口味(数据结构/算法),周六复盘,周日彻底休息。
 >
-> 🔥 **当前状态**：Week 18 进行中（推理模型与 Test-Time Compute 🔬，Day 115 解数独 + Test-Time Compute 总览 ✅，Day 116 单词搜索 + PRM ✅，Day 117 N 皇后 + ToT/MCTS/rStar ✅，Day 118 进行中：爬楼梯最少成本 + 自我验证与反思 Self-Consistency/Self-Refine/验证者悖论），Week 17 已完结，**每日更新从未中断**。
+> 🔥 **当前状态**：Week 18 进行中（推理模型与 Test-Time Compute 🔬，Day 115 解数独 + Test-Time Compute 总览 ✅，Day 116 单词搜索 + PRM ✅，Day 117 N 皇后 + ToT/MCTS/rStar ✅，Day 118 爬楼梯最少成本 + 自我验证与反思 ✅，Day 119 最长重复子数组 + 长上下文与推理系统工程 ✅），Week 17 已完结，**每日更新从未中断**。
 
 ---
 
@@ -70,6 +70,7 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
+- 🔬 [Day 119 — 最长重复子数组（Maximum Length of Repeated Subarray）+ 长上下文与推理系统工程（KV Cache · Prefix Caching · 延迟-质量权衡）](week18/2026-10-01-maximum-length-of-repeated-subarray-inference-systems.md)（LCS 连续版对偶：`dp[i][j]` = 以 i-1/j-1 结尾的公共**后缀**长度，不匹配**清零**而非继承 = 与子序列唯一差别 / 滚动数组 j 倒序（与 0-1 背包同因）/ 进阶：二分长度+滚动哈希 O((n+m)log min) / 核心隐喻：DP 折叠重叠子结构 ↔ Prefix Caching 折叠共享前缀·Day 1 闭环 / KV 显存公式 2×层×KV头×头维×字节×长度（7B fp16≈512KB/token·4K≈2GB·GQA 砍头）/ PagedAttention = OS 虚拟内存：16-token 块+block table+按需+COW 碎片<4% / Prefix caching 块级内容哈希命中跳过 prefill·GRPO prefill O(G·L)→O(L) 省 30~60%·多轮对话白嫖 / PD 分离：prefill 算力型 ∥ decode 带宽型·KV 按层 RDMA / 长上下文三座大山 O(L²)·O(L)·O(L) 与登山杖 / 延迟-质量交换所：serving 买延迟（纯赚三件套）↔ test-time 买质量（核心汇率））
 - 🔬 [Day 118 — 爬楼梯的最少成本（Min Cost Climbing Stairs）+ 自我验证与反思（Self-Consistency / Self-Refine / 验证者悖论）](week18/2026-09-30-min-cost-climbing-stairs-self-verification.md)（Day 1 对偶回归：同一状态机计数加法 vs 最优取 min / `f(i)=cost[i]+min(f(i-1),f(i-2))` 初值踏上付费答案登顶免费 / k 级扩展 = 滑动窗口最小值+单调队列 O(n) / 暴力枚举 2ⁿ 爬法 = 采样全集投票·DP 折叠成 O(n) 精确计算「能 DP 别投票」 / Self-Consistency 独立性假设+1−(1−p)^N+系统性错误一致地错 / 改进：verifier 加权·Early-Stopping 省 ~40% / Kamoi 2024 冷水：intrinsic self-correction GSM8K 95%→82.9% / 验证者悖论三段式+三出路：外包解耦·RL 涌现 R1 实证·rStar 互证 / Reflexion verbal RL·HumanEval 91% 档 / CoVe 四步独立作答防锚定 / Self-Rewarding 自评→DPO 迭代·分布坍缩风险）
 - 🔬 [Day 117 — N 皇后（N-Queens）+ 推理树搜索（ToT / MCTS / rStar）](week18/2026-09-29-n-queens-tree-search.md)（按行建模决策变量 n²→n（2^(n²)→n!）/ 三向冲突 O(1)：cols·diag1[r-c+n-1]·diag2[r+c] 先剪枝后扩展 / 位运算版 avail=full&~(cols|d1|d2)·diag1<<1·diag2>>1 三行核心 / 冲突检查=树搜索廉价评估函数·评估越便宜越准树越小 / CoT 单链贪心 vs 树搜索中途纠偏总表 / ToT 四操作：分解·生成 k 候选·评估·搜索（评估器是命门·Goodhart）/ MCTS 四步循环+UCB1 默写·LLM 化四问·Simulation 三档成本-质量权衡 / rStar 判别式互证免训练 verifier·小模型边际收益更大 / 三范式对比表·搜索↔RL 飞轮·o1 内化路线之争：外挂搜索 vs 焊进权重）
 - 🔬 [Day 116 — 单词搜索（Word Search）+ 过程奖励模型（PRM）](week18/2026-09-28-word-search-process-reward-model.md)（回溯三件套：原地标记+四方向 DFS+退出撤销 / 前缀验证剪枝，Trie 前缀检查 = 算法版过程验证器 / Follow-up Word Search II：Trie 建图+共享前缀剪枝，10⁵ 词场景，进阶 AC 自动机 / credit assignment 归因黑洞 → 稠密过程信号 / PRM800K 人工标注 → MATH-Shepherd MCTS rollout 自动标注 / ORM vs PRM 七维对照表 / PRM 三用途：RL shaping·推理搜索引导·数据筛选 / 四坑：装模作样 hack·step 边界·OOD·验证成本 / veRL 落地：per-turn reward + 轨迹过滤）
@@ -150,9 +151,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 18 / Day 118**（Week 18 主题：推理模型与 Test-Time Compute 🔬 — Day 118 进行中：爬楼梯的最少成本 = Day 1 对偶回归（同一状态机换聚合函数：计数加法 → 最优取 min），暴力枚举 2ⁿ 爬法 = 采样全集投票，DP 用重叠子结构折叠成 O(n) 精确计算——「能 DP 别投票」；面试技巧内生验证一族：Self-Consistency 多数投票（独立性假设·1−(1−p)^N·系统性错误一致地错·加权/早停改进）、Self-Refine 批评-修订循环（Kamoi 2024 冷水：无外部反馈 intrinsic self-correction 常掉点，GSM8K 95%→82.9%）、验证者悖论三段式（能力循环/独立性崩塌·self-preference/Goodhart）+ 三出路（外部验证器解耦 / RL 让自检验涌现·R1 实证 / rStar 互证）、Reflexion verbal RL、CoVe 独立作答防锚定、Self-Rewarding 自评→DPO 迭代（分布坍缩风险）；本周内生验证已通关，明天 Day 119 长上下文与推理系统工程 🔜）
+当前进度：**Week 18 / Day 119**（Week 18 主题：推理模型与 Test-Time Compute 🔬 — Day 119 进行中：最长重复子数组 = LCS 连续版对偶（不匹配清零而非继承历史最优，滚动数组倒序压缩），核心隐喻「DP 折叠重叠子结构 ↔ Prefix Caching 折叠共享前缀」与 Day 1 闭环；面试技巧推理系统工程四大账本——KV cache 显存公式（2×层数×KV头数×头维×字节×长度，Llama-7B fp16 ≈ 512KB/token）、PagedAttention（OS 虚拟内存思路：16-token 块+block table+按需+COW，碎片<4%）、prefix caching（块级内容哈希，GRPO 组共享前缀 prefill O(G·L)→O(L) 省 30~60%）、PD 分离（prefill 算力型 ∥ decode 带宽型，TTFT/TPOT 各有 SLO）；长上下文三座大山（O(L²) prefill / O(L) 显存 / O(L) 带宽）与登山杖；延迟-质量交换所：serving 层买延迟（PagedAttention/prefix cache/PD 分离纯赚、speculative decoding 花算力、KV 量化微掉点）、test-time 层买质量（长 CoT 核心汇率、自适应预算、budget forcing）；明天 Day 120 Verifier 生态与 LLM-as-Judge 🔜）
 
-**更新记录**：已连续更新 **118** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **119** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
