@@ -1,7 +1,7 @@
 # 🎯 Interview Prep - 每天一道题,六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2018%20Day%20120%20🔬-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20120%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2018%20Day%20121%20🏆-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20121%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -9,7 +9,7 @@
 >
 > 每天 20:42 自动推送:一道算法题 + 一页面试速查。跟着走,6 周后你会感谢自己。
 >
-> 🎉 **连续更新 120 天，从未中断！**
+> 🎉 **连续更新 121 天，从未中断！**
 
 ---
 
@@ -24,9 +24,9 @@
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码,是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 120 · 2026-10-02 · Week 18 Day 6 🔬）
-- 🔬 [验证二叉搜索树 + Verifier 生态与 LLM-as-Judge（五大偏差 · Goodhart 四幕剧 · Judge 工程 checklist）](week18/2026-10-02-validate-bst-verifier-ecosystem-llm-as-judge.md) — 算法题「验证二叉搜索树」是验证器的完美隐喻：只检查「左 < 根 < 右」的**局部检查**会被 `[5,4,6,null,null,3,7]` 反例打爆（3 在 6 的右子树却小于祖先 5）——BST 的约束是全局值域，必须用**值域递归** `validate(node, low, high)` 把祖先约束一路传下去（左传 (low, v)、右传 (v, high)），或用**中序遍历严格递增**的等价判定，O(n)/O(h)；扩展：Recover BST 两次逆序对定位、第 k 小、最大 BST 子树、哨兵 long 防 int 溢出。面试技巧收官 Verifier 生态：四类验证器全家福（**规则验语法 → 执行验行为 → PRM 验过程 → LLM-Judge 验语义**，携带上下文越多越贵越易被 Goodhart）；LLM-as-Judge 三范式对照（**pointwise 分数会通胀 · pairwise 稳但必须 order swap · reference-guided** 有锚半开放）；**五大偏差**及缓解——位置偏差（swap 双向）、冗长偏差（AlpacaEval 2.0 LC 指标）、自我偏好（盲评+跨家族）、格式谄媚（rubric 只看内容）、分数漂移（锚点样本）；MT-Bench 量化结论：GPT-4 judge 与人类一致率 85%+ 可做 A/B 排序，但安全/深度专业/长链验证场景系统性失效；**Goodhart 四幕剧**：judge 进训练回路（RLAIF/Constitutional AI）→ 政策学会讨好（加长加粗加自信）→ judge OOD 失效 → 修复三板斧（refresh · 多 judge 集成 · held-out judge + 人类校准）
-- 🎤 面试技巧：judge 工程 checklist 十条（pairwise 优先 / order swap / rubric 分项 / 盲评 / 长度控制 / reference 锚 / ensemble 投票 / held-out 校准 / 版本可复现）；「给团队设计验证管线」标准答案——按四类成本谱分层路由到最便宜的够用档，映射 veRL RewardWorker 三种验证器挂载；10 道高频速查一句话版
+### 今日更新（Day 121 · 2026-10-03 · Week 18 Day 7 🏆 收官日）
+- 🏆 [24 点游戏 + Week 18 推理模型与 Test-Time Compute 综合复习（主线公式 · 10 道连环问通关 · 24 点×test-time compute 同构收官）](week18/2026-10-03-24-game-week18-review.md) — 收官算法题「24 点」是 ToT 的成名战场（Day 117 callback）：**减而治之**——每次取有序对枚举 6 种运算放回递归，天然枚举所有括号结构（4 张牌 3 层合并，括号被递归隐式展开），浮点 ε 比较 + 除零保护 + 排序记忆化；核心同构：**每棵递归子树 = 推理树节点，每条合并路径 = CoT，`==24` 终局检查 = ORM**——搜索空间小 + 验证器便宜 → 暴力搜索就是推理；5 张牌以上才需要剪枝评估（PRM 雏形）、目标分解先验（pUCT 的 P(s,a)）。面试技巧 Week 18 综合复习：**一条主线公式「正确率 = 搜索 × 验证 × 算力分配」串六天**——o1 打开 Scaling Law 第二根轴（Day 115），预算花在搜索策略（BoN/Self-Refine/ToT-MCTS，Day 117/118）、验证器选型（规则→执行→PRM→LLM-Judge 成本谱，Day 116/120）、compute-optimal 分配（Day 115）+ 系统侧账本（KV cache/prefix caching/PD 分离，Day 119）；10 道高频连环问通关（o1 本质/验证比生成容易/1−(1−p)^N/PRM 数据三路/MCTS 四步+LLM 化四改造/Self-Consistency 失效条件/KV 显存口算+GRPO 白嫖/五大偏差/Goodhart 四幕剧/系统设计四步框架）；收官金句「**答案能被便宜验证的问题，暴力搜索就是推理；不能被便宜验证的问题，才需要 verifier 经济学**」
+- 🎤 面试技巧：收尾话术模板一段话覆盖全周（两根轴→三问→三策略→四类验证器→算力分配→系统账本→经济学），Week 18 完结撒花 🎉
 
 **想看今天的内容?直接点上面 👆**
 
@@ -46,7 +46,7 @@
 
 > 💡 **节奏设计**:周一/周五主菜(重难点),周三换口味(数据结构/算法),周六复盘,周日彻底休息。
 >
-> 🔥 **当前状态**：Week 18 进行中（推理模型与 Test-Time Compute 🔬，Day 115 解数独 + Test-Time Compute 总览 ✅，Day 116 单词搜索 + PRM ✅，Day 117 N 皇后 + ToT/MCTS/rStar ✅，Day 118 爬楼梯最少成本 + 自我验证与反思 ✅，Day 119 最长重复子数组 + 长上下文与推理系统工程 ✅），Week 17 已完结，**每日更新从未中断**。
+> 🔥 **当前状态**：Week 18 已完结 🏆（推理模型与 Test-Time Compute，Day 115 解数独 + Test-Time Compute 总览 ✅ → Day 121 24 点 + 综合复习收官 ✅），Week 17 已完结，**每日更新从未中断**。
 
 ---
 
@@ -70,10 +70,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
+- 🏆 [Day 121 — 24 点游戏（24 Game）+ Week 18 综合复习：推理模型与 Test-Time Compute](week18/2026-10-03-24-game-week18-review.md)（减而治之：有序对 6 运算枚举·括号被递归结构隐式枚举·浮点 ε+除零保护+排序记忆化 / 核心同构：递归子树=推理树节点·合并路径=CoT·`==24`=ORM·**搜索空间小+验证器便宜→暴力搜索就是推理** / 5 张牌以上要剪枝评估=PRM 雏形·目标分解先验=pUCT P(s,a) / 主线公式「正确率=搜索×验证×算力分配」串六天：o1 两根轴·搜索三策略·验证器四类成本谱·compute-optimal·系统账本 / 10 道连环问通关：o1 本质·验证比生成容易·1−(1−p)^N·PRM 数据三路·MCTS 四步+LLM 化·Self-Consistency 失效·KV 显存口算+GRPO 白嫖·五偏差·Goodhart 四幕剧·系统设计四步 / 收官金句「答案能被便宜验证的问题暴力搜索就是推理」·Week 18 完结 🎉）
 - 🔬 [Day 120 — 验证二叉搜索树（Validate BST）+ Verifier 生态与 LLM-as-Judge](week18/2026-10-02-validate-bst-verifier-ecosystem-llm-as-judge.md)（局部检查必翻车：`[5,4,6,null,null,3,7]` 反例·3 小于祖先 5 藏在 6 的右子树 / 值域递归 `validate(node,low,high)` 把全局不变量路径化 · 中序严格递增等价判定 O(n)/O(h · 哨兵 long 防 int 溢出 / Recover BST 两次逆序对 · 第 k 小 · 最大 BST 子树 · 10⁹ 节点并行验证值域随任务序列化 / **局部检查=语法验证 · 值域传递=语义验证：验证器档次取决于携带多少上下文** / Verifier 全家福：规则验语法→执行验行为→PRM 验过程→LLM-Judge 验语义·越贵越易被 Goodhart / 三范式：pointwise 分数通胀 · pairwise 稳必须 order swap · reference-guided 有锚 / 五偏差：位置·冗长·自我偏好·格式谄媚·分数漂移+各自缓解 / MT-Bench：GPT-4 judge 与人类一致 85%+·安全与长链验证场景失效 / Goodhart 四幕剧：静态→训练信号(RLAIF)→政策讨好→judge 失效 / 修复三板斧：refresh·多 judge 集成·held-out+人类校准 / judge 工程 checklist 十条 · 路由原则=每题配最便宜的够用验证器 veRL RewardWorker 落地）
 - 🔬 [Day 119 — 最长重复子数组（Maximum Length of Repeated Subarray）+ 长上下文与推理系统工程（KV Cache · Prefix Caching · 延迟-质量权衡）](week18/2026-10-01-maximum-length-of-repeated-subarray-inference-systems.md)（LCS 连续版对偶：`dp[i][j]` = 以 i-1/j-1 结尾的公共**后缀**长度，不匹配**清零**而非继承 = 与子序列唯一差别 / 滚动数组 j 倒序（与 0-1 背包同因）/ 进阶：二分长度+滚动哈希 O((n+m)log min) / 核心隐喻：DP 折叠重叠子结构 ↔ Prefix Caching 折叠共享前缀·Day 1 闭环 / KV 显存公式 2×层×KV头×头维×字节×长度（7B fp16≈512KB/token·4K≈2GB·GQA 砍头）/ PagedAttention = OS 虚拟内存：16-token 块+block table+按需+COW 碎片<4% / Prefix caching 块级内容哈希命中跳过 prefill·GRPO prefill O(G·L)→O(L) 省 30~60%·多轮对话白嫖 / PD 分离：prefill 算力型 ∥ decode 带宽型·KV 按层 RDMA / 长上下文三座大山 O(L²)·O(L)·O(L) 与登山杖 / 延迟-质量交换所：serving 买延迟（纯赚三件套）↔ test-time 买质量（核心汇率））
 - 🔬 [Day 118 — 爬楼梯的最少成本（Min Cost Climbing Stairs）+ 自我验证与反思（Self-Consistency / Self-Refine / 验证者悖论）](week18/2026-09-30-min-cost-climbing-stairs-self-verification.md)（Day 1 对偶回归：同一状态机计数加法 vs 最优取 min / `f(i)=cost[i]+min(f(i-1),f(i-2))` 初值踏上付费答案登顶免费 / k 级扩展 = 滑动窗口最小值+单调队列 O(n) / 暴力枚举 2ⁿ 爬法 = 采样全集投票·DP 折叠成 O(n) 精确计算「能 DP 别投票」 / Self-Consistency 独立性假设+1−(1−p)^N+系统性错误一致地错 / 改进：verifier 加权·Early-Stopping 省 ~40% / Kamoi 2024 冷水：intrinsic self-correction GSM8K 95%→82.9% / 验证者悖论三段式+三出路：外包解耦·RL 涌现 R1 实证·rStar 互证 / Reflexion verbal RL·HumanEval 91% 档 / CoVe 四步独立作答防锚定 / Self-Rewarding 自评→DPO 迭代·分布坍缩风险）
-- 🔬 [Day 117 — N 皇后（N-Queens）+ 推理树搜索（ToT / MCTS / rStar）](week18/2026-09-29-n-queens-tree-search.md)（按行建模决策变量 n²→n（2^(n²)→n!）/ 三向冲突 O(1)：cols·diag1[r-c+n-1]·diag2[r+c] 先剪枝后扩展 / 位运算版 avail=full&~(cols|d1|d2)·diag1<<1·diag2>>1 三行核心 / 冲突检查=树搜索廉价评估函数·评估越便宜越准树越小 / CoT 单链贪心 vs 树搜索中途纠偏总表 / ToT 四操作：分解·生成 k 候选·评估·搜索（评估器是命门·Goodhart）/ MCTS 四步循环+UCB1 默写·LLM 化四问·Simulation 三档成本-质量权衡 / rStar 判别式互证免训练 verifier·小模型边际收益更大 / 三范式对比表·搜索↔RL 飞轮·o1 内化路线之争：外挂搜索 vs 焊进权重）
 > 📅 **每天 20:42 自动更新**,[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
 ---
@@ -149,9 +149,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 18 / Day 120**（Week 18 主题：推理模型与 Test-Time Compute 🔬 — Day 120 进行中：验证二叉搜索树 = 验证器隐喻题（局部检查必翻车，值域递归把全局不变量折叠成路径局部检查；中序严格递增等价判定；Recover BST 两次逆序对）；面试技巧 Verifier 生态收官——四类验证器全家福（规则/执行/PRM/LLM-Judge，携带上下文越多越贵越易被 Goodhart）、LLM-as-Judge 三范式（pointwise 通胀/pairwise 稳要 swap/reference-guided）、五大偏差及缓解（位置/冗长/自我偏好/格式谄媚/分数漂移）、Goodhart 四幕剧（静态→训练信号→政策讨好→judge 失效，修复三板斧 refresh·集成·held-out 校准）、judge 工程 checklist 十条、路由原则「每题配最便宜的够用验证器」映射 veRL RewardWorker；明天 Day 121 Week 18 综合复习收官 🎉）
+当前进度：**Week 18 完结 🏆 / Day 121**（Week 18 主题：推理模型与 Test-Time Compute 🔬 — Day 121 收官：24 点游戏 = ToT 成名战场，减而治之有序对 6 运算枚举天然覆盖全部括号结构，核心同构「递归子树=推理树节点·合并路径=CoT·`==24`=ORM」——搜索空间小+验证器便宜→暴力搜索就是推理；面试技巧 Week 18 综合复习——主线公式「正确率=搜索×验证×算力分配」串六天：o1 打开 Scaling Law 第二根轴、搜索三策略（BoN/Self-Refine/ToT-MCTS）、验证器四类成本谱（规则→执行→PRM→LLM-Judge 越贵越易被 Goodhart）、compute-optimal 按难度分配、系统侧账本（KV cache/prefix caching/PD 分离，GRPO 组共享前缀白嫖 30~60%）；10 道连环问通关（o1 本质/验证比生成容易/1−(1−p)^N/PRM 数据三路/MCTS 四步+LLM 化/Self-Consistency 失效条件/KV 显存口算/五大偏差/Goodhart 四幕剧+修复三板斧/系统设计四步框架）；收官金句「答案能被便宜验证的问题，暴力搜索就是推理；不能被便宜验证的问题，才需要 verifier 经济学」🎉）
 
-**更新记录**：已连续更新 **120** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **121** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
