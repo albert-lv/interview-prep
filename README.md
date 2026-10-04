@@ -1,7 +1,7 @@
 # 🎯 Interview Prep - 每天一道题,六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2018%20Day%20121%20🏆-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20121%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2019%20Day%20122%20🎭-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20122%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -9,7 +9,7 @@
 >
 > 每天 20:42 自动推送:一道算法题 + 一页面试速查。跟着走,6 周后你会感谢自己。
 >
-> 🎉 **连续更新 121 天，从未中断！**
+> 🎉 **连续更新 122 天，从未中断！**
 
 ---
 
@@ -19,14 +19,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 120 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 122 天** |
 | 📅 **6 周系统计划** | 不是零散刷题,按主题递进(DP → 数据结构 → 网络 → 系统设计) |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码,是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 121 · 2026-10-03 · Week 18 Day 7 🏆 收官日）
-- 🏆 [24 点游戏 + Week 18 推理模型与 Test-Time Compute 综合复习（主线公式 · 10 道连环问通关 · 24 点×test-time compute 同构收官）](week18/2026-10-03-24-game-week18-review.md) — 收官算法题「24 点」是 ToT 的成名战场（Day 117 callback）：**减而治之**——每次取有序对枚举 6 种运算放回递归，天然枚举所有括号结构（4 张牌 3 层合并，括号被递归隐式展开），浮点 ε 比较 + 除零保护 + 排序记忆化；核心同构：**每棵递归子树 = 推理树节点，每条合并路径 = CoT，`==24` 终局检查 = ORM**——搜索空间小 + 验证器便宜 → 暴力搜索就是推理；5 张牌以上才需要剪枝评估（PRM 雏形）、目标分解先验（pUCT 的 P(s,a)）。面试技巧 Week 18 综合复习：**一条主线公式「正确率 = 搜索 × 验证 × 算力分配」串六天**——o1 打开 Scaling Law 第二根轴（Day 115），预算花在搜索策略（BoN/Self-Refine/ToT-MCTS，Day 117/118）、验证器选型（规则→执行→PRM→LLM-Judge 成本谱，Day 116/120）、compute-optimal 分配（Day 115）+ 系统侧账本（KV cache/prefix caching/PD 分离，Day 119）；10 道高频连环问通关（o1 本质/验证比生成容易/1−(1−p)^N/PRM 数据三路/MCTS 四步+LLM 化四改造/Self-Consistency 失效条件/KV 显存口算+GRPO 白嫖/五大偏差/Goodhart 四幕剧/系统设计四步框架）；收官金句「**答案能被便宜验证的问题，暴力搜索就是推理；不能被便宜验证的问题，才需要 verifier 经济学**」
-- 🎤 面试技巧：收尾话术模板一段话覆盖全周（两根轴→三问→三策略→四类验证器→算力分配→系统账本→经济学），Week 18 完结撒花 🎉
+### 今日更新（Day 122 · 2026-10-04 · Week 19 Day 1 🎭 新主题开启）
+- 🎭 [打开转盘锁 + Week 19 开启：Agentic 系统与智能体工程（状态空间 BFS · 双向 BFS / A* 进阶 · agent 第一性原理总览）](week19/2026-10-04-open-the-lock-agentic-systems-intro.md) — 新周开场算法题「打开转盘锁」：把拨锁翻译成**状态图上的单源最短路径**——状态=锁面编码（10⁴ 节点）、动作=8 邻居现场生成（4 位×±1 循环）、deadends=删除节点合并进 visited；标准 BFS 分层展开，起点在 deadends 里直接 `-1`（送分坑），「停留才死、经过不死」是常见 WA 点；状态空间 10ⁿ 爆炸时的三板斧：**双向 BFS**（ frontier 用 set、谁小扩谁，O(b^d)→O(b^(d/2)) 指数减半）· **A***（h=海明距离可采纳，永不高估）· IDA*（O(d) 内存）；**核心同构：状态=context · 拨动=action · deadends=环境惩罚反馈 · target=任务目标——agent 的规划本质就是在隐式状态图上搜索，而 RL 是不知道图长啥样时的搜索策略，test-time compute 是步间思考预算**。面试技巧 Week 19 总览：chatbot 是函数、agent 是进程；六大核心议题本周地图（架构骨架 Day 123 → Context Engineering Day 124 → Tool Use/MCP Day 125 → 记忆系统 Day 126 → 多智能体编排 Day 127 → 评估与观测 Day 128）；高频 Q&A：agent vs workflow（控制流谁定）· 搜索就是规划 · 两大敌人=失控循环+上下文腐化 · demo 与生产差在可观测性/容错/成本治理 · 面试加分项=讲得清失败模式的工程故事
+- 🎤 面试技巧：Week 19 开启宣言——「**模型不变，世界在变；prompt 是快照，context 才是现场**」；今日金句「凡是能建模成状态搜索的任务，就别指望模型靠灵感，给它图、给它验证器、给它预算」
 
 **想看今天的内容?直接点上面 👆**
 
@@ -46,7 +46,7 @@
 
 > 💡 **节奏设计**:周一/周五主菜(重难点),周三换口味(数据结构/算法),周六复盘,周日彻底休息。
 >
-> 🔥 **当前状态**：Week 18 已完结 🏆（推理模型与 Test-Time Compute，Day 115 解数独 + Test-Time Compute 总览 ✅ → Day 121 24 点 + 综合复习收官 ✅），Week 17 已完结，**每日更新从未中断**。
+> 🔥 **当前状态**：Week 19 已开启 🎭（Agentic 系统与智能体工程，Day 122 打开转盘锁 + 总览日 ✅），Week 18 已完结，**每日更新从未中断**。
 
 ---
 
@@ -65,11 +65,13 @@ week07/   # 操作系统(进程/线程/内存/IO)
 week08/   # 操作系统进阶(锁/调度/文件系统)
 week09/   # 网络基础(TCP/IP/HTTP/DNS)
 week10/   # 网络进阶(IO 模型/TCP 拥塞/HTTPS/TLS)
+week19/   # Agentic 系统与智能体工程(Agent 架构/Context Eng/Tool Use/记忆/多智能体/评估)
 agent-tips/   # 每日 Agent 工具技巧(Claude Code / Kimi Code / Windsurf)
 memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
+- 🎭 [Day 122 — 打开转盘锁（Open the Lock）+ Week 19 开启：Agentic 系统与智能体工程](week19/2026-10-04-open-the-lock-agentic-systems-intro.md)（状态图建模：状态=10⁴ 锁面·动作=8 邻居现场生成·deadends=删点合并 visited / BFS 分层展开第一次到达即最优·起点在 deadends 直接 -1·「停留才死经过不死」WA 点 / 状态爆炸三板斧：双向 BFS frontier 用 set 谁小扩谁 O(b^d)→O(b^(d/2))·A* h=海明距离可采纳·IDA* O(d) 内存 / 核心同构：状态=context·拨动=action·deadends=惩罚反馈·target=目标——**agent 规划=隐式状态图搜索，RL=不知图时的搜索策略，test-time compute=步间思考预算** / Week 19 总览：chatbot 是函数 agent 是进程·六议题地图（架构 Day 123·Context Eng Day 124·Tool/MCP Day 125·记忆 Day 126·多智能体 Day 127·评估 Day 128）·两大敌人=失控循环+上下文腐化）
 - 🏆 [Day 121 — 24 点游戏（24 Game）+ Week 18 综合复习：推理模型与 Test-Time Compute](week18/2026-10-03-24-game-week18-review.md)（减而治之：有序对 6 运算枚举·括号被递归结构隐式枚举·浮点 ε+除零保护+排序记忆化 / 核心同构：递归子树=推理树节点·合并路径=CoT·`==24`=ORM·**搜索空间小+验证器便宜→暴力搜索就是推理** / 5 张牌以上要剪枝评估=PRM 雏形·目标分解先验=pUCT P(s,a) / 主线公式「正确率=搜索×验证×算力分配」串六天：o1 两根轴·搜索三策略·验证器四类成本谱·compute-optimal·系统账本 / 10 道连环问通关：o1 本质·验证比生成容易·1−(1−p)^N·PRM 数据三路·MCTS 四步+LLM 化·Self-Consistency 失效·KV 显存口算+GRPO 白嫖·五偏差·Goodhart 四幕剧·系统设计四步 / 收官金句「答案能被便宜验证的问题暴力搜索就是推理」·Week 18 完结 🎉）
 - 🔬 [Day 120 — 验证二叉搜索树（Validate BST）+ Verifier 生态与 LLM-as-Judge](week18/2026-10-02-validate-bst-verifier-ecosystem-llm-as-judge.md)（局部检查必翻车：`[5,4,6,null,null,3,7]` 反例·3 小于祖先 5 藏在 6 的右子树 / 值域递归 `validate(node,low,high)` 把全局不变量路径化 · 中序严格递增等价判定 O(n)/O(h · 哨兵 long 防 int 溢出 / Recover BST 两次逆序对 · 第 k 小 · 最大 BST 子树 · 10⁹ 节点并行验证值域随任务序列化 / **局部检查=语法验证 · 值域传递=语义验证：验证器档次取决于携带多少上下文** / Verifier 全家福：规则验语法→执行验行为→PRM 验过程→LLM-Judge 验语义·越贵越易被 Goodhart / 三范式：pointwise 分数通胀 · pairwise 稳必须 order swap · reference-guided 有锚 / 五偏差：位置·冗长·自我偏好·格式谄媚·分数漂移+各自缓解 / MT-Bench：GPT-4 judge 与人类一致 85%+·安全与长链验证场景失效 / Goodhart 四幕剧：静态→训练信号(RLAIF)→政策讨好→judge 失效 / 修复三板斧：refresh·多 judge 集成·held-out+人类校准 / judge 工程 checklist 十条 · 路由原则=每题配最便宜的够用验证器 veRL RewardWorker 落地）
 - 🔬 [Day 119 — 最长重复子数组（Maximum Length of Repeated Subarray）+ 长上下文与推理系统工程（KV Cache · Prefix Caching · 延迟-质量权衡）](week18/2026-10-01-maximum-length-of-repeated-subarray-inference-systems.md)（LCS 连续版对偶：`dp[i][j]` = 以 i-1/j-1 结尾的公共**后缀**长度，不匹配**清零**而非继承 = 与子序列唯一差别 / 滚动数组 j 倒序（与 0-1 背包同因）/ 进阶：二分长度+滚动哈希 O((n+m)log min) / 核心隐喻：DP 折叠重叠子结构 ↔ Prefix Caching 折叠共享前缀·Day 1 闭环 / KV 显存公式 2×层×KV头×头维×字节×长度（7B fp16≈512KB/token·4K≈2GB·GQA 砍头）/ PagedAttention = OS 虚拟内存：16-token 块+block table+按需+COW 碎片<4% / Prefix caching 块级内容哈希命中跳过 prefill·GRPO prefill O(G·L)→O(L) 省 30~60%·多轮对话白嫖 / PD 分离：prefill 算力型 ∥ decode 带宽型·KV 按层 RDMA / 长上下文三座大山 O(L²)·O(L)·O(L) 与登山杖 / 延迟-质量交换所：serving 买延迟（纯赚三件套）↔ test-time 买质量（核心汇率））
@@ -149,9 +151,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 18 完结 🏆 / Day 121**（Week 18 主题：推理模型与 Test-Time Compute 🔬 — Day 121 收官：24 点游戏 = ToT 成名战场，减而治之有序对 6 运算枚举天然覆盖全部括号结构，核心同构「递归子树=推理树节点·合并路径=CoT·`==24`=ORM」——搜索空间小+验证器便宜→暴力搜索就是推理；面试技巧 Week 18 综合复习——主线公式「正确率=搜索×验证×算力分配」串六天：o1 打开 Scaling Law 第二根轴、搜索三策略（BoN/Self-Refine/ToT-MCTS）、验证器四类成本谱（规则→执行→PRM→LLM-Judge 越贵越易被 Goodhart）、compute-optimal 按难度分配、系统侧账本（KV cache/prefix caching/PD 分离，GRPO 组共享前缀白嫖 30~60%）；10 道连环问通关（o1 本质/验证比生成容易/1−(1−p)^N/PRM 数据三路/MCTS 四步+LLM 化/Self-Consistency 失效条件/KV 显存口算/五大偏差/Goodhart 四幕剧+修复三板斧/系统设计四步框架）；收官金句「答案能被便宜验证的问题，暴力搜索就是推理；不能被便宜验证的问题，才需要 verifier 经济学」🎉）
+当前进度：**Week 19 进行中 🎭 / Day 122**（Week 19 主题：Agentic 系统与智能体工程 🎭 — Day 122 开启日：打开转盘锁 = 状态空间 BFS 微缩模型，状态=锁面编码、动作=8 邻居现场生成、deadends=删点合并 visited；核心同构「状态=context·拨动=action·deadends=惩罚反馈·target=目标」——agent 的规划本质就是隐式状态图搜索，RL 是不知道图时的搜索策略，test-time compute 是步间思考预算；面试技巧 Week 19 总览——chatbot 是函数、agent 是进程（感知→规划→行动→观察闭环），六议题本周地图：架构骨架 Day 123→Context Engineering Day 124→Tool Use/MCP Day 125→记忆系统 Day 126→多智能体编排 Day 127→评估与观测 Day 128；两大敌人=失控循环+上下文腐化；agent 工程=系统工程+模型能力；金句「凡是能建模成状态搜索的任务，就别指望模型靠灵感，给它图、给它验证器、给它预算」🎭）
 
-**更新记录**：已连续更新 **121** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **122** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
