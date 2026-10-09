@@ -1,7 +1,7 @@
 # 🎯 Interview Prep - 每天一道题,六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2019%20Day%20126%20🎭-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20126%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2019%20Day%20127%20🎭-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20127%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -9,7 +9,7 @@
 >
 > 每天 20:42 自动推送:一道算法题 + 一页面试速查。跟着走,6 周后你会感谢自己。
 >
-> 🎉 **连续更新 126 天，从未中断！**
+> 🎉 **连续更新 127 天，从未中断！**
 
 ---
 
@@ -19,14 +19,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 126 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 127 天** |
 | 📅 **6 周系统计划** | 不是零散刷题,按主题递进(DP → 数据结构 → 网络 → 系统设计) |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码,是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 126 · 2026-10-08 · Week 19 Day 5 🎭）
-- 🧠 [LFU 缓存 + 记忆系统三层设计与失效降级](week19/2026-10-08-lfu-cache-memory-systems.md) — 今日算法题「LFU 缓存」（LC 460）= **缓存即记忆：eviction 策略即遗忘曲线**——`capacity`=工作记忆上限（context window）·`freq` 计数器=记忆强度（每次 get=一次提取练习）·`minFreq` 淘汰=遗忘执行器·TTL=时效衰减。三件套结构 O(1)：**key→节点哈希表 / freq→双向链表（同频内 LRU 序）/ minFreq 指针**（LRU + 频率分桶 = LFU）；易错点：put 已存在不触发淘汰·新 key 插入后 min_freq 重置为 1·get miss 不动 minFreq。连环问：LRU 怕缓存污染 vs LFU 怕新数据冷启动→**aging 定期 freq 减半=记忆消退**·LRU-K/ARC/W-TinyLFU 混合策略（试用期=准入窗口）·TTL 惰性+定期清理·Top-K 输出·分布式近似（本地 LFU+Gossip 同步计数器）。面试技巧**记忆系统三层模型**（认知科学映射）：工作记忆=context window（唯一可直接思考的显存）·情景记忆=向量库（性价比之王，90% 工程在这层）·语义记忆=权重（写入最贵）·程序性记忆=skill 文件；四决策：写入路径（重要性评分+纠错记忆价值最高+**冲突时更新而非追加**）·读取路径（触发式检索+相关性阈值=生命线）·巩固（离线批处理=海马体→皮层转移）·遗忘（三件套：容量驱逐+TTL+重要性衰减）；**MemGPT/Letta 虚拟上下文分页**（LLM=CPU 只能访问 context·函数调用=缺页中断·四区=core memory/recall context/archival memory/memory blocks·paging 三要素：换入时机/换出策略/地址翻译）；**失效降级阶梯**（向量库挂→BM25→纯工作记忆→摘要+告知）+六失效模式速查表（空召回→显式标注"无历史"防幻觉·陈旧记忆→TTL+新盖旧·**记忆中毒=注入攻击持久化载体**·膨胀→aging+LFU 驱逐·污染→阈值+rerank）；金句「记不住是残疾，忘不了是噩梦，记忆工程就是在两者之间调参」
-- 🎤 面试技巧：今日金句「**好的记忆系统不是没有遗忘，而是忘得对——LFU 的 freq 计数器记的是记忆强度，minFreq 淘汰执行的是遗忘曲线；你写过的每一个缓存设计题，都是记忆系统的预科**」
+### 今日更新（Day 127 · 2026-10-09 · Week 19 Day 6 🎭）
+- 🧠 [分割数组的最大值 + 多智能体编排四种模式](week19/2026-10-09-split-array-multi-agent-orchestration.md) — 今日算法题「分割数组的最大值」（LC 410）= **多智能体负载均衡的算法原型**：数组元素=任务时长·分成 k 个连续子数组=任务分给 k 个 worker·最小化最大子数组和=最小化最慢 worker 完工时间（makespan minimization）。核心套路「最小化最大值 + 可行性单调 = 二分答案」：feasible(limit)=能否切成 ≤k 段（**至多是关键松弛**）每段和 ≤limit，下界 max(nums) 上界 sum(nums)，O(n·log S)；贪心正确性反证（前缀覆盖论证：贪心每段结束位置不早于任何合法划分，段数只会更少）；连环问：LPT 最长处理时间优先（近似比 4/3−1/(3m)，P||Cmax 是 NP-hard）·依赖 DAG→List Scheduling 关键路径优先·异构 worker→加权 limit=k8s 打分模型·二分四件套（LC 875/1482/1011）。面试技巧**多智能体编排四种模式总表**（主管-工人=科层制/流水线=车间/辩论投票=评审会/市场拍卖=竞标场）：①主管-工人（星型拓扑·验收标准先于派发·层级 ≤2 红线·委派三件套=目标+约束+验收·致命伤=中心 context 膨胀）②流水线（阶段靠 schema 契约连接非自然语言·级联误差=stage 入口校验打回·换 agent 唯一理由=脑回路差异大）③辩论投票（Self-Consistency 组织版·**回声室=同底模型换人设不叫多样性，真多样性=异构数据源/工具/验证器**·裁决三档=多数投票/judge agent/历史胜率加权·必须有外部锚防 Kamoi 式掉点）④市场拍卖（静态分配失衡时用·出价必须含成本信号·二价拍卖 Vickrey 促真实披露·流拍任务兜底）；先答"为什么不是单 agent"（三买三税：上下文隔离/并行提速/认知多样性 ↔ 通信成本/协调开销/误差传播）；通信三板斧（消息传递/黑板共享·写冲突=单 writer 或 LWW/发布订阅）；六失效模式速查（循环委托/中心过载/回声室/级联误差/成本失控/死锁互等各配缓解）；框架速览（LangGraph=图/AutoGen=对话/CrewAI=角色/Swarm=路由·选型四问=可观测性/失败隔离/成本熔断/状态管理）；veRL 连接（opponent pool 防坍缩·partial rollout 任务切分=今日负载均衡题）；金句「多智能体编排的本质是组织设计——你不是在写代码，你是在当 CEO 设计汇报线；communication structure follows task structure」
+- 🎤 面试技巧：今日金句「**所有组织设计的铁律在 agent 系统同样成立：先想清楚任务怎么分，再决定谁跟谁说话；而任务分不均，加多少 agent 都是白搭——10 个 worker 的完成时间取决于最慢的那个**」
 
 **想看今天的内容?直接点上面 👆**
 
@@ -71,10 +71,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
+- 🎭 [Day 127 — 分割数组的最大值（Split Array Largest Sum）+ 多智能体编排四种模式](week19/2026-10-09-split-array-multi-agent-orchestration.md)（**多智能体负载均衡算法原型**：元素=任务时长·k 段=k worker·最小化最大子数组和=makespan / 二分答案四件套：下界 max·上界 sum·feasible=≤k 段（至多松弛）·O(n·log S) / 贪心正确性=前缀覆盖反证·「能装就装」 / 连环问：LPT 4/3 近似比·List Scheduling 关键路径·异构加权=k8s 打分·LC 875/1482/1011 / **四模式总表**：主管-工人（星型·验收先于派发·层级 ≤2·委派三件套）·流水线（schema 契约·级联误差 stage 入口校验·换 agent=脑回路差异）·辩论投票（回声室=换人设不叫多样性·真多样性=异构数据源·外部锚）·市场拍卖（成本信号·Vickrey 二价·流拍兜底）/ 三买三税·通信三板斧·六失效速查 / veRL 连接：opponent pool·partial rollout 切分=今日题 / 金句「编排=组织设计·先想任务怎么分再想谁跟谁说话」）
 - 🎭 [Day 126 — LFU 缓存（LFU Cache）+ 记忆系统三层设计与失效降级](week19/2026-10-08-lfu-cache-memory-systems.md)（**缓存即记忆：eviction 策略即遗忘曲线**——capacity=工作记忆上限·freq=记忆强度（get=提取练习）·minFreq 淘汰=遗忘执行器·TTL=时效衰减 / 三件套 O(1)：key→节点·freq→双向链表（同频 LRU 序）·minFreq 指针（LRU+频率分桶=LFU）/ 易错：put 已存在不淘汰·新 key 后 min_freq=1·get miss 不动 minFreq / 连环问：LRU 怕污染 vs LFU 怕冷启动→**aging freq 减半=记忆消退**·LRU-K·ARC·W-TinyLFU·TTL 惰性+定期·分布式 Gossip 同步计数器 / **记忆三层模型**：工作=context·情景=向量库（90% 工程在这）·语义=权重·程序性=skill / 四决策：写入评分+纠错记忆最贵·**冲突更新而非追加**·触发式检索+阈值生命线·离线巩固·遗忘三件套 / **MemGPT 虚拟分页**：LLM=CPU·函数调用=缺页中断·换入时机/换出策略/地址翻译 / **降级阶梯**：向量挂→BM25→纯工作记忆·六失效模式（空召回显式标注防幻觉·陈旧 TTL·**记忆中毒=注入持久化载体**·膨胀→aging·污染→rerank）/ 金句「记不住是残疾，忘不了是噩梦」）
 - 🎭 [Day 125 — K 站中转内最便宜的航班（Cheapest Flights Within K Stops）+ Tool Use 工程、MCP 协议与 Computer Use](week19/2026-10-07-cheapest-flights-k-stops-tool-use-mcp.md)（**预算约束下的工具调用路径规划微缩模型**：节点=进度·边=工具调用·k 次中转=max_steps 预算 / 分层 Bellman-Ford：k+1 轮松弛=中转约束算法化身·backup 数组防一条边一轮用两次 / 二维状态 Dijkstra：`(node,stops)` 双维状态·堆顶即全局最优·SPFA 活跃队列 / 连环问：k≥n-2 退化·负权回 BF+负环（套利环限步）·多源虚拟源·必经工具分段最短路·二维预算 / **tool orchestration = (进度, 剩余步数) 状态图最短路** / Tool Use：schema 是写给模型的 prompt·负面约束防误调·20+ 工具→工具路由=RAG for tools·三层容错·危险确认门 / MCP：N×M→N+M·三角色·**Tools=动词·Resources=名词·Prompts=文档**·生命周期五步·**MCP vs FC=语言 vs 插座**·tool poisoning / Computer Use：四挑战·OSWorld 22%→40%+·**有 API 永远优先 API**·三板斧 / 金句「接口多像人话·标准插座·最后一双眼睛是屏幕」）
 - 🎭 [Day 124 — 最小覆盖子串（Minimum Window Substring）+ Context Engineering 与长上下文管理](week19/2026-10-06-minimum-window-substring-context-engineering.md)（**窗口只增不减·compaction 合法性下界=任务 coverage（最小覆盖原则）** / need·cnt·missing 三件套：missing 数种类不数次数=防重复字符污染·合法性判定 O(1) / 贪心正确性=右端点固定短窗不劣·数据流在线版·丢字符有代价=约束最优化（压缩成本进账本） / **context 是 agent 的新显存** / context rot 四大机制：指令冲突·Lost in the Middle·error compounding 语境版·信噪比稀释 / 成本结构：输入 token 是乘数·tool schema 隐形大户·多智能体乘法爆炸 / **四策略总表**：截断（失忆）·滑动窗口（同构最小覆盖）·摘要压缩（有损+幻觉）·结构化压缩（tool result elision）·生产=叠加态（/compact+滑窗兜底+CLAUDE.md 重建） / **外部化三件套**：sub-agent 打包只回传结论=最小覆盖工程版·文件外置（随机访问换线性存储）·滚动 state.md（append-only→read-modify-write） / prompt caching 账本：前缀严格一致·schema 稳定化·KV 省显存 vs caching 省钱包 / RAG vs 长窗口三问判据·裁剪口诀「丢了能否低成本重新拿到」·单轮四账相加（70%+ 是 tool output=管控杠杆） / 金句「Truncation 是失忆，summarization 是听说，structured compaction 是整理，sub-agent 是让别人去记」）
-- 🎭 [Day 123 — 钥匙和迷宫（Shortest Path to Get All Keys）+ Agent 架构三范式深讲（ReAct / Plan-and-Execute / Reflexion）](week19/2026-10-05-shortest-path-all-keys-agent-three-paradigms.md)（状态增强 BFS 能力型原型：状态=`(行,列,钥匙mask)` 三元组·同一格带不同钥匙=不同状态·`(r,c)` 去重误杀"带钥匙二进宫"最优路径·贪心绕路反成最优 / 锁门=tool gating·**mask=agent state 第一课：状态必须包含你已拥有什么，而不只是你在哪** / k>6→A*·IDA*·多机器人=任务分配+各自规划·同族 LC 1293 预算型 / 三范式总表：ReAct=想一步做一步看反馈（error compounding·死循环·context rot）·P&E=规划一次执行到底（早期错全链路错·replanner 三件套=失败率阈值·verifier checkpoint·环境 diff）·Reflexion=复盘+episodic memory（verbal RL·起效前提=干净验证器） / 一句话区分：规划揉进步里 vs 一次性买断·生产=分层叠加态（Planner 低频→ReAct 执行→Reflexion 重试→全局预算） / 8 道连环问·**veRL 回调：失败轨迹=Reflexion 燃料**）
 > 📅 **每天 20:42 自动更新**,[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
 ---
@@ -150,9 +150,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 19 进行中 🎭 / Day 126**（Week 19 主题：Agentic 系统与智能体工程 🎭 — Day 126 记忆系统三层设计与失效降级日：LC 460 LFU 缓存 = 缓存即记忆的硬件级同构——capacity=工作记忆上限（context window）、freq 计数器=记忆强度（每次 get=一次提取练习）、minFreq 淘汰=遗忘执行器、TTL=时效衰减；三件套 O(1) 结构：key→节点哈希表/freq→双向链表（同频内 LRU 序）/minFreq 指针（LRU+频率分桶=LFU），易错点三连（put 已存在不触发淘汰、新 key 插入后 min_freq 重置为 1、get miss 不动 minFreq）；连环问：LRU 怕缓存污染 vs LFU 怕新数据冷启动→aging 定期 freq 减半=记忆消退工程实现、LRU-K/ARC/W-TinyLFU 混合策略、TTL 惰性+定期清理、分布式近似（本地 LFU+Gossip 同步计数器）。面试技巧：**记忆系统三层模型**（认知科学→工程映射表）——工作记忆=context window（唯一可直接思考的显存）·情景记忆=向量库（性价比之王，90% 记忆工程在这层）·语义记忆=权重（写入最贵，continual learning 是开放难题）·程序性记忆=skill 文件；四决策：写入路径（重要性评分+纠错记忆价值最高+冲突时更新而非追加）·读取路径（触发式检索+相关性阈值=生命线+Lost in the Middle 注入位置）·巩固（离线批处理=海马体→皮层转移）·遗忘（容量驱逐+TTL+重要性衰减三件套，忘不了是噩梦=隐私合规遗忘权）；**MemGPT/Letta 虚拟上下文分页**（LLM=CPU 只能访问 context·外部存储=磁盘·函数调用=缺页中断·四区=core memory/recall context/archival memory/memory blocks·paging 三要素=换入时机/换出策略/地址翻译）；**失效降级阶梯**（向量库挂→BM25/关键词→纯工作记忆→滚动摘要+告知用户）+六失效模式速查表（检索空召回→显式标注"无历史"防幻觉编造·陈旧记忆→TTL+版本号+新盖旧·**记忆中毒=注入攻击的持久化载体**→写入端校验+检索端标注来源·记忆膨胀→aging+摘要压缩+LFU 驱逐·上下文污染→相关性阈值+Cross-Encoder rerank）；评估四指标（召回@k/噪声率/记忆命中率/用户纠正率）；金句「好的记忆系统不是没有遗忘，而是忘得对——记不住是残疾，忘不了是噩梦，记忆工程就是在两者之间调参」🎭）
+当前进度：**Week 19 进行中 🎭 / Day 127**（Week 19 主题：Agentic 系统与智能体工程 🎭 — Day 127 多智能体编排四种模式日：LC 410 分割数组的最大值 = 多智能体负载均衡算法原型——数组元素=任务时长、分成 k 个连续子数组=任务分给 k 个 worker、最小化最大子数组和=最小化最慢 worker 完工时间（makespan minimization）；核心套路「最小化最大值+可行性单调=二分答案」：feasible(limit)=能否切成 ≤k 段每段和 ≤limit（至多是关键松弛）、下界 max(nums) 上界 sum(nums)、O(n·log S)，贪心正确性=前缀覆盖反证（贪心每段结束位置不早于任何合法划分，段数只会更少）；连环问：LPT 最长处理时间优先（近似比 4/3−1/(3m)，P||Cmax 是 NP-hard）·依赖 DAG→List Scheduling 关键路径优先·异构 worker→加权 limit（k8s 打分模型）·二分四件套（LC 875/1482/1011）。面试技巧：**四种编排模式总表**（主管-工人=科层制/流水线=车间/辩论投票=评审会/市场拍卖=竞标场）——①主管-工人：星型拓扑·验收标准先于派发·层级 ≤2 红线·委派三件套=目标+约束+验收·致命伤=中心 context 膨胀（结论回传+结构化汇报）；②流水线：阶段间靠 schema 契约连接非自然语言·级联误差=stage 入口校验+打回重出·换 agent 的唯一理由=脑回路差异大；③辩论投票：Self-Consistency 的组织版·**回声室=同底模型换人设不叫多样性，真多样性=异构数据源/工具/验证器**·裁决三档=多数投票/judge agent/历史胜率加权·必须有外部锚（执行/检索）防 Kamoi 式掉点；④市场拍卖：静态分配失衡时用·出价必须含成本信号·二价拍卖 Vickrey 促真实披露·流拍任务兜底；**先答"为什么不是单 agent"**（三买三税：上下文隔离/并行提速/认知多样性 ↔ 通信成本/协调开销/误差传播）；通信三板斧：消息传递/黑板共享（写冲突=单 writer 或 LWW）/发布订阅；六失效模式速查表（循环委托→委派深度计数+每跳产出工件·中心过载→结论回传·回声室→异构验证器·级联误差→stage 校验·成本失控→全局预算熔断·死锁互等→超时缺省推进）；框架速览（LangGraph=图/AutoGen=对话/CrewAI=角色/Swarm=路由·选型四问=可观测性/失败隔离/成本熔断/状态管理）；veRL 连接（opponent pool 防坍缩·partial rollout 任务切分=今日负载均衡题·群体 reward 归因=信用分配社交版开放问题）；金句「多智能体编排的本质是组织设计——你不是在写代码，你是在当 CEO 设计汇报线；communication structure follows task structure」🎭）
 
-**更新记录**：已连续更新 **126** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **127** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
