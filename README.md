@@ -1,7 +1,7 @@
 # 🎯 Interview Prep - 每天一道题,六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2020%20Day%20129%20🛡️-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20129%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2020%20Day%20130%20🛡️-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20130%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -9,7 +9,7 @@
 >
 > 每天 20:42 自动推送:一道算法题 + 一页面试速查。跟着走,6 周后你会感谢自己。
 >
-> 🎉 **连续更新 129 天，从未中断！**
+> 🎉 **连续更新 130 天，从未中断！**
 
 ---
 
@@ -19,15 +19,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 129 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 130 天** |
 | 📅 **6 周系统计划** | 不是零散刷题,按主题递进(DP → 数据结构 → 网络 → 系统设计) |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码,是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 129 · 2026-10-11 · Week 20 Day 1 开启 🛡️）
-- 🧠 [单词接龙 + Week 20 开启：Agent 安全与对齐工程](week20/2026-10-11-word-ladder-agent-security-intro.md) — 今日算法题「单词接龙」（LC 127）= **最短注入链的算法原型**：起始词 = 良性 prompt·目标词 = 攻击目标·每次改一个字母 = 逐步微调措辞·中间词必须在字典 = 每步都得绕过 guardrail 的合法状态检查·BFS 最短路 = 红队要找的最短攻击链；现场生成邻居 + **入队即标记**防重复入队 O(N·L·26)，wildcard 桶预处理优化；连环问：**双向 BFS（红蓝对抗 = 同一张状态图上的双向 BFS·小侧扩展）**·Word Ladder II 全路径 = **攻击面测绘**（分层 DAG + 前驱集合）·边带权 → Dijkstra = 期望成本最低攻击路径·违规 k 次容量 = 二维状态 BFS（Day 123 同款）·字符奇偶签名预检剪枝；GCG 攻击 = 今日题的连续松弛版（embedding 空间坐标下降搜最短变形）。面试技巧 **Agent 安全与对齐工程总览**：攻击面全景（直接注入/间接注入 = agent 头号天敌/工具层/记忆层/供应链 × 输入-模型-系统三层栈）；注入家族演化史（DAN → 编码越狱 → Crescendo 多轮渐进注入 → GCG 梯度攻击 → 泛化后缀）；confused deputy 与权限最小化；**纵深防御五层**（L1 输入 → L5 运行时·L4 沙箱让攻击终点落在无害区）；**对齐三件套**（RLHF 定口味·Constitutional 定规矩·DPO 做手术·警惕 over-refusal 这个 Goodhart 副产品）；agent 特有安全（不可逆操作闸门·爆炸半径预算·凭证隔离·轨迹级审计复用 Day 128）；红队与评估（**ASR 三轴报表**·红队流水线 = 单词接龙自动化·紫队飞轮 = 红蓝同飞轮）；veRL 连接（对抗训练 = 攻击分布上做 RLHF·Safe RL 约束 = CPO/Lagrangian 预算 vs 惩罚·宪法当 verifier = 安全版 PRM）；金句「蓝队砌墙红队找洞是同一张图两种 BFS·不追攻不破的幻觉·追代价高终点无害被攻破能回流」
-- 🎤 面试技巧：今日金句「**LLM 安全的本质是把模型从评论家变成执行者之后，所有输出层的问题都升级成了行动层的事故——chatbot 说错话是公关事件，agent 做错事是资损事件**」
-
+### 今日更新（Day 130 · 2026-10-12 · Week 20 Day 2 🛡️）
+- 🧠 [多模式匹配检测器（AC 自动机）+ 间接注入与内容-指令分离工程](week20/2026-10-12-ac-automaton-indirect-injection.md) — 今日算法题「多模式匹配」（Aho-Corasick 自动机）= **注入检测引擎的算法内核**：模式库=注入特征库·一次扫描报全部命中=审计全量过检·扫描代价与模式数无关=运维敢加规则 / Trie 建树+BFS 建 fail+output 合并三件套，O(Σ|p|) 预处理 + O(n+z) 扫描；连环问：KMP→AC 谱系（next 数组=单模式版 fail）·对抗变体归一化层（NFKC+零宽剥离+leet 映射）·模糊检测两段式（AC 锚点+局部编辑距离）·10⁶ 词库压缩（双数组 Trie/DAWG/Hyperscan SIMD 位并行）·热更新=不可变快照+原子切换·流式扫描天然可断点续传。面试技巧 **间接注入深讲**：间接注入=agent 时代的 XSS（SOP↔instruction hierarchy 类比）/ 内容-指令分离四件套（标注隔离·spotlighting·canary 蜜罐·出向动作审计·权限收敛）·闭合标签注入=缓解边界必说 / **检测器经济学**：拦截栈四层（AC→归一化模糊→embedding 相似→LLM judge=Day 120 验证器成本谱复用）·**误报不对称设计**（输入侧宁漏勿错·出向侧宁错勿漏）/ 产品线速览（Llama Guard 3·Prompt Shields·NeMo Guardrails·AgentDojo 双指标=攻击成功率↓+任务完成率不掉·全拒答假安全）/ veRL：注入攻防数据=GRPO 高质量难例·CPO 约束优于裸惩罚 / 金句「内容-指令分离是准入证·注入一定会成功所以爆炸半径必须有限」
+- 🎤 面试技巧：今日金句「**内容-指令分离之于 agent，就是输入校验之于 Web 安全：不是 feature，是准入证。检测栈的智慧不在拦得住，在拦错了代价不对称——输入侧误拦伤体验，出向侧漏拦伤钱包**」
 **想看今天的内容?直接点上面 👆**
 
 ---
@@ -72,10 +71,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
+- 🛡️ [Day 130 — 多模式匹配检测器（Aho-Corasick 自动机）+ 间接注入与内容-指令分离工程](week20/2026-10-12-ac-automaton-indirect-injection.md)（**注入检测引擎的算法内核**：模式库=注入特征库·一次扫描报全部命中=审计全量过检·扫描代价与模式数无关=运维敢加规则 / Trie 建树+BFS 建 fail+output 合并三件套·O(Σ|p|) 预处理+O(n+z) 扫描 / 连环问：KMP→AC 谱系（next 数组=单模式版 fail）·变体归一化层（NFKC+零宽剥离+leet 映射）·模糊检测两段式（AC 锚点+局部编辑距离）·10⁶ 词库压缩（双数组 Trie·DAWG·Hyperscan SIMD）·热更新=不可变快照+原子切换·流式可断点续传 / **间接注入=agent 时代的 XSS**（SOP↔instruction hierarchy 类比）/ 内容-指令分离四件套（标注隔离·spotlighting·canary 蜜罐·出向动作审计·权限收敛）·闭合标签注入=缓解边界 / **检测器经济学**：拦截栈四层=Day 120 验证器成本谱复用·**误报不对称设计**（输入侧宁漏勿错·出向侧宁错勿漏）/ 产品线速览：Llama Guard 3·Prompt Shields·NeMo Guardrails·**AgentDojo 双指标**（攻击成功率↓+任务完成率不掉=全拒答假安全不算赢）/ veRL：注入攻防数据=GRPO 难例·CPO 约束优于裸惩罚 / 金句「内容-指令分离是准入证·注入一定会成功所以爆炸半径必须有限」）
 - 🛡️ [Day 129 — 单词接龙（Word Ladder）+ Week 20 开启：Agent 安全与对齐工程](week20/2026-10-11-word-ladder-agent-security-intro.md)（**最短注入链算法原型**：起始词=良性 prompt·目标词=攻击目标·每步改一个字母=逐步微调·中间词必须合法=绕过 guardrail / BFS 现场生成邻居·入队即标记 O(N·L·26)·wildcard 桶优化 / 连环问：**双向 BFS=红蓝对抗同图搜索**·Ladder II 全路径=攻击面测绘·带权→Dijkstra=期望成本最低攻击·违规 k 次=二维状态 BFS·奇偶签名预检 / 注入家族演化史：DAN→编码→Crescendo→GCG→泛化后缀 / 间接注入=agent 头号天敌·confused deputy / **纵深防御五层**·对齐三件套（RLHF 定口味·Constitutional 定规矩·DPO 做手术·over-refusal 警告）/ agent 特有安全=爆炸半径预算+轨迹审计 / **ASR 三轴报表**·红队流水线=单词接龙自动化·紫队飞轮 / veRL：对抗训练·Safe RL 约束=预算 vs 惩罚 / 金句「蓝队砌墙红队找洞同一张图两种 BFS」）
 - 🎉 [Day 128 — 编辑距离（Edit Distance）+ 评估与观测（SWE-bench 与轨迹评估）](week19/2026-10-10-edit-distance-evaluation-observability.md)（**轨迹差异度算法原型**：字符串 = golden trace ↔ 实际轨迹·编辑操作 = 轨迹偏差 / 二维 DP：相等免费对齐·不等 1+min(删/插/替)·O(mn)→滚动 O(min)·扫序与 0-1 背包相反 / 连环问：插删版=m+n−2·LCS（git diff Myers 内核）·对齐回溯·加权=DNA 打分·Wer 词错误率·Hirschberg / **评估五大难**：开放输出·路径多样·环境交互·成本变量·非确定性 / SWE-bench：真实 issue+FAIL_TO_PASS/PASS_TO_PASS 双门·Verified 500·污染三板斧 / **三轴**：成功率分难度·成本均值+P95·可靠性（pass@k 上限 vs pass^k 下限）/ 轨迹评估：终局 vs 过程·步数效率·无效动作率·轨迹相似度=今日题 / 可观测性：trace 落盘·replay 铰链·eval harness=reward 镜像 / **Week 19 七天串讲收官**·金句「不能衡量就不能改进」）
 - 🎭 [Day 127 — 分割数组的最大值（Split Array Largest Sum）+ 多智能体编排四种模式](week19/2026-10-09-split-array-multi-agent-orchestration.md)（**多智能体负载均衡算法原型**：元素=任务时长·k 段=k worker·最小化最大子数组和=makespan / 二分答案四件套：下界 max·上界 sum·feasible=≤k 段（至多松弛）·O(n·log S) / 贪心正确性=前缀覆盖反证·「能装就装」 / 连环问：LPT 4/3 近似比·List Scheduling 关键路径·异构加权=k8s 打分·LC 875/1482/1011 / **四模式总表**：主管-工人（星型·验收先于派发·层级 ≤2·委派三件套）·流水线（schema 契约·级联误差 stage 入口校验·换 agent=脑回路差异）·辩论投票（回声室=换人设不叫多样性·真多样性=异构数据源·外部锚）·市场拍卖（成本信号·Vickrey 二价·流拍兜底）/ 三买三税·通信三板斧·六失效速查 / veRL 连接：opponent pool·partial rollout 切分=今日题 / 金句「编排=组织设计·先想任务怎么分再想谁跟谁说话」）
-- 🎭 [Day 126 — LFU 缓存（LFU Cache）+ 记忆系统三层设计与失效降级](week19/2026-10-08-lfu-cache-memory-systems.md)（**缓存即记忆：eviction 策略即遗忘曲线**——capacity=工作记忆上限·freq=记忆强度（get=提取练习）·minFreq 淘汰=遗忘执行器·TTL=时效衰减 / 三件套 O(1)：key→节点·freq→双向链表（同频 LRU 序）·minFreq 指针（LRU+频率分桶=LFU）/ 易错：put 已存在不淘汰·新 key 后 min_freq=1·get miss 不动 minFreq / 连环问：LRU 怕污染 vs LFU 怕冷启动→**aging freq 减半=记忆消退**·LRU-K·ARC·W-TinyLFU·TTL 惰性+定期·分布式 Gossip 同步计数器 / **记忆三层模型**：工作=context·情景=向量库（90% 工程在这）·语义=权重·程序性=skill / 四决策：写入评分+纠错记忆最贵·**冲突更新而非追加**·触发式检索+阈值生命线·离线巩固·遗忘三件套 / **MemGPT 虚拟分页**：LLM=CPU·函数调用=缺页中断·换入时机/换出策略/地址翻译 / **降级阶梯**：向量挂→BM25→纯工作记忆·六失效模式（空召回显式标注防幻觉·陈旧 TTL·**记忆中毒=注入持久化载体**·膨胀→aging·污染→rerank）/ 金句「记不住是残疾，忘不了是噩梦」）
 > 📅 **每天 20:42 自动更新**,[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
 ---
@@ -151,9 +150,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 20 进行中 🛡️ / Day 129**（Week 20 主题：Agent 安全与对齐工程 🛡️ — Day 129 开场日：LC 127 单词接龙 = 最短注入链的算法原型——起始词 = 良性 prompt、目标词 = 攻击目标、每次改一个字母 = 逐步微调、中间词必须合法 = 绕过 guardrail、BFS 最短路 = 红队要找的最短攻击链；现场生成邻居 + 入队即标记 O(N·L·26)，wildcard 桶优化；连环问：双向 BFS = 红蓝对抗同一张状态图上的双向搜索·Word Ladder II 全路径 = 攻击面测绘（分层 DAG + 前驱集合）·边带权 → Dijkstra = 期望成本最低攻击路径·违规 k 次容量 = 二维状态 BFS。面试技巧：Agent 安全与对齐工程总览——攻击面全景（直接注入/间接注入 = agent 头号天敌/工具层/记忆层/供应链 × 输入-模型-系统三层栈）；注入家族演化史（DAN → 编码越狱 → Crescendo 多轮渐进注入 → GCG 梯度攻击 → 泛化后缀）；confused deputy 与权限最小化；纵深防御五层（L1 输入 → L5 运行时，L4 沙箱让攻击终点落在无害区）；对齐三件套（RLHF 定口味·Constitutional 定规矩·DPO 做手术，警惕 over-refusal 的 Goodhart 副产品）；agent 特有安全（不可逆操作闸门·爆炸半径预算·凭证隔离·轨迹级审计复用 Day 128）；红队与评估（ASR 三轴报表·红队流水线 = 单词接龙自动化·紫队飞轮）；veRL 连接（对抗训练 = 攻击分布上做 RLHF·Safe RL 约束 = CPO/Lagrangian 预算 vs 惩罚·宪法当 verifier = 安全版 PRM）；金句「蓝队砌墙红队找洞是同一张图两种 BFS」🛡️）
+当前进度：**Week 20 进行中 🛡️ / Day 130**（Week 20 主题：Agent 安全与对齐工程 🛡️ — Day 130：多模式匹配检测器（Aho-Corasick 自动机）= 注入检测引擎的算法内核——模式库 = 注入特征库、一次扫描报全部命中 = 审计全量过检、扫描代价与模式数无关 = 运维敢加规则；Trie 建树 + BFS 建 fail + output 合并三件套，O(Σ|p|) 预处理 + O(n+z) 扫描；连环问：KMP→AC 谱系（next 数组 = 单模式版 fail）·对抗变体归一化层（NFKC + 零宽剥离 + leet 映射）·模糊检测两段式（AC 锚点 + 局部编辑距离）·10⁶ 词库压缩（双数组 Trie/DAWG/Hyperscan SIMD 位并行）·热更新 = 不可变快照 + 原子切换·流式扫描天然可断点续传。面试技巧：间接注入深讲——间接注入 = agent 时代的 XSS（同源策略 SOP ↔ instruction hierarchy 信任分级类比，XSS 到今天没被解决只是被驯化）；内容-指令分离四件套（结构化标注隔离·spotlighting·canary 蜜罐反向利用攻击·出向动作审计不审内容审动作·权限收敛兜底）；闭合标签注入 = 缓解边界必主动说；检测器经济学 = 四层拦截栈（AC → 归一化模糊 → embedding 相似 → LLM judge）复用 Day 120 验证器成本谱，路由原则 = 最便宜的够用检测器；误报不对称设计 = 输入侧宁漏勿错（误拦伤体验养 over-refusal）·出向侧宁错勿漏（漏拦伤钱包）；产品线速览（Llama Guard 3·Azure Prompt Shields·NeMo Guardrails·护栏模型自己也是模型也要被评估）；AgentDojo 双指标 = 攻击成功率 ↓ + 正常任务完成率不掉，"全拒答"假安全不算赢；veRL 连接：注入攻防数据 = GRPO 高质量难例（被攻破的组梯度最大）·CPO/Lagrangian 约束优于裸惩罚·记忆中毒 = 跨会话持久化注入（Day 126 缝合）；金句「内容-指令分离之于 agent 就是输入校验之于 Web 安全：不是 feature 是准入证；注入一定会成功，所以爆炸半径必须有限」🛡️）
 
-**更新记录**：已连续更新 **129** 天，每日 20:42 自动推送。
+**更新记录**：已连续更新 **130** 天，每日 20:42 自动推送。
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
