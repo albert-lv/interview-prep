@@ -1,7 +1,7 @@
 # 🎯 Interview Prep - 每天一道题,六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2020%20Day%20132%20🛡️-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20132%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2020%20Day%20133%20🛡️-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20133%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -9,7 +9,7 @@
 >
 > 每天 20:42 自动推送:一道算法题 + 一页面试速查。跟着走,6 周后你会感谢自己。
 >
-> 🎉 **连续更新 132 天，从未中断！**
+> 🎉 **连续更新 133 天，从未中断！**
 
 ---
 
@@ -19,14 +19,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 132 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 133 天** |
 | 📅 **6 周系统计划** | 不是零散刷题,按主题递进(DP → 数据结构 → 网络 → 系统设计) |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码,是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 132 · 2026-10-14 · Week 20 Day 4 🛡️）
-- 🧠 [访问所有节点的最短路径（Shortest Path Visiting All Nodes）+ 红队自动化平台设计](week20/2026-10-14-shortest-path-visiting-all-nodes-red-team-automation.md) — 今日算法题「访问所有节点的最短路径」（LC 847）= **覆盖率引导模糊测试的状态搜索骨架**：节点=程序状态·mask=已覆盖边集合（coverage bitmap）·状态=(node,mask)=fuzzer 的种子·访问所有节点=coverage 最大化·最短路径=最小变异代价 / 状态 n·2ⁿ·O(n²·2ⁿ)·起点任选同层入队·mask 用 `|` 不用 `^`；连环问：n=50 状态爆炸→**coverage 最大化近似**（AFL 64KB bitmap 拿精确换可用）·与 TSP 的关系=允许重访的松弛决定可解性·parent 回溯=变异谱系·mask 含历史→**搜索难以双向化**（对抗攻击只能前向）·第一层天然并行=fuzzer 多核分片·带权=Dijkstra=期望成本最低攻击路径。面试技巧 **红队自动化平台设计**：手测 prompt 是抽奖，工业红队=AFL 方法论迁移到 LLM——**流水线五段**：变异生成（语料三层+算子四级：字符/词/语义/Crescendo/梯度）·沙箱执行（Day 131 L4 复用+完整轨迹落盘）·**判定分级**（拒绝≠成功=HarmBench 行为判定·两层漏斗·**双指标护栏**=ASR↑+正常完成率不掉）·归因分析（**ddmin 最小化**+聚类去重：10 万样本≈20 个独立漏洞）·回流增强（黄金回归集+训练负样本+GRPO 难例）；**GCG 骨架**=贪心坐标下降（loss 目标→梯度提议→**前向校验**→贪心固定·多模型联合 loss=可迁移性来源）；家族树：GCG/AutoDAN↔白盒·PAIR/TAP/Crescendo↔黑盒；连环问：三轴报表（ASR 分难度+完成率护栏+修复周期）·红队与评估=同一流水线两个读法·对抗样本进训练的方向感（进 rejected 侧）·闭源三层打法（开源造→迁移→黑盒迭代）·人管深度机器管广度·**veRL：红队成功轨迹=GRPO 免费难例（组基线自动加权）** / 金句「手测 prompt 是抽奖，红队平台是开矿——攻击的价值不在击穿那一刻，在击穿之后闭环的速度」
-- 🎤 面试技巧：今日金句「**coverage 是搜索的地图，变异是勘探的钻头，每一个打穿的地方都应该变成回归集里的一盏探照灯；拒绝 ≠ 成功——模型可能只是识别出了攻击**」
+### 今日更新（Day 133 · 2026-10-15 · Week 20 Day 5 🛡️）
+- 🧠 [ddmin 最小化算法（Delta Debugging）+ 对抗样本与越狱防御实战](week20/2026-10-15-ddmin-adversarial-training-sanitization.md) — 今日算法题「ddmin」= **红队归因分析的第一刀**：10 万成功样本先最小化再聚类去重，10 万 → 20 个独立漏洞——没有最小化，聚类被噪声淹没 / 对「子集格」做二分：complement 测试命中就收缩·未命中粒度倍增·字符级终止 = 1-minimal / 最坏 O(k²) 次 test·触发单元小接近线性·LLM 场景必须预算封顶 / 连环问：test 不单调→k=3 多数投票·与二分查找 = 链 vs 格·test 太贵→缓存+AC 预筛+LLM 提议校验（GCG 同范式）·多段输入→HDD 层级化·**1-minimal ≠ 全局最小**·最小化后接 k-means++ 聚类闭环。面试技巧 **对抗样本与越狱防御实战**：总纲 = **攻防经济学——攻击找一个点防御盖一个面**：攻击成本↑+爆炸半径↓+修复闭环快 / **对抗训练** = 攻击样本当 hardest 数据增强加厚边界·数据管道 = ddmin→聚类→每类采样→训练三元组（SFT 负样本/DPO rejected/GRPO 负奖励）·**配比是命门**（只喂攻击 = over-refusal 制造机·双指标护栏）·**训练集上的安全 ≠ 真安全**（held-out 攻击族评泛化）·**自适应攻击者假设**（知道你的防御再测一遍）·天花板 = 防已知范式→必须绑紫队飞轮 / **净化管线**：检测 = 识别攻击 vs **净化 = 让攻击失效**（把身份证照片重画一遍）/ 输入侧三件套：感知归一化（Day 130 复用）·**Paraphrase 防御**（GCG suffix 是分布外信号不是语义·改写保留语义抹掉扰动·改写器异构防被攻）·语义层重构（高敏 L3 专属）/ 三层收尾框架：对抗治已知的病·净化治未知的病·纵深治治不了的病 / veRL：成功轨迹 = 组内最低 reward 自动加权·软惩罚 vs **CPO 硬预算**（防 Goodhart 擦边）·trajectory store 一库三读
+- 🎤 面试技巧：今日金句「**对抗训练加厚边界，净化管线洗掉信号，沙箱收敛半径——防御不是让攻击不可能，而是让攻击贵到不划算、小到有边界、快到能闭环**」
 **想看今天的内容?直接点上面 👆**
 
 ---
@@ -45,7 +45,7 @@
 
 > 💡 **节奏设计**:周一/周五主菜(重难点),周三换口味(数据结构/算法),周六复盘,周日彻底休息。
 >
-> 🔥 **当前状态**：Week 20 进行中 🛡️（Agent 安全与对齐工程，Day 132 已更新），**每日更新从未中断**。
+> 🔥 **当前状态**：Week 20 进行中 🛡️（Agent 安全与对齐工程，Day 133 已更新），**每日更新从未中断**。
 
 ---
 
@@ -71,11 +71,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
+- 🔴 [Day 133 — ddmin 最小化算法（Delta Debugging）+ 对抗样本与越狱防御实战](week20/2026-10-15-ddmin-adversarial-training-sanitization.md)（**红队归因分析的第一刀**：10 万成功样本先 ddmin 最小化再聚类去重，10 万 → 20 个独立漏洞——没有最小化，聚类被噪声淹没 / 对「子集格」二分：complement 命中收缩·未命中粒度倍增·字符级 = 1-minimal / 最坏 O(k²) 次 test·LLM 场景预算封顶 / 连环问：不单调→多数投票·链 vs 格·太贵→缓存+预筛+LLM 提议（GCG 同范式）·HDD 层级·**1-minimal ≠ minimal** / **对抗训练**：攻击样本 = hardest 数据增强·管道 = ddmin→聚类→训练三元组（SFT/DPO/GRPO）·**配比防 over-refusal**·held-out 攻击族评泛化·**自适应攻击者假设** / **净化管线**：检测 = 识别 vs **净化 = 让攻击失效**·三件套 = 归一化复用·**Paraphrase 防御**（suffix 是分布外信号非语义·改写器异构）·语义重构 / 三层框架：治已知·治未知·治治不了 / veRL：成功轨迹 = 最低 reward 自动加权·**CPO 硬预算**防 Goodhart / 金句「防御不是让攻击不可能，而是贵到不划算、小到有边界、快到能闭环」）
 - 🔴 [Day 132 — 访问所有节点的最短路径（Shortest Path Visiting All Nodes）+ 红队自动化平台设计](week20/2026-10-14-shortest-path-visiting-all-nodes-red-team-automation.md)（**覆盖率引导模糊测试的状态搜索骨架**：节点=程序状态·mask=coverage bitmap·种子=(输入,mask)·全覆盖=最小变异代价 / 状态 (node,mask)·O(n²·2ⁿ)·起点同层入队·`|` 不用 `^` / 连环问：状态爆炸→coverage 最大化近似（AFL bitmap）·TSP=重访松弛决定可解性·变异谱系回溯·**含历史状态难双向化**·第一层并行分片·带权=Dijkstra 期望成本 / **红队流水线五段**：变异（语料三层+算子四级）→执行（Day 131 沙箱复用）→**判定**（拒绝≠成功·双指标护栏 ASR↑+完成率不掉）→归因（ddmin+聚类：10 万样本≈20 漏洞）→回流（回归集+训练+GRPO 难例）/ **GCG 骨架**：贪心坐标下降=梯度提议+前向校验+贪心固定·多模型联合 loss=可迁移 / 家族树：GCG·AutoDAN·PAIR·TAP·Crescendo 选型表 / 连环问：三轴报表·红队与评估同流水线·负样本进 rejected 侧·闭源三层打法·人管深度机器管广度·veRL 成功轨迹=免费难例 / 金句「手测 prompt 是抽奖，红队平台是开矿」）
 - 🛡️ [Day 131 — 钥匙和房间（Keys and Rooms）+ 沙箱与权限工程](week20/2026-10-13-keys-and-rooms-sandbox-permissions.md)（**权限可达性分析的算法原型**：房间=资源·钥匙=权限·0 号房间=初始权限集·BFS 可达集=横向移动面 / O(V+E)·入队即标记·持有钥匙≠到过房间 / 连环问：权限缺口清单·**最小初始权限集**（外部钥匙贪心+闭包）·带权=Held-Karp·循环继承=三色素描·与 Day 123 迷宫对偶（持有物可逆性）·10⁹ 外存 BFS+bitset / **沙箱谱系**：chroot→jail→容器→gVisor→Kata/**Firecracker microVM**（精简设备模型=减攻击面·~125ms）→Wasm isolate / **权限模型五件套**+**capability vs ACL**（fd 是 capability 本体·ambient authority·confused deputy 解药）/ agent 五道施工线：ephemeral 沙箱（断网 allowlist+墙钟超时）·工具分级 L0~L3·凭证隔离（代持+JIT+蜜罐）·eBPF 网络兜底·确认门防疲劳三件套 / 连环问：逃逸五层纵深·JIT 防权限爬升=因果链校验 / veRL：rollout 可重置+判分器隔离 / 金句「对齐是概率·沙箱是边界·钥匙都该带 TTL」）
 - 🛡️ [Day 130 — 多模式匹配检测器（Aho-Corasick 自动机）+ 间接注入与内容-指令分离工程](week20/2026-10-12-ac-automaton-indirect-injection.md)（**注入检测引擎的算法内核**：模式库=注入特征库·一次扫描报全部命中=审计全量过检·扫描代价与模式数无关=运维敢加规则 / Trie 建树+BFS 建 fail+output 合并三件套·O(Σ|p|) 预处理+O(n+z) 扫描 / 连环问：KMP→AC 谱系（next 数组=单模式版 fail）·变体归一化层（NFKC+零宽剥离+leet 映射）·模糊检测两段式（AC 锚点+局部编辑距离）·10⁶ 词库压缩（双数组 Trie·DAWG·Hyperscan SIMD）·热更新=不可变快照+原子切换·流式可断点续传 / **间接注入=agent 时代的 XSS**（SOP↔instruction hierarchy 类比）/ 内容-指令分离四件套（标注隔离·spotlighting·canary 蜜罐·出向动作审计·权限收敛）·闭合标签注入=缓解边界 / **检测器经济学**：拦截栈四层=Day 120 验证器成本谱复用·**误报不对称设计**（输入侧宁漏勿错·出向侧宁错勿漏）/ 产品线速览：Llama Guard 3·Prompt Shields·NeMo Guardrails·**AgentDojo 双指标**（攻击成功率↓+任务完成率不掉=全拒答假安全不算赢）/ veRL：注入攻防数据=GRPO 难例·CPO 约束优于裸惩罚 / 金句「内容-指令分离是准入证·注入一定会成功所以爆炸半径必须有限」）
-- 🛡️ [Day 129 — 单词接龙（Word Ladder）+ Week 20 开启：Agent 安全与对齐工程](week20/2026-10-11-word-ladder-agent-security-intro.md)（**最短注入链算法原型**：起始词=良性 prompt·目标词=攻击目标·每步改一个字母=逐步微调·中间词必须合法=绕过 guardrail / BFS 现场生成邻居·入队即标记 O(N·L·26)·wildcard 桶优化 / 连环问：**双向 BFS=红蓝对抗同图搜索**·Ladder II 全路径=攻击面测绘·带权→Dijkstra=期望成本最低攻击·违规 k 次=二维状态 BFS·奇偶签名预检 / 注入家族演化史：DAN→编码→Crescendo→GCG→泛化后缀 / 间接注入=agent 头号天敌·confused deputy / **纵深防御五层**·对齐三件套（RLHF 定口味·Constitutional 定规矩·DPO 做手术·over-refusal 警告）/ agent 特有安全=爆炸半径预算+轨迹审计 / **ASR 三轴报表**·红队流水线=单词接龙自动化·紫队飞轮 / veRL：对抗训练·Safe RL 约束=预算 vs 惩罚 / 金句「蓝队砌墙红队找洞同一张图两种 BFS」）
-> 📅 **每天 20:42 自动更新**,[查看全部历史 →](https://github.com/albert-lv/interview-prep/commits/main)
 
 ---
 
@@ -150,9 +149,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 20 进行中 🛡️ / Day 132**（Week 20 主题：Agent 安全与对齐工程 🛡️ — Day 132：访问所有节点的最短路径（Shortest Path Visiting All Nodes, LC 847）= 覆盖率引导模糊测试的状态搜索骨架——节点 = 程序状态、mask = 已覆盖边集合（coverage bitmap）、状态 = (node, mask) = fuzzer 的种子、访问所有节点 = coverage 最大化、最短路径 = 最小变异代价；状态数 n·2ⁿ、O(n²·2ⁿ)、起点任选同层入队、mask 用 `|` 不用 `^`；连环问：n=50 状态爆炸 → coverage 最大化近似（AFL 64KB bitmap 拿精确换可用）·与 TSP 关系 = 允许重访的松弛决定可解性·parent 回溯 = 变异谱系·mask 含历史 → 搜索难以双向化（对抗攻击只能前向）·第一层天然并行 = fuzzer 多核分片·边带权 = Dijkstra = 期望成本最低攻击路径。面试技巧：红队自动化平台设计——手测 prompt 是抽奖，工业红队 = AFL 方法论迁移到 LLM：流水线五段 = 变异生成（语料三层 + 算子四级：字符/词/语义/Crescendo/梯度）→ 沙箱执行（Day 131 L4 复用 + 完整轨迹落盘）→ 判定分级（**拒绝 ≠ 成功** = HarmBench 行为判定·两层漏斗·双指标护栏 = ASR↑ + 正常完成率不掉）→ 归因分析（ddmin 最小化 + 聚类去重：10 万样本 ≈ 20 个独立漏洞）→ 回流增强（黄金回归集 + 训练负样本 + GRPO 难例）；GCG 骨架 = 贪心坐标下降（loss 目标 → 梯度提议 → 前向校验 → 贪心固定·多模型联合 loss = 可迁移性来源）；家族树：GCG/AutoDAN ↔ 白盒·PAIR/TAP/Crescendo ↔ 黑盒；连环问：三轴报表（ASR 分难度 + 完成率护栏 + 修复周期）·红队与评估 = 同一流水线两个读法·对抗样本进训练的方向感（进 rejected 侧）·闭源三层打法（开源造 → 迁移 → 黑盒迭代）·人管深度机器管广度·veRL：红队成功轨迹 = GRPO 免费难例（组基线自动加权）；自检清单 10 项；金句「手测 prompt 是抽奖，红队平台是开矿——攻击的价值不在击穿那一刻，在击穿之后闭环的速度」🔴）
+当前进度：**Week 20 进行中 🛡️ / Day 133**（Week 20 主题：Agent 安全与对齐工程 🛡️ — Day 133：ddmin 最小化算法（Delta Debugging）= 红队归因分析的第一刀——10 万成功样本先最小化再聚类去重，10 万 → 20 个独立漏洞；对「子集格」二分：complement 测试命中收缩、未命中粒度倍增、字符级终止 = 1-minimal；最坏 O(k²) 次 test、触发单元小接近线性、LLM 场景必须预算封顶；连环问：test 不单调 → k=3 多数投票·与二分查找 = 链 vs 格·test 太贵 → 缓存+AC 预筛+LLM 提议校验（GCG 同范式）·多段输入 → HDD 层级化·1-minimal ≠ 全局最小（随机重启补救）·最小化后接 k-means++ 聚类闭环。面试技巧：对抗样本与越狱防御实战——总纲 = 攻防经济学（攻击找一个点、防御盖一个面：攻击成本↑+爆炸半径↓+修复闭环快）；对抗训练 = 攻击样本当 hardest 数据增强加厚边界，数据管道 = ddmin→聚类→每类采样→训练三元组（SFT 负样本/DPO rejected/GRPO 负奖励），配比是命门（只喂攻击 = over-refusal 制造机、双指标护栏），训练集上的安全 ≠ 真安全（held-out 攻击族评泛化），自适应攻击者假设（知道你的防御再测一遍），天花板 = 防已知范式不防新范式 → 绑紫队飞轮；净化管线：检测 = 识别攻击 vs 净化 = 让攻击失效，输入侧三件套 = 感知归一化（Day 130 复用）/Paraphrase 防御（GCG suffix 是分布外信号不是语义、改写保留语义抹掉扰动、改写器异构防被攻）/语义层重构（高敏 L3 专属）；三层收尾框架：对抗治已知的病、净化治未知的病、纵深治治不了的病；veRL：成功轨迹 = 组内最低 reward 自动加权，软惩罚 vs CPO 硬预算（防 Goodhart 擦边），trajectory store 一库三读；自检清单 10 项；金句「对抗训练加厚边界，净化管线洗掉信号，沙箱收敛半径——防御不是让攻击不可能，而是让攻击贵到不划算、小到有边界、快到能闭环」🛡️）
 
-**更新记录**：已连续更新 **132** 天
+**更新记录**：已连续更新 **133** 天
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
