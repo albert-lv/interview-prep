@@ -1,7 +1,7 @@
 # 🎯 Interview Prep - 每天一道题,六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2023%20Day%20149-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20149%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2023%20Day%20150-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20150%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -9,7 +9,7 @@
 >
 > 每天 20:42 自动推送:一道算法题 + 一页面试速查。跟着走,6 周后你会感谢自己。
 >
-> 🎉 **连续更新 149 天，从未中断！**
+> 🎉 **连续更新 150 天，从未中断！**
 
 ---
 
@@ -19,14 +19,14 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 149 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 150 天** |
 | 📅 **6 周系统计划** | 不是零散刷题,按主题递进(DP → 数据结构 → 网络 → 系统设计) |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码,是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 149 · 2026-10-31 · Week 23 Day 2 📨 Multi-Agent 工程实战：消息全员知晓的轮次（LC 994 · 多源 BFS = gossip 广播时间）+ agent 间消息与黑板：消息格式与 schema 演进/黑板读写权限/SwarmChat 式频道收敛/消息溯源审计）
-- 📨 [消息全员知晓的轮次 / Gossip 广播时间（LC 994 · 多源 BFS）+ agent 间消息与黑板](week23/2026-10-31-agent-messaging-blackboard-gossip-bfs.md) — 🔥 **今日时事锚点 = Anthropic S-1 招股书全文发酵（10/26 披露·财新 10/31 封面「最赚钱 AI 实验室 IPO 揭幕」·SEC 官网被挤崩）**（H1 营收 **$162.86 亿（+1300%）**·Q2 首次经营利润 $9.74 亿·毛利率 85%·NDR ≈900%·≥$10 万客户 11,900 家·算力承诺最高 **$8,060 亿**[谷歌云 $1,145 亿/AWS $1,100 亿/SpaceX $1,205 亿/博通租芯 $1,610 亿]·五类普通股·11/16 当周 IPO 代码 ANT·估值预期 $1.5-2 万亿）× **S-1 隐藏炸弹：Q2 收入约 6% 来自攻击者买 token 做蒸馏**（合法付费流量+敌对目的·传统 IDS 全失效·靠收入结构审计+行为聚类发现=「消息溯源与审计」的完美现实案例）× **美股 Q3 财报季血洗（10/29-30）**（谷歌 -13%[FCF -$90.65 亿]·**英特尔 -29%[1970 年代以来最大单日跌幅]**·费半 -7.2%·英伟达单月蒸发 $8,000 亿·「重估科技股」=AI 叙事进入查账期）× **MCP Registry 再更新（10/28 普查：51,666 servers·30 天 +41%·7,229 个 A2A agent 持有效 Agent Card·A2A Python SDK 同比 +1,308%）** — 算法题「消息全员知晓轮次」= **多源 BFS**（腐烂传播=gossip 广播·队列分层=轮次记账·层数天然=广播轮次·多源一次成型 O(mn) vs 逐源 BFS 平方爆炸·分区检测=fresh 残留返 -1）·进阶六连（加权版=LC 743 多源 Dijkstra「轮=逻辑时间非物理时间」/all-to-all gossip 汇合分析/Demers 1988·**电话模型三档：完全图 ⌈log₂n⌉/一般图 NP-hard/树上贪心**·有向图=强连通与缩点·随机丢失进入 SWIM/read repair 领域·回压=下游慢改 pull 或令牌桶）·面试技巧：消息格式三铁律（**schema_version 最外层**/tolerant reader/三类信息三种载体=指令强 schema·事实黑板·协商会话·A2A Message vs Artifact 同款二分）·schema 漂移事故三连+死信队列=正常路径·**黑板四问**（谁写[全员可写=METR 留言板灾难]/谁读[默认最小可见+订阅制]/过期[author·timestamp·version·supersedes 四元组]/冲突[结构化 LWW+文档 CRDT]）·**黑板 vs 队列分工一句话**（队列=命令通道消费即销毁·黑板=状态通道随时读最新·SwarmChat 讨论晋升机制=消息收敛后固化看板事实）·SwarmChat 收敛三件套（线程切分=靠可见性收敛非劝少说话/看板沉淀=止血 vs 造血/@mention 路由 O(N²)→O(k)）·**溯源三要素**（谁说的/什么时候/依据什么+trace-id 贯穿+哈希链防 log tampering+审计终极目标=第三方可重算）·**S-1 的 6% 学费**：审计不只看越权还看合法流量目的·成本曲线与安全画像会师·gossip vs 中心黑板取舍表（一致性/可用性/写冲突/消息量/审计五维+混合答案=SWIM 发现+黑板状态）·模拟面试五连·金句「不审计的通道，迟早在为对手打工」）
-- 🎤 面试技巧：今日金句「**多 agent 系统的消息层，考的不是「怎么把消息发出去」，而是「三年后还有人能回答三个问题：这条消息谁说的、凭什么说、说完世界变成了什么样」。S-1 里那 6% 的蒸馏收入告诉我们：不审计的通道，迟早在为对手打工；而 log tampering 的 7% 告诉我们：没有完整性保护的日志，本身就是攻击面。当面试官说「设计 agent 间通信」时，他真正在问的是：当第 900 个 agent 在留言板上写下没人教过它的话，你能不能在两分钟内回答——它是谁，它从哪来，它想干什么。**」
+### 今日更新（Day 150 · 2026-11-01 · Week 23 Day 3 💸 Multi-Agent 工程实战：多 agent 预算与结算——token 经济学（LC 1584 · MST = 任务联盟最小通信成本）+ 任务级成本归集 / 签名前预算上下文 · 签名后幂等台账 / 混合计费调度）
+- 💸 [任务联盟的最小通信成本（LC 1584 · Prim MST）+ 多 agent 预算与结算](week23/2026-11-01-multi-agent-budget-settlement-mst.md) — 🔥 **今日时事锚点 = Anthropic S-1 的「80.2% 按 token 计量计费」（10/28 券商研报口径·财新 10/31 封面霸榜·路演 11/9-10·11/16 当周 IPO·ANT·$1.5-2 万亿）**（H1 按量收入 $130.64 亿占 80.2%·订阅仅 19.8%·**Claude Code top 5% 企业客户月均消费 20 倍**·NDR ≈900%·≥$10 万客户 11,900 家·云市场渠道 48%·发明新指标 RRR[28 天按量×13+当月订阅×12]）× **2026 计费大迁移全年史**（GitHub Copilot 6/1 AI Credits[1 credit=$0.01]·OpenAI 8 月 Enterprise 全转 token·Meta WhatsApp MBA 8/1 按 token·Anthropic 4 月 Enterprise 改按量[Fable 5 7/7 移出订阅]）× **x402 基金会 10 月新章**（10/1 首任执行董事·57 家成员·Base 1.19 亿+Solana 3,500 万笔·Stripe 2/10 接入·**AWS Bedrock AgentCore per-session 消费上限**·Visa TAP 三件套[限额/商户类目/人工审批]）× **美股财报血洗（10/29-30）**（谷歌 -13%·英特尔 -29% 半世纪最大·费半 -7.2%·英伟达月蒸发 $8,000 亿）— 算法题「任务联盟最小通信成本」= **Prim 堆优化 MST**（minDist 松弛+lazy deletion·cut property 交换论证·Prim=联盟扩张 vs Kruskal=市场结算·O(n²log n)）·进阶六连（Kruskal 并查集对偶=Day 148 同款·**Steiner 树 NP-hard 但曼哈顿平面有 PTAS**·删最重 k-1 条边=k 任务分包=LC 1168 原型·**MST 也是最小瓶颈树[免费推论]**·在线加 agent=最近邻+周期重跑·边权=价目表只在相对结构变化时重算）·面试技巧：账本树三原则（task_id 五元组计量·管理税归集[METR 式死法=管理节点烧 60%]·消息按边记账=今天 MST 的账上意义）·**签名前四元组**（task_id/remaining_budget/allowed_merchants/expires_at=x402 SDK 10/22 漏洞教训[默认无上限可签走全额]）·**签名后三件套**（idempotency key[task+agent+counter]/扣款记账同事务/三方对账[先信服务商账单=先外后内]）·燃烧顺序口诀（沉没订阅池→临期积分→缓存 1/20→旗舰按量→批处理半价·反例三连[死循环烧穿额度·命中率 90→20%=20 倍成本·价目表写死代码]）·**S-1 五启示**（计量即商业[给任务拨预算不给 agent]·水位设计[NDR 900% 的留存结构]·买家侧对称[Anthropic 自己 take-or-pay·稳态 70% 承诺+30% 弹性]·账本加行为维度[6% 蒸馏收入会计侧读法]·编码 agent 单独科目[20 倍消耗]）·成本失控排查五步（账本树→命中率→重试风暴→账本树成环=预算黑洞→价目表）·模拟面试五连·金句「预算是产品，水位是设计」）
+- 🎤 面试技巧：今日金句「**多 agent 系统的账本层，考的不是「总共花了多少钱」，而是「这一块钱是哪个任务、哪个 agent、哪条消息花出去的」。S-1 用 80.2% 的按量收入告诉我们：token 计量已经是这门生意的本体，谁计量得细，谁定价权大；x402 用 SDK 默认无上限的漏洞告诉我们：agent 的签名能力不带预算上下文，就是挂在互联网上的提款机；而 NDR 900% 告诉我们：当每一步产出都是下一步的输入，用量只会上涨——所以预算是产品，水位是设计。当面试官说「设计 agent 经济系统」时，他真正在问的是：第 10 万笔扣款发生时，你能不能在三分钟内回答——谁授权的、凭什么授权的、账平不平。**」
 **想看今天的内容?直接点上面 👆**
 ---
 
@@ -79,8 +79,6 @@ memory/       # 进度追踪 & 学习笔记
 - 🛡️ [Day 146 — 最近的请求次数 / Rate Limiter（LC 933 · 滑动窗口 / 令牌桶 / 漏桶）+ 网关预算护栏](week22/2026-10-28-gateway-budget-guardrails.md)（**配额三轴第一轴的算法底座**：五种限流算法一张表（固定窗/滑窗日志/滑窗计数/令牌桶/漏桶）·令牌桶惰性结算 Go 实现（不放后台 ticker·懒记账哲学=Day 143 懒标记同构）·分片+一致性哈希多租户·漏桶对偶=保护脆下游 / 热点：**GPT-6.1 Terra（10/27）**（缓存 **1/20 价** $0.05/百万·「谁更会算账」·按任务计费延伸）·**Anthropic S-1（10/26）**（H1 $162.86 亿·**80% 按用量计费**·Q2 首次营业利润·算力承诺 $7500-8100 亿）·**Skynet LLMjacking（10/21 披露本周发酵）**（10 万步无人批准·蜜罐 12.7 万探测·**官方建议=监控异常推理用量与费用=密钥被盗第一信号**）·算力金融工程化（博通 630 亿租芯 Anthropic·Meta 975 亿绑定 NVIDIA Sentry 行为监控）/ 配额三轴框架（rate/quota/slot 独立否则逃逸路径三连）·**429 vs 402**（时间维度 vs 会计维度·报错反了放大 10 倍损失）·降级梯子 L0-L3（主动降质好过被动熔断）·成本异常四件套（**命中率 90%→20% = 成本瞬间 20 倍·命中率是最便宜的 IDS**·成本告警=安全告警·网关=SOC 传感器）·价目表是数据不是代码·模拟面试五连·金句「护栏不是墙，是仪表」）
 - ⚡ [Day 145 — LRU / LFU 缓存设计（LC 146 / LC 460 · 哈希链表 O(1) get/put）+ 一致性哈希 + 模型路由与语义缓存](week22/2026-10-27-model-routing-semantic-caching.md)（**哈希表 + 双向链表双向索引**·LRU 三坑（更新续命/淘汰同步删 map/cap=0）·LFU「频次→LRU 链」两级索引·为什么堆不对（O(log n)+无法按时间二次淘汰）·LRU vs LFU 选型=重尾热点 vs 时间漂移·TinyLFU 准入与逐出分离·一致性哈希+虚拟节点搬移 1/N·KV block 分布式存储同构 / 热点：**K3.1 价目表 = 缓存经济学官方教材**（10/24 持续发酵·缓存命中 ¥1.3 vs 未命中 ¥13 = **官方 1/10 价**·编码负载命中率常态 90%+·90% 命中=输入侧 0.167×≈83% off）·**Highspeed 档**（同权重 2~3× 速度 2× 价=「买速度」产品化·路由第三决策轴）·**Hermes 官方第一军规（10/25）**（system prompt 稳定=canonicalization 钦点）·K3.1 权重 11/4 前开源确认（今日 blog）·vLLM v0.32.0 vs SGLang v0.5.22 前缀缓存军备竞赛（RadixAttention vs PagedAttention）·同 K3 托管商 251 vs 42 tok/s=前缀复用率定性能 / 请求五决策点框架·三层缓存表（**语义=答过没·前缀=开头算过没·供应商=黑盒**）·canonicalization 六军规·路由三档（RouteLLM 分类器 cost-weighted 阈值=路由系统的学习率·cascade 级联）·滞回带防体验跳变·可靠性五连（雪崩/穿透/击穿 singleflight/降级铁律=省钱路径可挂主路径不可挂）·缓存安全三面（跨租户串答/时序侧信道/缓存投毒）·模拟面试五连·金句「命中率是新的 QPS，缓存命中是全系统最便宜的算力」）
 - ⚡ [Day 144 — 蓄水池抽样（LC 398/382 · 无限流无偏均匀采样）+ 测试时扩展：多数投票 / 自洽性 / 自适应采样 / 投票失效边界](week22/2026-10-26-test-time-scaling-reservoir-sampling.md)（**算法 R 三行代码 + k/n 归纳证明**（进入概率×留存概率连乘）·O(n)/O(k) 单遍·进阶八连：Algorithm L 指数跳跃·A-Res 加权 rand^(1/w)·k=1 链表特例·分布式「流量不等不能合并」坑·top-k 对偶 sketch·fpc 置信区间·动态采样率控制回路 / 热点：**Kimi K3.1 Pro（10/24·HN 947 分）**（3T 开源·Terminal-Bench 65.7% 超 GPT-6·AA 第 4·后训练 RL 放大思考能力）·**Highspeed 2~3×**（买速度=第三轴）·**Cerebras 账本（10/25）**（线性注意力无 KV cache·架构被晶圆定价）·**Self-Consistency Is Losing Its Edge**（15× 算力换 1.6%·>15 路径反降·冗余机理）·**When SC Backfires**（GPQA 56.6% 问题更差）·**RUVERBENCH**（3~5 票饱和·消方差消不了偏差）·**Blend-ASC**（6.8× 样本·流式早停）·**When To Solve When To Verify**（SC 胜 GenRM 8×）·**GVS5H**（五 27B 协作匹配 Fable 5）/ 三条 Scaling 轴框架·采样家族谱系·**bias-variance 统一理论**（同家族=同一盲点的 k 次复印）·预算经济学五连·工程清单六条（canonicalization/temperature 分层/置信度=票分布/审计留痕/聚合器版本化/超时降级）·模拟面试五连·金句「方差绞肉机」）
-- ⚡ [Day 143 — 我的日程安排表 III（LC 732 · 懒标记线段树 = 在线区间加 + 峰值并发）+ KV Cache 管理深潜：PagedAttention / RadixAttention / 抢占换出 / MLA / 安全五连](week22/2026-10-25-kv-cache-deep-dive.md)（**Day 142 拼车离线版的在线对偶**：懒标记线段树 O(log 10⁹)/次·动态开点·「完全覆盖记账·部分覆盖先结账」·边界计数备选·BIT 不保最值决策表 / 热点：**ACL 2026 Safe-CAM（10/24 昨天）**（KV 压缩×越狱双刃剑：意外鲁棒性 vs LLaMA-2 ASR 0→34%·压缩率=安全变量）·**KV Cache Hijacking**（复用劫持）·**KV-Cloak NDSS'26**（KV 明文三攻击·<10% 防御开销）·**cache_salt CVE-2025-46570**（前缀缓存侧信道）·vLLM v0.32.0 + SGLang v0.5.22（Rust 前缀缓存核心默认）·DeepInfer 不含 KV 层（护城河在调度）·ModelSphere 三级 KV / KV=主存类比总纲·PagedAttention 七连·RadixAttention vs hash·抢占三变量·MLA 低秩 latent·分层卸载·**安全五连全是 10 月出处**·模拟面试五连·金句「开始计入安全学分」）
-
 ---
 
 ## 🚀 怎么使用?
@@ -154,9 +152,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 23 进行中 🚀 / Day 149**（Week 23 Day 2：agent 间消息与黑板。Day 149 消息全员知晓的轮次 = LC 994 多源 BFS（腐烂传播=gossip 广播·队列分层=轮次记账·多源一次成型 O(mn)·分区检测返 -1·进阶：加权版=LC 743 多源 Dijkstra·电话模型三档[完全图 ⌈log₂n⌉/一般图 NP-hard/树上贪心]·有向图强连通缩点·随机丢失=SWIM·回压=pull+令牌桶）·面试技巧：消息格式三铁律（schema_version 最外层/tolerant reader/三类信息三种载体[指令=强 schema·事实=黑板·协商=会话]=A2A Message vs Artifact 同款二分）·schema 漂移事故三连+死信队列=正常路径·黑板四问（谁写[全员可写=METR 留言板反例]/谁读[最小可见+订阅]/过期[author·timestamp·version·supersedes]/冲突[结构化 LWW+CRDT]）·黑板 vs 队列分工（命令通道消费即销毁 vs 状态通道随时读最新·SwarmChat 讨论晋升=消息收敛固化看板）·SwarmChat 收敛三件套（线程=靠可见性收敛/看板沉淀=止血 vs 造血/@mention 路由 O(N²)→O(k)）·溯源三要素+哈希链防 log tampering+审计=第三方可重算·gossip vs 中心黑板五维取舍表+混合答案=SWIM 发现+黑板状态·模拟面试五连·热点：Anthropic S-1 全文发酵（10/26 披露·财新 10/31 封面[H1 $162.86 亿 +1300%·Q2 首次经营利润 $9.74 亿·NDR 900%·算力承诺 $8,060 亿·五类普通股·11/16 当周 IPO·ANT·$1.5-2 万亿]）·**S-1 隐藏炸弹=Q2 收入 ~6% 来自蒸馏攻击者**（合法流量+敌对目的·收入结构审计+行为聚类发现=溯源审计教科书）·美股财报血洗（10/29-30·谷歌 -13%·英特尔 -29% 半世纪最大·费半 -7.2%·英伟达月蒸发 $8,000 亿）·MCP Registry 10/28 普查（51,666 servers 30 天 +41%·7,229 A2A agents·A2A SDK +1,308%）·金句「不审计的通道，迟早在为对手打工」；自检清单 10 项；**Week 23 计划：Day 3 多 agent 预算与结算（x402 续集·LC 1584 MST/LC 1102 minimax 候选）·Day 4 群体容错与拜占庭（METR 留言板全案复盘）·Day 5 评测与红队规模化·Day 6/7 串讲收官**））
+当前进度：**Week 23 进行中 🚀 / Day 150**（Week 23 Day 3：多 agent 预算与结算。Day 150 任务联盟最小通信成本 = LC 1584 Prim 堆优化 MST（minDist 松弛+lazy deletion·cut property 交换论证·Prim=联盟扩张 vs Kruskal=市场结算·进阶：Steiner NP-hard 但曼哈顿平面有 PTAS/删最重 k-1 条边=k 任务分包/MST 也是最小瓶颈树/边权=价目表只在相对结构变化时重算）·面试技巧：账本树三原则（task_id 五元组计量·管理税归集·消息按边记账）·签名前四元组（task_id/remaining_budget/merchants/expires_at·x402 SDK 10/22 默认无上限漏洞教训）·签名后三件套（idempotency key=task+agent+counter·扣款记账同事务·三方对账先外后内）·燃烧顺序口诀（沉没订阅池→临期积分→缓存 1/20→旗舰按量→批处理半价·反例三连：死循环烧穿额度/命中率 90→20%=20 倍成本/价目表写死代码）·S-1 五启示（80.2% 按量=计量即商业[给任务拨预算不给 agent]·NDR 900%=水位设计·买家侧对称[Anthropic take-or-pay·70% 承诺+30% 弹性]·账本加行为维度[6% 蒸馏收入会计侧]·编码 agent 单独科目[top 5%=20 倍]）·成本失控排查五步（账本树→命中率→重试风暴→账本树成环=预算黑洞→价目表）·热点：Anthropic S-1 的 80.2% 按 token 计量计费（10/28 研报口径·财新 10/31 封面·路演 11/9-10·11/16 当周 IPO·ANT·$1.5-2 万亿·Claude Code top 5% 企业客户月均 20 倍·云市场渠道 48%·新指标 RRR）·2026 计费大迁移（GitHub Copilot 6/1 AI Credits·OpenAI 8 月 Enterprise 转 token·Meta WhatsApp 8/1·Anthropic 4 月 Enterprise 按量）·x402 基金会 10 月新章（10/1 首任执行董事·57 成员·Base 1.19 亿+Solana 3,500 万笔·Stripe 2/10·AWS Bedrock AgentCore per-session 上限·Visa TAP 三件套）·美股财报血洗（10/29-30·谷歌 -13%·英特尔 -29% 半世纪最大·费半 -7.2%·英伟达月蒸发 $8,000 亿）·金句「预算是产品，水位是设计」；自检清单 10 项；**Week 23 计划：Day 4 群体容错与拜占庭（METR 留言板全案复盘·LC 684/LC 207 候选）·Day 5 评测与红队规模化·Day 6/7 串讲收官**））
 
-**更新记录**：已连续更新 **149** 天
+**更新记录**：已连续更新 **150** 天
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
