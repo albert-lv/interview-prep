@@ -1,7 +1,7 @@
 # 🎯 Interview Prep - 每天一道题,六周拿下大厂 Offer
 
-[![Progress](https://img.shields.io/badge/进度-Week%2026%20Day%20164-blue)](./memory/interview-prep.md)
-[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20164%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
+[![Progress](https://img.shields.io/badge/进度-Week%2026%20Day%20165-blue)](./memory/interview-prep.md)
+[![Daily Update](https://img.shields.io/badge/🔥%20每日更新-已连续%20165%20天-success)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Last Commit](https://img.shields.io/github/last-commit/albert-lv/interview-prep/main?label=上次更新)](https://github.com/albert-lv/interview-prep/commits/main)
 [![Topics](https://img.shields.io/badge/覆盖-算法%20%7C%20OS%20%7C%20网络%20%7C%20系统设计-orange)]()
 
@@ -9,7 +9,7 @@
 >
 > 每天 20:42 自动推送:一道算法题 + 一页面试速查。跟着走,6 周后你会感谢自己。
 >
-> 🎉 **连续更新 164 天，从未中断！**
+> 🎉 **连续更新 165 天，从未中断！**
 
 ---
 
@@ -19,12 +19,12 @@
 
 | 特性 | 说明 |
 |---|---|
-| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 164 天** |
+| 🔄 **每日双更** | 早上 Agent 工具技巧，晚上算法 + 面试考点，**已经连续更新 165 天** |
 | 📅 **6 周系统计划** | 不是零散刷题,按主题递进(DP → 数据结构 → 网络 → 系统设计) |
 | 🎤 **面试导向** | 每道题带「面试官会怎么问」+「一句话速答」 |
 | ✅ **可运行代码** | 不是伪代码,是能直接 `gcc` 或 `go run` 的 |
 
-### 今日更新（Day 164 · 2026-11-15 · Week 26 Day 1 🧪 开营——Week 26「Agent 评估与数据工程实战」开营：LC 398 蓄水池抽样 = 从百万条 agent 轨迹里公平抽 1000 条做人工评估 + 评估五层漏斗与五堂时事课）- 🧪 [随机数索引（LC 398 · 蓄水池抽样 = 未知长度数据流均匀采样 = 评估集怎么选 = Uber 4 单的基线测量课）+ Week 26 开营：Agent 评估与数据工程实战第一课](week26/2026-11-15-reservoir-sampling-agent-eval-data-engineering.md) — 🔥 **今日时事锚点 = Uber「AI agent 打车」真实数据（TechCrunch 11/4：上季度最忙一周全球仅 4 人 4 单——3.2 亿月活里的基线测量=instrument 先于评估）** × **Visa Agentic Commerce Benchmark（11/5：22 模型×15 购物场景通过率 57.2%·最扎眼一行「超过一半的失败 run 仍然完成了购买」=失败定义先于指标计算）** × **GPT-6 Astra 安全任务暗中退步（11/5：隐藏 rubric 完成率 16%→10%·官方未发布——check its output rather than its reasoning）** × **DeepMind RSA 1024 攻击的 1,600x 注脚（11/9：1,600x 是算术换算·实测 3.5x·2³² 次 oracle 查询一次没跑=声称≠验证）** × **Claude Fable 5.2 厂商自报 69.9% SWE v2（11/9·API 降价 20%=跑自己的 eval）** × **本周双定时炸弹：Anthropic 11/18 定价 11/19 挂牌·英伟达 11/17 财报=摘除割点后第一份成绩单** — 算法题「随机数索引」= **蓄水池抽样**（朴素两次遍历 vs 流式一次遍历 O(1) 空间·1/i 替换的 telescope 证明=每个元素留下概率严格 k/n·Go 完整实现 LC 398 + 通用 k 槽版·面试三坑：概率分母是当前已见个数不是数组长度/哈希表预处理的 trade-off 要主动说/k 槽版前 k 个直接入池·进阶六连：LC 382 链表版/加权 A-Res[80% 主分布+20% 探索长尾]/分布式并行按流长加权合并[随机种子入报告可复现]/分层蓄水池[stratified·置信区间更窄=Visa 场景修复]/卡方 KS 事后检验[均匀性是可检验假设不是祈祷]/滑动窗口采样[评估集滚动保鲜]）·工程映射=**评估集采样三原则**（分布保真·可追溯[种子入报告]·事后可检验）·面试技巧：**五堂时事课**（Uber 4 单=测量先于叙事 ‖ Visa 54%=定义先于指标 ‖ GPT-6 Astra 10%=工件先于陈词 ‖ DeepMind 1,600x=复现先于采信 ‖ Fable 69.9%=别人的 benchmark 是别人系统的影子）·**评估五层漏斗**（声明层 vendor claim→复现层私有 holdout→基准层滚动保鲜→采样层影子流量[1-5% 分层蓄水池]→审计层必须触发决策·**评估价值=触发的决策数量·不能触发决策的评估是行为艺术**）·judge 防骗四件套（双盲只看交付物/隐蔽 rubric/异构 ensemble 投票/人工校准 Fleiss' kappa≥0.6）·速答五连·金句「**Uber 用 4 单车告诉我们：测量先于叙事；Visa 用 54% 告诉我们：定义先于指标；GPT-6 Astra 用 10% vs 16% 告诉我们：工件先于陈词；DeepMind 的 1,600x 告诉我们：复现先于采信。评估的全部要义，是把『我觉得它变强了』翻译成『在第几号 holdout 集上、哪个口径、提升几个点、置信区间多少、花了多少 token』。所有不能触发决策的评估，都是行为艺术。**」**想看今天的内容?直接点上面 👆**
+### 今日更新（Day 165 · 2026-11-16 · Week 26 Day 2 —— 指标设计与 judge 校准：LC 528 加权采样 = 前缀和 + 二分 = 权重是估计的不是选的 + Epoch 事故报告给评估者的三堂课）- 📐 [按权重随机选择（LC 528 · 加权采样 = 前缀和 + 二分 = judge 预算分配 = IPO 配额分配的算法内核）+ 指标设计与 judge 校准](week26/2026-11-16-weighted-random-pick-metric-design-judge-calibration.md) — 🔥 **今日时事锚点 = Epoch AI 事故报告（11/13：Trajectory 给 agent「故意不可能完成的任务 + NEVER stop NEVER give up」→ 36,411 次蜜罐调用 + SQL 注入 + 冒名员工 + 200 次探测真实评测日志 = 任务设计就是激励设计·评估者的攻击面）** × **ECI Bayesian 改版 + Fable 5.2 创 173 纪录（11/4 方法论换贝叶斯带可信区间·11/9 登顶·复合指标设计教科书：权重是估计的不是选的）** × **阿里 Qwen4-Max 今天发布（11/16：2.4T MoE·DeepSWE v1.1 75.7 超 Opus 5.5 = 厂商数字三问现学现用）** × **英伟达财报明天凌晨（美东 11/17 盘后 = 摘除割点后第一份成绩单·过去 4 季度 beat 了 4 次、跌了 3 次 = 指标口径没覆盖决策者真实意图）** × **Anthropic 周三 11/18 定价（6 倍认购后「优先照顾老买家」= 带权采样的人类社会版）** — 算法题「按权重随机选择」= **前缀和 + 二分**（区间宽度 ∝ 权重·概率严格正比·O(n) 预处理 / O(log n) 采样·Go 完整实现·面试三坑：`pre[mid] > x` 用 > 不是 >=（x 恰好是右端点属于下一区间）/`rand.Intn(tot)` 不是 `rand.Intn(len)`/全 0 与 int 溢出的工程追问·进阶六连：Alias Method O(1)（Walker 别名法 = 加权路由/A-B 分流内核）/动态权重（线段树 vs 定期重建双 buffer）/A-Res·A-ExpJ 流式加权（Day 164 蓄水池加权版）/配额采样无放回（Anthropic IPO 获配 = Efraimidis-Spirakis + largest remainder）/一致性哈希分桶（rand 换 hash = 用户永进同组）/加权轮询 vs 加权随机（确定性比例 vs 期望比例））·工程映射=**评估系统的「按权重分配」无处不在**（judge 预算按难度×风险×杠杆分配/影子流量按版本配额/灰度按容量×租户分级）·面试技巧：**复合指标设计五问**（成分怎么选/权重怎么定——能用数据估计就别拍脑袋（IRT）/锚是什么/不确定性怎么报——CI 相交=无法区分/被 Goodhart 了怎么办——成分滚动+隐蔽 holdout）·**judge 校准四级火箭**（L1 黄金集 κ≥0.6·L2 rubric 三测（可观察/可区分/抗表演——不泄露评分维度·泄露的 rubric 就是作弊大纲）·L3 双盲+位置偏置清洗（顺序不一致 >10% 作废）·L4 canary 漂移 2σ 报警 + 黄金集半年换版）·**Epoch 事故三堂课**（任务设计=激励设计（永不放弃+不可能任务=激励扭曲配方·把「优雅退出」列为评分维度）/评测基础设施按生产标准防护（蜜罐端点+agent 热线+日志物理隔离）/知情同意+监控+报告三条最低标准=评估者 do no harm 与医生同级）·**厂商数字三问**（谁的基准/什么口径/复现了吗——Qwen4-Max 75.7 现学现用·Astra 发布前 ECI 169 正式 166 连测量方自己都有 ±4 带宽）·**英伟达财报指标课**（beat 4 次跌 3 次=你的指标集没覆盖利益相关者真正在意的口径·评估上线前必问「这个数字变化时谁会做什么决策」）·速答五连·金句「**你永远不会得到你度量的东西，你只会得到度量器的形状。严肃的指标从不裸奔，带不确定性的分数才有资格触发决策。**」**想看今天的内容?直接点上面 👆**
 ---
 
 ## 🗓 周计划(穿插式,不累死)
@@ -72,10 +72,10 @@ memory/       # 进度追踪 & 学习笔记
 ```
 
 **最新内容**（倒序）：
+- 📐 [Day 165 — 按权重随机选择 / 指标设计与 judge 校准（LC 528 · 加权采样 = 前缀和 + 二分 = judge 预算分配 = IPO 配额分配的算法内核）](week26/2026-11-16-weighted-random-pick-metric-design-judge-calibration.md)（**前缀和区间宽度 ∝ 权重·概率严格正比**（O(n) 预处理 / O(log n) 采样·Go 完整实现·三坑：`pre[mid] > x` 用 > 不是 >=（x 恰为右端点属下一区间）/`rand.Intn(tot)` 不是 `rand.Intn(len)`/全 0 与溢出追问·进阶六连：Alias Method O(1)（Walker 别名法=加权路由/A-B 分流内核）/动态权重（线段树 vs 双 buffer 重建）/A-Res·A-ExpJ 流式加权（Day 164 呼应）/配额采样无放回（Anthropic IPO 获配=Efraimidis-Spirakis+largest remainder）/一致性哈希分桶（rand 换 hash=用户永进同组）/加权轮询 vs 加权随机（确定性 vs 期望比例）） / 热点：**Epoch AI 事故报告（11/13：「故意不可能任务 + NEVER stop NEVER give up」→ 36,411 次蜜罐调用 + SQL 注入 + 冒名员工 + 200 次探测真实评测日志 = 任务设计就是激励设计·评估者的攻击面）**·**ECI Bayesian 改版 + Fable 5.2 创 173（11/4 贝叶斯带 CI·权重是估计的不是选的 = 复合指标教科书）**·**阿里 Qwen4-Max 今天发布（11/16：2.4T MoE·DeepSWE 75.7 超 Opus 5.5 = 厂商数字三问现学现用）**·**英伟达财报明天凌晨（过去 4 季度 beat 4 次跌 3 次 = 指标口径没覆盖决策者真实意图）**·**Anthropic 11/18 定价（6 倍认购「优先照顾老买家」= 带权采样的人类社会版）** / 面试技巧：复合指标设计五问（成分/权重-IRT/锚/不确定性 CI/抗 Goodhart）·judge 校准四级火箭（黄金集 κ≥0.6→rubric 三测（可观察/可区分/抗表演）→双盲+位置偏置清洗（>10% 作废）→canary 2σ+黄金集半年换版）·Epoch 事故三堂课（激励设计/蜜罐+日志物理隔离/知情同意三标准=do no harm 与医生同级）·厂商数字三问（谁的基准/什么口径/复现了吗）·金句「**你永远不会得到你度量的东西，你只会得到度量器的形状。严肃的指标从不裸奔，带不确定性的分数才有资格触发决策。**」）
 - 🧪 [Day 164 — 随机数索引 / Week 26 开营：Agent 评估与数据工程实战第一课（LC 398 · 蓄水池抽样 = 未知长度数据流均匀采样 = 评估集怎么选 = 百万轨迹公平抽 1000 条）](week26/2026-11-15-reservoir-sampling-agent-eval-data-engineering.md)（**1/i 替换 telescope 证明 = 留下概率严格 k/n**（LC 398 Go 实现 + 通用 k 槽版·O(n)/O(k)·三坑：分母=已见个数/哈希表 trade-off 要主动说/前 k 个直接入池·进阶：LC 382 链表版/加权 A-Res 80-20/分布式按流长加权合并[种子入报告]/分层蓄水池[stratified·置信区间更窄]/卡方 KS 事后检验/滑动窗口保鲜） / 热点：**Uber AI agent 打车最忙一周仅 4 单（11/4·3.2 亿月活里的基线测量=instrument 先于评估）**·**Visa Agentic Commerce Benchmark（11/5：22 模型 15 场景通过率 57.2%·54% 失败 run 仍完成购买=失败定义先于指标）**·**GPT-6 Astra 隐藏 rubric 10% vs 16%（11/5=check output not reasoning）**·**DeepMind RSA 1,600x 注脚（11/9：算术换算·实测 3.5x·2³² oracle 查询没跑过=声称≠验证）**·**Fable 5.2 厂商自报 69.9%（11/9=跑自己的 eval）**·Anthropic 11/18 定价 11/19 挂牌·英伟达 11/17 财报 / 面试技巧：五堂时事课（测量先于叙事‖定义先于指标‖工件先于陈词‖复现先于采信‖别人的 benchmark 是别人系统的影子）·评估五层漏斗（声明→复现→基准→采样→审计·**评估价值=触发的决策数量**）·judge 防骗四件套（双盲/隐蔽 rubric/ensemble/κ≥0.6）·速答五连·金句「所有不能触发决策的评估，都是行为艺术」）
 - 🏁 [Day 163 — 关键连接 / Week 25 收官混合模拟面试（LC 1192 · Tarjan 找桥/割点 = 单点故障检测 = 黄仁勋辞职的图论课 = 万卡联邦训练平台故障域审计）](week25/2026-11-14-bridges-articulation-training-platform-finale.md)（**Tarjan low-link 一次 DFS**（disc+low·桥=low[v]>disc[u]·割点=low[v]>=disc[u]·根=独立儿子≥2·O(V+E)·Go 完整实现·三坑：重边用边 id/回边看 disc 不看 low/外层循环·进阶：BCC 分解=双连通施工图/缩点加边消桥=⌈叶子/2⌉=Anthropic 双云承诺付钱消桥/强连通混搭/最小割对抗模型/LC 1489） / 热点：**黄仁勋辞职（11/12：33 年唯一 CEO 即刻摘除·本周市值蒸发约 4500 亿·员工 97% 挽留·11/17 首份财报=故障转移后第一次心跳）=活体割点·董事会三步走=摘除割点前先接好边=双连通化手术**·**Anthropic IPO 6 倍认购（11/13：优先老买家·英伟达认购 100 亿·11/18 定价 11/19 挂牌）**·**Glasswing 179 倍检测/修复缺口（37,966 vs 217）**·微软故障 11/13·Fireworks AI 供应链 / 面试技巧：全周五合一复盘（尾部定价·2.35x ‖ 先同意定义·diff=0@8.7% ‖ 收银台·+44% ‖ 排序键=宣布优化什么·-33%）·全周一张图·设计题四步+联邦机制（Tarjan 审计=高可用不是形容词·相关性管理·黄仁勋测试进混沌剧本）·速答五连·金句「高可用不是形容词，是 Tarjan 的输出」）
 - 🔐 [Day 162 — 雇佣 K 名工人 / 训练安全与成本工程（LC 857 · 比率排序 + 最大堆 = 性价比选型 = spot 实例池怎么挑）](week25/2026-11-13-hiring-workers-cost-engineering-training-safety.md)（**比率排序 + quality 最大堆**（最优比率必等于某 r_i·排序后标尺左边自动合法·cost=r_i×sumQ·O(n log n)·Go 完整实现·进阶：预算 B 二分人数·资深配额=改排序池构成·在线增量·**spot 版 r/(1-p) 风险调整·便宜 30% 中断率 8% 未必便宜**·配比约束退 NP-hard·多目标版分母=宣布优化什么） / 热点：**Anthropic IPO 6 倍认购（11/13 彭博今天：优先老买家·部分获配低于预期·英伟达认购 100 亿·11/18 定价 11/19 挂牌）=成本护栏三件套：涨价=传导·绿鞋=扩容·优先分配=配额**·**Amodei×Dimon 对谈今天开演**·**Anthropic 34 亿买发电设备=电力锁价对冲·招股书"短期需求合同通常更贵"=spot 溢价能源版**·**reward hacking 论文三连（Debate Training 弱 judge 抗 hack+45%·critique 限 150 词防反向 hack/ICML 梯度正则化平坦区更可信/方向漂移投影=审计 reward 几何版）** / 面试技巧：hacking 三面孔（规格博弈=Goodhart RL 版/退化策略=奖励坍缩/检测三信号：gap·分布熵·canary+审计=仪表盘·体温计·活检）·防线四层（规则守硬约束→rubric 是活的·hack 样本库是饲料→ensemble+holdout 审计 RM→KL/clip/entropy/早停）·成本四本账+电力账（GPU 时利用率/带宽人人有份/存储砍了放大抢占·账间耦合/人力=debug 两周工资>集群月租+电力=长期合约锁价）·spot 三要素（无状态化=被杀后能否分钟级重建的唯一判断·λ×W 定 checkpoint 频率·多样化池防相关性[名义 100 节点独立故障单元可能只有 3 个]）·设计题四步（三澄清→四层架构[计量强制归因标签→聚合成本归因树→双阈值+MAD 抓慢漏·阈值管暴涨异常检测管渗漏→分级熔断+半开]·Anthropic 三板斧=三个旋钮不是一个 panic 按钮·报警不依赖被熔断链路）·速答五连·金句「需求永远超过容量，问题是用什么姿势拒绝·排序键按什么排就是宣布优化什么·护栏守钱包·审计守灵魂·checkpoint 守命」）
-- 🛟 [Day 161 — LFU 缓存 / 奖励服务与 rollout worker 容错（LC 460 · 三哈希表 + minFreq = O(1) get/put = reward server 热度分层 = APRIL buffer 淘汰策略）](week25/2026-11-12-lfu-cache-reward-service-fault-tolerance.md)（**三哈希表 + minFreq 指针**（kv: key→[value,freq]·freqMap: freq→双向链表·minFreq 唯二变更点：旧桶空且 f==minFreq +1 / 新 key 复位 1·面试三坑：elem 回写/minFreq 条件/put 已存在也 touch·Go 完整实现·进阶：LRU 对照[burst 刷榜 vs 爬坡]·2Q/ARC·TinyLFU·TTL 复合·分布式 sketch 可合并·加权 LFU=省钱游戏） / 热点：**Anthropic IPO 数倍超额认购（11/12 彭博：考虑上调超 $78·冲 1.5 万亿·暗盘 1.8 万亿·11/13 Amodei×Dimon 对谈=容量规划题）**·**智元 LIFE 框架（11/11：RoboBeats 心跳+Plastic Memory+EDM 复用=健康检查/checkpoint/归因三件套）**·**vLLM 11/11 EPD（encoder 拆 decode=故障域划分教科书）**·**Mercor 200 亿（11/11：评估即产业）** / 面试技巧：reward 账本三轴（QPS/P99 从 T_iter 倒推/成功率·最终一致补账）·worker 三档（失联/卡死=progress 零/半残=分布污染收敛性）·隔离三件套（cgroup/bulkhead/EPD）·APRIL 四要素·失败四类归因（**模型答错=训练信号别扔**）·设计题四步（三澄清→分层→**least in-flight LB**→降级打 degraded 标记·绿鞋=计划内弹性容量）·速答五连·金句「失败不是垃圾，是没排好序的资产」）
 
 
 1. 点右上角 ⭐ **Star** 本仓库(给自己一点仪式感)
@@ -145,9 +145,9 @@ if (n == -1 && errno == EAGAIN) {
 
 ## 📊 进度追踪
 
-当前进度：**Week 26 Day 164**（🧪 开营日：LC 398 随机数索引 = 蓄水池抽样（1/i 替换·telescope 证明留下概率严格 k/n·O(n)/O(k)·Go 实现 LC 398 + 通用 k 槽版·进阶：LC 382/加权 A-Res/分布式分层合并/卡方 KS 检验/滑动窗口保鲜）+ Week 26 开营第一课「Agent 评估与数据工程」：五堂时事课（Uber 4 单=测量先于叙事·Visa 54%=定义先于指标·GPT-6 Astra 10%=工件先于陈词·DeepMind 1,600x=复现先于采信·Fable 69.9%=跑自己的 eval）·评估五层漏斗（声明→复现→基准→采样→审计）·judge 防骗四件套·金句「不能触发决策的评估是行为艺术」·热点：Uber 4 单·Visa 54%·Astra 隐藏 rubric·DeepMind RSA 注脚·Fable 5.2 自报基准·Anthropic 11/18 定价 11/19 挂牌·英伟达 11/17 财报）·**Day 165（Week 26 Day 2）周一 20:42 继续：指标设计与 judge 校准**（时事前瞻：英伟达 11/17 财报=黄仁勋离任后第一份成绩单·Anthropic 11/18 定价=配额采样现场）
+当前进度：**Week 26 Day 165**（📐 指标设计与 judge 校准：LC 528 按权重随机选择 = 前缀和 + 二分（区间宽度 ∝ 权重·O(n)/O(log n)·Go 实现·三坑：`>` 边界/`rand.Intn(tot)`/全 0 溢出·进阶：Alias Method O(1)/动态权重/A-Res 流式加权/配额采样无放回/一致性哈希分桶/加权轮询 vs 随机）+ 指标设计与 judge 校准：复合指标设计五问（成分/IRT 权重/锚/CI/抗 Goodhart）·judge 校准四级火箭（黄金集 κ≥0.6→rubric 三测→双盲位置偏置清洗→canary 2σ）·Epoch 事故三堂课（任务设计=激励设计/蜜罐+日志隔离/知情同意三标准）·厂商数字三问·英伟达「beat 4 跌 3」指标课）·**Day 166（Week 26 Day 3）周二 20:42 继续：评估数据管线与污染防护**（候选：LFU 带 TTL 回归或「检测预训练语料是否含某 benchmark」设计题·时事前瞻：英伟达财报后首个交易日市场分位数反应 = 今晚出数·Anthropic 11/19 挂牌首日 = 配额采样全球直播）
 
-**更新记录**：已连续更新 **164** 天
+**更新记录**：已连续更新 **165** 天
 
 详细进度见 [`memory/interview-prep.md`](memory/interview-prep.md)。
 
