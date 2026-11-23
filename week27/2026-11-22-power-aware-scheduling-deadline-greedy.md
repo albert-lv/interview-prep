@@ -49,6 +49,8 @@ tasks = [{t:3, d:5}, {t:2, d:3}]   price = [5, 1, 4, 2, 10]
      占据 [0,3) 内最便宜的 2 个槽：槽1(1)、槽2(4)；
      再处理 {3,5}，在 [0,5) 剩余槽位中最便宜 3 个：槽3(2)、槽0(5)、槽4(10)。
      最小电费 = 1+4+2+5+10 = 22。
+
+回归示例：tasks = [{t:1, d:2}]，price = [5, 1]；应选槽 1，最小电费为 1。
 ```
 
 ### 思路
@@ -66,10 +68,10 @@ tasks = [{t:3, d:5}, {t:2, d:3}]   price = [5, 1, 4, 2, 10]
 **问题二（可抢占 + 电价最小化）：**
 
 1. 按 `d` 升序排序（EDF 顺序）；
-2. 维护 `used[]` 槽位占用表。逐个任务处理：在 `[0, d_i)` 的**空闲槽位中挑最便宜的 `t_i` 个**占掉，累加电费；
-3. 若 `[0, d_i)` 内空闲槽位不足 `t_i`，返回 `-1`（容量不可行）。
+2. 维护按价格排序的**空闲槽位最小堆**。截止时间向后推进时，将新进入 `[0, min(d_i, len(price)))` 的槽位入堆，先前未选的槽仍留在堆里；
+3. 若堆内槽位不足 `t_i`，返回 `-1`（容量不可行）；否则弹出最便宜的 `t_i` 个并累加电费。
 
-**为什么对（交换论证）**：按 EDF 顺序，后处理的任务 deadline 更晚，其可用槽位集合 `[0, d)` 是前面任务的**超集**。设当前处理的任务 `J` 是剩余中 deadline 最紧的，某个最优解给 `J` 安排了槽位集合 `S_O`。`J` 的最优槽位必然可以替换成 `[0, d_J)` 内最便宜的 `t_J` 个槽 `S_G`：把 `J` 挪进 `S_G`，原来占用 `S_G` 的其他任务 `K`（`d_K ≥ d_J`）可以挪到 `J` 让出的 `S_O` 里——因为 `S_O ⊆ [0, d_J) ⊆ [0, d_K)`，对 `K` 依然可行，且电费不增（`S_G` 是最便宜选择）。逐次替换下去，贪心解不劣于最优解。∎
+**为什么对（交换论证）**：按 EDF 顺序，后处理的任务 deadline 更晚，其可用槽位集合 `[0, d)` 是前面任务的**超集**。设当前处理的任务 `J` 是剩余中 deadline 最紧的，某个最优解给 `J` 安排了槽位集合 `S_O`。固定之前的贪心选择后，`J` 的槽位可替换成 `[0, d_J)` 内剩余槽位中最便宜的 `t_J` 个槽 `S_G`：把 `J` 挪进 `S_G`，原来占用 `S_G` 的其他任务 `K`（`d_K ≥ d_J`）可以挪到 `J` 让出的 `S_O` 里——因为 `S_O ⊆ [0, d_J) ⊆ [0, d_K)`，对 `K` 依然可行，且电费不增（`S_G` 是最便宜选择）。逐次替换下去，贪心解不劣于最优解。∎
 
 **一句话记忆**：*deadline 题先排序；不可抢占用最大堆"丢最长的"，可抢占用"紧任务先挑便宜槽"。*
 
@@ -95,7 +97,7 @@ type MaxHeap []int
 func (h MaxHeap) Len() int           { return len(h) }
 func (h MaxHeap) Less(i, j int) bool { return h[i] > h[j] } // 大顶堆
 func (h MaxHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
-func (h *MaxHeap) Push(x any)         { *h = append(*h, x.(int)) }
+func (h *MaxHeap) Push(x any)        { *h = append(*h, x.(int)) }
 func (h *MaxHeap) Pop() any {
 	old := *h
 	n := len(old)
@@ -120,25 +122,39 @@ func MaxTasks(tasks []Task) int {
 }
 
 // ---- 问题二：可抢占（checkpoint/restore），完成全部任务的最小电费 ----
+type MinHeap []int
+
+func (h MinHeap) Len() int           { return len(h) }
+func (h MinHeap) Less(i, j int) bool { return h[i] < h[j] } // 小顶堆：按电价排序
+func (h MinHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+func (h *MinHeap) Push(x any)        { *h = append(*h, x.(int)) }
+func (h *MinHeap) Pop() any {
+	old := *h
+	n := len(old)
+	v := old[n-1]
+	*h = old[:n-1]
+	return v
+}
+
 func MinCostAllTasks(tasks []Task, price []int) int {
 	sort.Slice(tasks, func(i, j int) bool { return tasks[i].D < tasks[j].D })
-	T := len(price)
-	used := make([]bool, T)
-	cost := 0
+	available := &MinHeap{}
+	cost, nextSlot := 0, 0
 	for _, tk := range tasks {
-		need, lim := tk.T, tk.D
-		if lim > T {
-			lim = T
+		lim := tk.D
+		if lim > len(price) {
+			lim = len(price)
 		}
-		for h := 0; h < lim && need > 0; h++ { // 前缀内从最便宜的空闲槽开始占
-			if !used[h] {
-				used[h] = true
-				cost += price[h]
-				need--
-			}
+		// deadline 只会递增，每个新进入前缀的槽最多入堆一次。
+		for nextSlot < lim {
+			heap.Push(available, price[nextSlot])
+			nextSlot++
 		}
-		if need > 0 {
+		if available.Len() < tk.T {
 			return -1 // deadline 前容量不足，不可行
+		}
+		for need := tk.T; need > 0; need-- {
+			cost += heap.Pop(available).(int)
 		}
 	}
 	return cost
@@ -146,8 +162,9 @@ func MinCostAllTasks(tasks []Task, price []int) int {
 
 func main() {
 	// {t:1,d:2} {t:2,d:4} {t:2,d:5} {t:3,d:5}：最多完成 3 个（{1,2}+{2,4}+{2,5} = 5h 刚好排下）
-	fmt.Println(MaxTasks([]Task{{1, 2}, {2, 4}, {2, 5}, {3, 5}}))                  // 3
+	fmt.Println(MaxTasks([]Task{{1, 2}, {2, 4}, {2, 5}, {3, 5}}))               // 3
 	fmt.Println(MinCostAllTasks([]Task{{2, 3}, {3, 5}}, []int{5, 1, 4, 2, 10})) // 22
+	fmt.Println(MinCostAllTasks([]Task{{1, 2}}, []int{5, 1}))                   // 1：便宜槽位不在最前面
 }
 ```
 
@@ -156,9 +173,9 @@ func main() {
 | 问题 | 时间 | 空间 |
 |------|------|------|
 | 问题一（不可抢占） | **O(n log n)** | O(n) |
-| 问题二（可抢占，实现版） | **O(n · T)**（T = max deadline） | O(T) |
+| 问题二（可抢占，实现版） | **O(n log n + T log T)** | O(T) |
 
-**进阶追问（面试加分项）**：当 `T` 很大（如一年 8760 小时 × 多年）时，"前缀内挑 k 个最便宜空闲槽"可用**离线预处理 + 平衡树/树状数组**优化到 O((n + T) log T)；若槽位价格有结构化特征（峰谷分段），还可以用并查集维护"下一段空闲槽"。
+问题二中，`T` 为最晚截止时间与电价表长度中的较小值。每个槽位最多入堆一次、出堆一次，因而不必为每个任务从头扫描前缀。
 
 ### Follow-ups（面试官可能的追问）
 
@@ -222,7 +239,7 @@ NVDA 这周崩掉的直接诱因，是市场对 **neocloud 循环融资、应收
 |------|--------|
 | deadline 调度通用套路 | 按 d 排序 + 堆/槽位管理 + 交换论证 |
 | LC 630 变体 | 大顶堆丢最长任务，O(n log n) |
-| 可抢占 + 电价 | EDF 顺序，紧任务先挑便宜槽，O(n·T) 可优化到 O((n+T) log T) |
+| 可抢占 + 电价 | EDF 顺序，最小堆选截止前最便宜的空闲槽，O(n log n + T log T) |
 | 混部工程前提 | 秒级 checkpoint（NVIDIA Snapshot <45s）+ 隔离 + 显存水位线 |
 | 容量对冲 | 合约基线 + 弹性现货两层结构，成本随需求非线性收缩 |
 | 宏观锚点 | NVDA 单周 -$900B / SEC+加州 AG 调查；ANT 回踩发行价；电力大盘 135 个 GW 级 campus |
